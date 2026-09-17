@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  icons: {
+    icon: [
+      { url: "/images/author/hulm-editorial-team.png" },
+      { url: "/images/author/hulm-editorial-team.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/images/author/hulm-editorial-team.png",
+    apple: "/images/author/hulm-editorial-team.png",
+  },
 };
 
 export default function RootLayout({
