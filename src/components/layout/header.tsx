@@ -131,7 +131,7 @@ export function Header() {
                 variant="outline"
                 className="text-xs font-semibold rounded-full h-9 px-4"
               >
-                <Link href="/contact/">Book a demo</Link>
+                <Link href="/contact">Book a demo</Link>
               </Button>
 
               <Button

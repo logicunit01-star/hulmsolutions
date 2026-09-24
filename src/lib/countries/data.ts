@@ -790,7 +790,7 @@ export const REGIONAL_LOCATIONS = [
     flag: "🇸🇦",
     role: "ZATCA Phase-2",
     region: "Middle East",
-    href: "/pos-software-ksa/"
+    href: "/pos-software-ksa"
   },
   {
     code: "AE",
@@ -798,7 +798,7 @@ export const REGIONAL_LOCATIONS = [
     flag: "🇦🇪",
     role: "Gulf Regional",
     region: "Gulf Regional",
-    href: "/pos-software-uae/"
+    href: "/pos-software-uae"
   },
   {
     code: "US",
@@ -806,7 +806,7 @@ export const REGIONAL_LOCATIONS = [
     flag: "🇺🇸",
     role: "North America",
     region: "North America",
-    href: "/pos-software-usa/"
+    href: "/pos-software-usa"
   },
   {
     code: "QA",
@@ -814,7 +814,7 @@ export const REGIONAL_LOCATIONS = [
     flag: "🇶🇦",
     role: "Middle East",
     region: "Middle East",
-    href: "/pos-software-qatar/"
+    href: "/pos-software-qatar"
   },
   {
     code: "PK",
@@ -822,6 +822,6 @@ export const REGIONAL_LOCATIONS = [
     flag: "🇵🇰",
     role: "HQ & Engineering",
     region: "South Asia",
-    href: "/fbr-integrated-pos-pakistan/"
+    href: "/fbr-integrated-pos-pakistan"
   }
 ];

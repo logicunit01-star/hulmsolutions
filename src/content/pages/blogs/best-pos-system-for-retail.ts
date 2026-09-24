@@ -6,7 +6,7 @@ export const bestPosRetailBlog = {
   title: "Best POS System for Retail Stores in 2026 – Complete Guide",
   slug: "best-pos-system-for-retail",
   author: "Hulm Editorial Team",
-  authorSlug: "hulm-editorial-team",
+  authorSlug: "hulm-solutions-editorial-team",
   updatedDate: "09/08/2026",
   publishedDate: "April 16, 2025",
   category: "Retail Strategy",

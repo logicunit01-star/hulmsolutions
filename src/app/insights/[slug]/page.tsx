@@ -66,12 +66,20 @@ export default async function SingleInsightPage({ params }: Props) {
   const category = metaItem?.category || "POS Strategy";
   const readTime = metaItem?.readTime || "6 min read";
   const authorName = post.author || metaItem?.author || "Hulm Editorial Team";
-  const authorSlug = post.authorSlug || metaItem?.authorSlug || "hulm-editorial-team";
+  const authorSlug = "hulm-solutions-editorial-team";
   const dateStr = post.date || metaItem?.date || "2025";
   const hasToc = post.tocItems && post.tocItems.length > 0;
   const articleHtml = post.contentHtml
-    .replaceAll("https://hulmsolutions.com/blog/", "/blog/")
-    .replaceAll("https://hulmsolutions.com/blogs/", "/blogs/");
+    .replace(
+      /href="https:\/\/hulmsolutions\.com\/(?!wp-content\/)/g,
+      'href="/'
+    )
+    .replace(
+      /href="\/pos-case-studies\/laptop-store-pos-system-karachi\/?"/g,
+      'href="/pos-case-studies/implementing-a-pos-system-for-retail-the-laptop-store"'
+    )
+    .replace(/href="\/industries\/restaurant\/?"/g, 'href="/industries/restaurant-pos"')
+    .replace(/href="(\/[^"#?]+)\/"/g, 'href="$1"');
 
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://hulmsolutions.com").replace(/\/$/, "");
   const articleSchema = {

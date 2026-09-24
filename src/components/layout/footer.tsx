@@ -5,34 +5,34 @@ import { Container } from "@/components/ui/container"
 import { REGIONAL_LOCATIONS } from "@/lib/countries/data"
 
 const productLinks = [
-  { title: "Product overview", href: "/apps/" },
-  { title: "POS & Billing", href: "/features/" },
-  { title: "Inventory Management", href: "/inventory-management/" },
-  { title: "Purchasing & Vendors", href: "/purchase-orders/" },
-  { title: "Customer Management", href: "/customer-management/" },
-  { title: "Reporting & Insights", href: "/reporting-module/" },
+  { title: "Product overview", href: "/apps" },
+  { title: "POS & Billing", href: "/features" },
+  { title: "Inventory Management", href: "/inventory-management" },
+  { title: "Purchasing & Vendors", href: "/purchase-orders" },
+  { title: "Customer Management", href: "/customer-management" },
+  { title: "Reporting & Insights", href: "/reporting-module" },
 ]
 
 const industryLinks = [
-  { title: "Retail stores", href: "/industries/retail-store/" },
-  { title: "Restaurants & cafes", href: "/industries/restaurant-pos/" },
-  { title: "Pharmacies", href: "/industries/pharmacy-store/" },
-  { title: "Bakeries", href: "/industries/bakery-pos-system/" },
-  { title: "Salons & spas", href: "/industries/salon-pos/" },
-  { title: "All industries", href: "/industries/" },
+  { title: "Retail stores", href: "/industries/retail-store" },
+  { title: "Restaurants & cafes", href: "/industries/restaurant-pos" },
+  { title: "Pharmacies", href: "/industries/pharmacy-store" },
+  { title: "Bakeries", href: "/industries/bakery-pos-system" },
+  { title: "Salons & spas", href: "/industries/salon-pos" },
+  { title: "All industries", href: "/industries" },
 ]
 
 const resourceLinks = [
-  { title: "FBR compliance", href: "/fbr-integrated-pos-pakistan/" },
-  { title: "Pricing", href: "/pricing/" },
-  { title: "Customer stories", href: "/pos-case-studies/" },
-  { title: "Insights", href: "/blogs/" },
-  { title: "Integrations", href: "/integration/" },
+  { title: "FBR compliance", href: "/fbr-integrated-pos-pakistan" },
+  { title: "Pricing", href: "/pricing" },
+  { title: "Customer stories", href: "/pos-case-studies" },
+  { title: "Insights", href: "/blogs" },
+  { title: "Integrations", href: "/integration" },
 ]
 
 const companyLinks = [
-  { title: "About Hulm", href: "/about/" },
-  { title: "Contact", href: "/contact/" },
+  { title: "About Hulm", href: "/about" },
+  { title: "Contact", href: "/contact" },
   { title: "Sign in", href: "https://app.hulmsolutions.com/", external: true },
 ]
 
@@ -88,7 +88,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
             <Link
-              href="/contact/"
+              href="/contact"
               className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold text-white transition-colors hover:border-[#25a18e]/60 hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
             >
               Book a demo
@@ -155,10 +155,10 @@ export function Footer() {
         <div className="flex flex-col gap-5 pt-7 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>&copy; {currentYear} Hulm Solutions (Pvt) Ltd. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <Link href="/privacy-policy/" className="transition-colors hover:text-[#7ae582]">
+            <Link href="/privacy-policy" className="transition-colors hover:text-[#7ae582]">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions/" className="transition-colors hover:text-[#7ae582]">
+            <Link href="/terms-and-conditions" className="transition-colors hover:text-[#7ae582]">
               Terms &amp; Conditions
             </Link>
             {socialLinks.map((link) => (

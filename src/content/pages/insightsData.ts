@@ -59,7 +59,7 @@ export const insightsData: Insight[] = [
     date: "July 24, 2025",
     readTime: "5 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/07/What-is-POS-Debit-Meaning-and-Debit-Card-POS-Transaction.webp",
     content: dummyContent
   },
@@ -72,7 +72,7 @@ export const insightsData: Insight[] = [
     date: "09/08/2026",
     readTime: "8 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/04/best-pos-system-for-retail-store-1024x579.webp",
     content: dummyContent
   },
@@ -85,7 +85,7 @@ export const insightsData: Insight[] = [
     date: "April 14, 2025",
     readTime: "4 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/04/What-is-a-POS-Purchase-Meaning-Defenition-and-How-its-work.webp",
     content: dummyContent
   },
@@ -98,7 +98,7 @@ export const insightsData: Insight[] = [
     date: "March 28, 2025",
     readTime: "6 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/03/What-is-POS-Skills-1024x575.webp",
     content: dummyContent
   },
@@ -111,7 +111,7 @@ export const insightsData: Insight[] = [
     date: "March 7, 2025",
     readTime: "5 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/03/What-is-a-pos-Person-1024x1024.webp",
     content: dummyContent
   },
@@ -124,7 +124,7 @@ export const insightsData: Insight[] = [
     date: "February 28, 2025",
     readTime: "7 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/02/POS-Reconciliation.webp",
     content: dummyContent
   },
@@ -137,7 +137,7 @@ export const insightsData: Insight[] = [
     date: "February 11, 2025",
     readTime: "5 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/02/cloud-based-pos-system.webp",
     content: dummyContent
   },
@@ -150,7 +150,7 @@ export const insightsData: Insight[] = [
     date: "February 11, 2025",
     readTime: "9 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/02/Point-of-sale-POS-Experience.webp",
     content: dummyContent
   },
@@ -163,7 +163,7 @@ export const insightsData: Insight[] = [
     date: "February 7, 2025",
     readTime: "4 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/01/How-does-a-Point-of-Sale-POS-machine-work-1024x1024.png",
     content: dummyContent
   },
@@ -176,7 +176,7 @@ export const insightsData: Insight[] = [
     date: "January 23, 2025",
     readTime: "6 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/01/pos-work-1024x1024.webp",
     content: dummyContent
   },
@@ -189,7 +189,7 @@ export const insightsData: Insight[] = [
     date: "January 16, 2025",
     readTime: "7 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/01/HulmPOS-Free-Point-of-Sale-Software.webp",
     content: dummyContent
   },
@@ -202,7 +202,7 @@ export const insightsData: Insight[] = [
     date: "December 30, 2024",
     readTime: "8 min read",
     author: "Hulm Editorial Team",
-    authorSlug: "hulm-editorial-team",
+    authorSlug: "hulm-solutions-editorial-team",
     imageUrl: "https://hulmsolutions.com/wp-content/uploads/2024/12/Best-POS-system-for-small-business.webp",
     content: dummyContent
   }

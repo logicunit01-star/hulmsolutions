@@ -13,7 +13,7 @@ export const manufacturingContent = {
     },
     secondaryCTA: {
       text: "Talk to sales",
-      href: "/contact/"
+      href: "/contact"
     },
     bgImage: "https://hulmsolutions.com/wp-content/uploads/2025/11/manufacturing-pos-hulm.jpg"
   },
@@ -121,7 +121,7 @@ export const manufacturingContent = {
     },
     secondaryCTA: {
       text: "Talk to sales",
-      href: "/contact/"
+      href: "/contact"
     }
   }
 };

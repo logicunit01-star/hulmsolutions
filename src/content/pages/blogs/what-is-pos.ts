@@ -120,11 +120,11 @@ export const whatIsPosBlog: SingleBlogData = {
     <h2 id="industry-specific-pos">How does POS software differ by industry?</h2>
     <p>Industry-specific POS software keeps the checkout familiar while adding workflows needed by a particular business type.</p>
     <ul>
-      <li><a href="/industries/retail-store/">Retail POS</a> may focus on barcodes, product variants, exchanges and branch stock.</li>
-      <li><a href="/industries/restaurant-pos/">Restaurant POS</a> may focus on menus, order types, kitchen tickets and bill handling.</li>
-      <li><a href="/industries/pharmacy-store/">Pharmacy POS</a> may need batch, expiry, pack and unit records alongside billing.</li>
-      <li><a href="/industries/bakery-pos-system/">Bakery POS</a> may combine counter sales, advance orders and product availability.</li>
-      <li><a href="/industries/salon-pos/">Salon POS</a> may connect service billing, appointments, customer history and retail stock.</li>
+      <li><a href="/industries/retail-store">Retail POS</a> may focus on barcodes, product variants, exchanges and branch stock.</li>
+      <li><a href="/industries/restaurant-pos">Restaurant POS</a> may focus on menus, order types, kitchen tickets and bill handling.</li>
+      <li><a href="/industries/pharmacy-store">Pharmacy POS</a> may need batch, expiry, pack and unit records alongside billing.</li>
+      <li><a href="/industries/bakery-pos-system">Bakery POS</a> may combine counter sales, advance orders and product availability.</li>
+      <li><a href="/industries/salon-pos">Salon POS</a> may connect service billing, appointments, customer history and retail stock.</li>
     </ul>
 
     <h2 id="how-to-use-a-pos-system">How do you use a POS system?</h2>
@@ -179,6 +179,6 @@ export const whatIsPosBlog: SingleBlogData = {
     <p>No. A cash register mainly records payments and stores cash. A modern POS system can also connect sales with inventory, customer records, purchasing, user permissions and reporting.</p>
 
     <h2 id="next-step">See how Hulm POS connects sales and operations</h2>
-    <p>Hulm POS connects checkout, inventory, products, customers, purchasing and reporting for supported business workflows. Review the <a href="/features/">POS features</a>, compare <a href="/pricing/">Hulm POS pricing</a>, or <a href="/contact/">book a product demonstration</a> based on your industry and branch requirements.</p>
+    <p>Hulm POS connects checkout, inventory, products, customers, purchasing and reporting for supported business workflows. Review the <a href="/features">POS features</a>, compare <a href="/pricing">Hulm POS pricing</a>, or <a href="/contact">book a product demonstration</a> based on your industry and branch requirements.</p>
   `,
 };

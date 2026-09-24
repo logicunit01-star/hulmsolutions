@@ -29,6 +29,13 @@ Environment policy: Netlify is staging only; `hulmsolutions.com` remains product
 | `/case-studies` | `308` → `/pos-case-studies` |
 | Sitemap | Canonical families only; restored URLs included |
 
+## Staging verification
+
+- Netlify published the completed development package from `refactor/pos-focused-positioning`.
+- All 59 sitemap URLs returned `200` on staging and matched their intended production canonical paths.
+- A rendered internal-link crawl exposed and led to removal of four placeholder article links, an outdated case-study URL and avoidable trailing-slash redirect hops.
+- The canonical editorial author page now lists the 13 real migrated articles rather than temporary placeholder cards.
+
 ## Not development blockers
 
 These items require business data, account access or launch authorization:

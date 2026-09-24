@@ -65,7 +65,7 @@ const sections: LegalSection[] = [
   },
   {
     heading: "Privacy Policy",
-    paragraphs: [<>The <Link href="/privacy-policy/" className="font-medium text-[#1b7f70] hover:underline">Hulm Solutions Privacy Policy</Link> explains how information is collected, used, stored and protected.</>],
+    paragraphs: [<>The <Link href="/privacy-policy" className="font-medium text-[#1b7f70] hover:underline">Hulm Solutions Privacy Policy</Link> explains how information is collected, used, stored and protected.</>],
   },
   {
     heading: "Governing Law",

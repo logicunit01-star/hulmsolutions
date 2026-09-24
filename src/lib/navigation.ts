@@ -7,35 +7,35 @@ export interface NavItem {
 export const mainNav: NavItem[] = [
   {
     title: "Product",
-    href: "/apps/",
+    href: "/apps",
     children: [
-      { title: "POS & Billing", href: "/features/" },
-      { title: "Inventory Management", href: "/inventory-management/" },
-      { title: "Purchasing & Vendors", href: "/purchase-orders/" },
-      { title: "Customer Management", href: "/customer-management/" },
-      { title: "Order Management", href: "/order-management/" },
-      { title: "Reporting & Insights", href: "/reporting-module/" },
+      { title: "POS & Billing", href: "/features" },
+      { title: "Inventory Management", href: "/inventory-management" },
+      { title: "Purchasing & Vendors", href: "/purchase-orders" },
+      { title: "Customer Management", href: "/customer-management" },
+      { title: "Order Management", href: "/order-management" },
+      { title: "Reporting & Insights", href: "/reporting-module" },
     ],
   },
   {
     title: "Industries",
-    href: "/industries/",
+    href: "/industries",
   },
   {
     title: "FBR Compliance",
-    href: "/fbr-integrated-pos-pakistan/",
+    href: "/fbr-integrated-pos-pakistan",
   },
   {
     title: "Pricing",
-    href: "/pricing/",
+    href: "/pricing",
   },
   {
     title: "Customers",
-    href: "/pos-case-studies/",
+    href: "/pos-case-studies",
   },
   {
     title: "Resources",
-    href: "/blogs/",
+    href: "/blogs",
   },
 ];
 
@@ -43,31 +43,31 @@ export const footerNav = [
   {
     title: "INDUSTRIES",
     links: [
-      { title: "Retail Store", href: "/industries/retail-store/" },
-      { title: "Restaurant", href: "/industries/restaurant-pos/" },
-      { title: "Pharmacy Store", href: "/industries/pharmacy-store/" },
-      { title: "Salon / Spa", href: "/industries/salon-pos/" },
-      { title: "Manufacturing Industry", href: "/industries/manufacturing-industries/" },
-      { title: "Furniture Store", href: "/industries/furniture-store/" },
+      { title: "Retail Store", href: "/industries/retail-store" },
+      { title: "Restaurant", href: "/industries/restaurant-pos" },
+      { title: "Pharmacy Store", href: "/industries/pharmacy-store" },
+      { title: "Salon / Spa", href: "/industries/salon-pos" },
+      { title: "Manufacturing Industry", href: "/industries/manufacturing-industries" },
+      { title: "Furniture Store", href: "/industries/furniture-store" },
     ],
   },
   {
     title: "Product",
     links: [
-      { title: "POS & Billing", href: "/features/" },
-      { title: "Inventory Management", href: "/inventory-management/" },
-      { title: "Purchase Orders", href: "/purchase-orders/" },
-      { title: "Vendor Management", href: "/vendors-management/" },
-      { title: "Mobile POS", href: "/mobile-pos/" },
+      { title: "POS & Billing", href: "/features" },
+      { title: "Inventory Management", href: "/inventory-management" },
+      { title: "Purchase Orders", href: "/purchase-orders" },
+      { title: "Vendor Management", href: "/vendors-management" },
+      { title: "Mobile POS", href: "/mobile-pos" },
     ],
   },
   {
     title: "Company",
     links: [
-      { title: "About Hulm", href: "/about/" },
-      { title: "Integration", href: "/integration/" },
-      { title: "Locations", href: "/contact/" },
-      { title: "Contact", href: "/contact/" },
+      { title: "About Hulm", href: "/about" },
+      { title: "Integration", href: "/integration" },
+      { title: "Locations", href: "/contact" },
+      { title: "Contact", href: "/contact" },
     ],
   },
 ];

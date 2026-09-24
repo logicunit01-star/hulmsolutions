@@ -97,7 +97,7 @@ export function AppTemplate({ appSlug }: AppTemplateProps) {
                   variant="outline"
                   className="w-full sm:w-auto h-12 px-8 rounded-xl font-semibold text-base bg-transparent border-white/30 text-white hover:bg-white/10 transition-colors"
                 >
-                  <Link href={hero.secondaryCtaLink || "/contact/"}>
+                  <Link href={hero.secondaryCtaLink || "/contact"}>
                     {hero.secondaryCtaText || "Talk to Sales"}
                   </Link>
                 </Button>
