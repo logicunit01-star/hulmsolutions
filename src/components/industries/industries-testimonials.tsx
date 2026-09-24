@@ -72,7 +72,7 @@ export function IndustriesTestimonials() {
               <Quote className="w-6 h-6 text-zinc-200 group-hover:text-[#25a18e]/30 transition-colors" />
             </div>
             <p className="text-zinc-600 text-sm sm:text-[14.5px] leading-relaxed mb-6 italic">
-              "{t.text}"
+              &ldquo;{t.text}&rdquo;
             </p>
           </div>
 

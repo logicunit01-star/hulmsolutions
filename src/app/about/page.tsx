@@ -115,7 +115,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {section.items?.map((item: any, i: number) => (
+                  {section.items?.map((item, i) => (
                     <div
                       key={i}
                       className="bg-[#F8FAF9] border border-gray-200/80 rounded-2xl p-7 shadow-xs hover:border-[#209f8f]/40 hover:shadow-md transition-all text-center"

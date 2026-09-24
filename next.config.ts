@@ -1,31 +1,35 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: process.cwd(),
+  },
+  outputFileTracingRoot: process.cwd(),
   async redirects() {
     return [
       {
-        source: '/blogs',
-        destination: '/insights',
+        source: '/insights',
+        destination: '/blogs',
+        permanent: true,
+      },
+      {
+        source: '/insights/:slug*',
+        destination: '/blog/:slug*',
         permanent: true,
       },
       {
         source: '/blog',
-        destination: '/insights',
+        destination: '/blogs',
         permanent: true,
       },
       {
-        source: '/blog/:slug*',
-        destination: '/insights/:slug*',
+        source: '/case-studies',
+        destination: '/pos-case-studies',
         permanent: true,
       },
       {
-        source: '/pos-case-studies',
-        destination: '/case-studies',
-        permanent: true,
-      },
-      {
-        source: '/pos-case-studies/:slug*',
-        destination: '/case-studies/:slug*',
+        source: '/case-studies/:slug*',
+        destination: '/pos-case-studies/:slug*',
         permanent: true,
       },
       {

@@ -25,8 +25,8 @@ const industryLinks = [
 const resourceLinks = [
   { title: "FBR compliance", href: "/fbr-integrated-pos-pakistan/" },
   { title: "Pricing", href: "/pricing/" },
-  { title: "Customer stories", href: "/case-studies/" },
-  { title: "Insights", href: "/insights/" },
+  { title: "Customer stories", href: "/pos-case-studies/" },
+  { title: "Insights", href: "/blogs/" },
   { title: "Integrations", href: "/integration/" },
 ]
 
@@ -155,6 +155,12 @@ export function Footer() {
         <div className="flex flex-col gap-5 pt-7 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>&copy; {currentYear} Hulm Solutions (Pvt) Ltd. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/privacy-policy/" className="transition-colors hover:text-[#7ae582]">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions/" className="transition-colors hover:text-[#7ae582]">
+              Terms &amp; Conditions
+            </Link>
             {socialLinks.map((link) => (
               <a key={link.title} href={link.href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#7ae582]">
                 {link.title}

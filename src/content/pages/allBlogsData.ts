@@ -1,3 +1,5 @@
+import { whatIsPosBlog } from "@/content/pages/blogs/what-is-pos";
+
 export interface SingleBlogData {
   slug: string;
   title: string;
@@ -8,9 +10,13 @@ export interface SingleBlogData {
   excerpt: string;
   tocItems: { title: string; href: string }[];
   contentHtml: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  faq?: { question: string; answer: string }[];
 }
 
 export const allBlogsData: Record<string, SingleBlogData> = {
+  "what-is-pos": whatIsPosBlog,
   "what-is-pos-debit-meaning": {
     "slug": "what-is-pos-debit-meaning",
     "title": "What is POS Debit Meaning & Debit Card POS Transaction?",

@@ -68,16 +68,11 @@ Each historical URL must receive one of four explicit outcomes:
 
 No historical URL with clicks, impressions, backlinks or leads may return an accidental 404. No group of unrelated URLs may be redirected to the homepage, because that can be treated as a soft 404.
 
-## Current route policy to revisit before launch
+## Confirmed route policy
 
 The production site currently uses `/blogs/` for the editorial index and `/blog/{slug}` for articles. It uses `/pos-case-studies/` for case studies. These paths should remain unchanged for pages with existing performance unless Search Console proves that another canonical already owns the signals.
 
-Therefore, before launch we will decide from data whether to:
-
-- Keep `/blogs/` and `/blog/{slug}` as the canonical public routes and redirect the new `/insights` aliases to them; or
-- Move to `/insights` only where a measured business reason outweighs migration risk.
-
-The safer default is to keep the current production URLs.
+The development implementation now keeps `/blogs/`, `/blog/{slug}`, `/pos-case-studies/` and `/pos-case-studies/{slug}` as the canonical public routes. The rebuild-only `/insights` and `/case-studies` paths permanently redirect in one hop to those established paths.
 
 The same rule applies to every industry and capability page: a cleaner new slug is not sufficient reason to move a performing URL.
 
@@ -141,7 +136,7 @@ The production domain must not be switched until all conditions pass:
 - Priority pages preserve their validated query clusters and conversion actions.
 - Core content is visible in the initial HTML.
 - Analytics, Search Console verification and conversion tracking are working.
-- Legal pages and the currently missing `what-is-pos` article are resolved.
+- Legal pages and the `what-is-pos` article are resolved.
 - A rollback deployment is ready.
 
 ## Monitoring after launch

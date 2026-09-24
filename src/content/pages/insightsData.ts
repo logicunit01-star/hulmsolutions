@@ -38,6 +38,19 @@ By adopting the right technologies, retailers can future-proof their business ag
 
 export const insightsData: Insight[] = [
   {
+    id: "0",
+    title: "What is POS System? What does POS mean & How to use POS System?",
+    slug: "what-is-pos",
+    excerpt: "Learn what a POS system is, what POS means, how point-of-sale hardware and software work, and how businesses use POS.",
+    category: "POS Education",
+    date: "December 18, 2024",
+    readTime: "9 min read",
+    author: "Hulm Editorial Team",
+    authorSlug: "hulm-solutions-editorial-team",
+    imageUrl: "https://hulmsolutions.com/wp-content/uploads/2024/12/what-is-pos.webp",
+    content: dummyContent
+  },
+  {
     id: "1",
     title: "What is POS Debit Meaning & Debit Card POS Transaction?",
     slug: "what-is-pos-debit-meaning",

@@ -51,7 +51,7 @@ export function ContactForm({ contact }: ContactFormProps) {
             </div>
             
             <div className="space-y-6">
-              {contactInfoSection?.items?.map((item: any, index: number) => {
+              {contactInfoSection?.items?.map((item, index) => {
                 const iconName = item.label === "Phone" ? "Phone" : item.label === "Email" ? "Mail" : "Clock";
                 const Icon = IconMap[iconName] || Mail;
                 return (

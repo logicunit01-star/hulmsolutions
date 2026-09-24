@@ -44,11 +44,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: study.metaTitle || `${study.title} | Hulm Case Study`,
     description: study.metaDescription || study.excerpt,
-    alternates: { canonical: `/case-studies/${study.slug}` },
+    alternates: { canonical: `/pos-case-studies/${study.slug}` },
     openGraph: {
       title: study.metaTitle || `${study.title} | Hulm Case Study`,
       description: study.metaDescription || study.excerpt,
-      url: `/case-studies/${study.slug}`,
+      url: `/pos-case-studies/${study.slug}`,
       images: study.image ? [{ url: study.image }] : undefined,
     },
   };
@@ -85,7 +85,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
-            <Link href="/case-studies" className="hover:text-white transition-colors">
+            <Link href="/pos-case-studies" className="hover:text-white transition-colors">
               Case Studies
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
@@ -284,7 +284,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                   />
                   <Quote className="w-10 h-10 text-[#209f8f]/40 mb-4" />
                   <blockquote className="text-base sm:text-lg font-medium italic text-white/95 leading-relaxed mb-6 relative z-10">
-                    "{study.quote.text}"
+                    &ldquo;{study.quote.text}&rdquo;
                   </blockquote>
                   <div className="relative z-10 flex items-center gap-3 pt-4 border-t border-white/10">
                     <div className="w-10 h-10 rounded-full bg-[#209f8f] flex items-center justify-center font-bold text-white text-sm">
@@ -332,7 +332,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               {/* Back to Case Studies Link */}
               <div className="pt-4">
                 <Link
-                  href="/case-studies"
+                  href="/pos-case-studies"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#209f8f] hover:text-[#1a8578] transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -434,7 +434,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                   {otherStudies.map((other) => (
                     <Link
                       key={other.id}
-                      href={`/case-studies/${other.slug}`}
+                      href={`/pos-case-studies/${other.slug}`}
                       className="group block p-2.5 -mx-2.5 rounded-xl hover:bg-[#F8FAF9] transition-colors"
                     >
                       <div className="text-[11px] font-semibold text-[#209f8f] uppercase tracking-wider mb-0.5">

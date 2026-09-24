@@ -1,7 +1,8 @@
 # Phase 7 — Technical SEO and URL migration
 
 Date: 19 September 2026  
-Status: Implemented locally; production deployment not started
+Last verified: 24 September 2026
+Status: Development complete; staging/pre-production validation remains
 
 ## Scope
 
@@ -35,9 +36,9 @@ The live site also exposes duplicate or outdated routes for the same intent:
 | Bakery | `/industries/bakery-pos-system` |
 | Salon / spa | `/industries/salon-pos` |
 | Restaurant | `/industries/restaurant-pos` |
-| Editorial index | `/insights` |
-| Editorial article | `/insights/{slug}` |
-| Case studies | `/case-studies` and `/case-studies/{slug}` |
+| Editorial index | `/blogs` |
+| Editorial article | `/blog/{slug}` |
+| Case studies | `/pos-case-studies` and `/pos-case-studies/{slug}` |
 | Editorial author | `/author/hulm-solutions-editorial-team` |
 
 ## Implemented
@@ -46,11 +47,11 @@ The live site also exposes duplicate or outdated routes for the same intent:
 
 Permanent redirects were added for:
 
-- `/blogs` → `/insights`
-- `/blog` → `/insights`
-- `/blog/:slug*` → `/insights/:slug*`
-- `/pos-case-studies` → `/case-studies`
-- `/pos-case-studies/:slug*` → `/case-studies/:slug*`
+- `/blog` → `/blogs`
+- `/insights` → `/blogs`
+- `/insights/:slug*` → `/blog/:slug*`
+- `/case-studies` → `/pos-case-studies`
+- `/case-studies/:slug*` → `/pos-case-studies/:slug*`
 - `/industries/bakery` → `/industries/bakery-pos-system`
 - `/industries/salon-spa` → `/industries/salon-pos`
 - `/industries/restaurant` → `/industries/restaurant-pos`
@@ -67,13 +68,14 @@ Self-referencing canonical metadata was added to:
 - Every industry detail page
 - Every capability page
 - Compliance and regional pages
-- Insights index and all insight articles
-- Case-study index and every case study
+- Blog index and all blog articles on the established production URL family
+- Case-study index and every case study on the established production URL family
+- Privacy policy and terms and conditions
 - About, contact, features, integrations and the canonical author page
 
 ### Sitemap and robots
 
-- Sitemap expanded to 56 unique canonical URLs.
+- Sitemap contains canonical URLs only, including the restored legal and article routes.
 - Redirecting and duplicate URLs are excluded.
 - Included route families: core pages, capabilities, industries, compliance, regions, case studies, insights and canonical author.
 - `robots.txt` allows the public site, disallows API and Next.js internals, and declares the production host and sitemap.
@@ -90,34 +92,44 @@ The JSON is serialized safely and was parsed successfully from the rendered home
 
 ### Internal linking
 
-- Editorial UI links now point directly to `/insights` and `/insights/{slug}`.
-- Imported article HTML rewrites old absolute `/blog/` and `/blogs/` internal links at render time so users and crawlers avoid unnecessary redirect hops.
+- Editorial UI links now point directly to `/blogs` and `/blog/{slug}`.
+- Case-study UI links now point directly to `/pos-case-studies` and `/pos-case-studies/{slug}`.
+- Imported article HTML normalizes old absolute blog links at render time so users and crawlers avoid unnecessary redirect hops.
+
+### Restored launch-critical content
+
+- `/privacy-policy` returns `200` with a self-canonical and the current approved policy content.
+- `/terms-and-conditions` returns `200` with a self-canonical and the current approved terms content.
+- `/blog/what-is-pos` returns `200` on its established URL with the retained metadata, publication dates and topic intent.
+- The restored article uses server-rendered semantic sections, a real comparison table, Article structured data and FAQ structured data supported by visible content.
 
 ## Verification results
 
-- `npm run build`: passed with 89 statically generated pages.
-- Redirect checks: all tested legacy routes return `308 Permanent Redirect` to the intended canonical URL.
-- Sitemap: 56 URLs, 56 unique, zero known legacy URLs.
-- Canonical checks: passed for home, apps, pricing, industries, a priority industry, an insight article and a case study.
+- `npm run build`: passed with 100 statically generated/SSG pages.
+- `npm run lint`: passed with zero errors; 32 non-blocking legacy warnings remain.
+- Redirect checks: `/blog`, `/insights`, `/insights/what-is-pos` and `/case-studies` return one-hop `308 Permanent Redirect` responses to their intended canonical URLs.
+- Runtime checks: `/blogs`, `/blog/what-is-pos`, `/pos-case-studies`, `/privacy-policy` and `/terms-and-conditions` return `200` with self-canonicals.
+- Sitemap checks: restored legal/article URLs are present; `/insights` and the noncanonical `/case-studies` family are absent.
+- Article checks: Article and FAQ structured data, publication/modified dates and an HTML table are present in the rendered response.
 - Structured data: valid JSON parsing; types found were `Organization` and `WebSite`.
-- Targeted ESLint for the SEO core and priority pages: zero errors; ten existing warnings on insight pages.
-- Full-repository ESLint still reports 34 pre-existing errors and 32 warnings in legacy capture/scrape scripts and older page/components. The production build is not blocked by them, but they should be handled as a separate cleanup task.
+- CommonJS capture/scrape utilities are now excluded from application linting; application type errors and unescaped JSX entities found by the full lint pass were corrected.
 
-## Pre-launch content blockers
+## Remaining pre-production gates
 
-Do not invent redirects for URLs whose replacement is not semantically equivalent. These production URLs still return 404 in the rebuild and need source content or an explicit business decision before launch:
+The three former content blockers are resolved. The remaining gates depend on production data or owner confirmation rather than page development:
 
-1. `/privacy-policy/`
-2. `/terms-and-conditions/`
-3. `/blog/what-is-pos/` (currently indexed; no matching rebuilt article)
-
-The legal pages should be supplied or approved by the business/legal owner. The missing article should either be migrated to `/insights/what-is-pos` with its old URL redirected, or intentionally retired using a documented 410/redirect decision based on search and backlink value.
+1. Reconcile the URL matrix with Google Search Console, GA4 conversions and backlink exports.
+2. Confirm pricing, trial duration, support promises, FBR wording and customer evidence with the product owner.
+3. Run the complete crawl against the final staging deployment and resolve any remaining historical URL mismatches.
+4. Verify analytics, Search Console ownership, form/trial/phone/WhatsApp conversions and consent behavior.
+5. Capture the GEO/LLM prompt baseline and verify production crawler/CDN access.
+6. Prepare the final production deployment and rollback procedure. Netlify remains staging only.
 
 ## Launch sequence
 
-1. Resolve the three missing production URLs above.
-2. Run the complete pre-launch crawl against the final deployment URL.
-3. Verify response codes, canonical targets, sitemap URLs, metadata and structured data in the deployed environment.
-4. Point the production domain only after the crawl has no unintended 404s or redirect chains.
-5. Submit the new sitemap in Google Search Console and monitor indexing, redirects and 404s after launch.
+1. Complete the data and product-owner gates above.
+2. Run the complete pre-launch crawl against the final staging deployment URL.
+3. Verify response codes, canonical targets, sitemap URLs, metadata, forms, analytics and structured data in that environment.
+4. Point the production domain only after the crawl has no unintended 404s or redirect chains and a rollback build is ready.
+5. Submit the production sitemap in Google Search Console and monitor indexing, redirects, traffic and leads after launch.
 

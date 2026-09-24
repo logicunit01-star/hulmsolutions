@@ -19,7 +19,7 @@ export function PostCard({ post }: PostCardProps) {
 
   return (
     <Card className="flex flex-col h-full bg-white border-border hover:border-primary/50 hover:shadow-md transition-all duration-200 overflow-hidden group">
-      <Link href={`/insights/${post.slug}`} className="block relative aspect-[16/9] bg-background-muted overflow-hidden">
+      <Link href={`/blog/${post.slug}`} className="block relative aspect-[16/9] bg-background-muted overflow-hidden">
         {post.featuredImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -37,7 +37,7 @@ export function PostCard({ post }: PostCardProps) {
       </Link>
       
       <CardContent className="flex flex-col flex-grow p-6">
-        <Link href={`/insights/${post.slug}`} className="group-hover:text-primary transition-colors">
+        <Link href={`/blog/${post.slug}`} className="group-hover:text-primary transition-colors">
           <h2 className="text-xl font-semibold text-[#152825] mb-3 leading-tight line-clamp-2">
             {post.title}
           </h2>

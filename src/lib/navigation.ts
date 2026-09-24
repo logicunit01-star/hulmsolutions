@@ -31,11 +31,11 @@ export const mainNav: NavItem[] = [
   },
   {
     title: "Customers",
-    href: "/case-studies/",
+    href: "/pos-case-studies/",
   },
   {
     title: "Resources",
-    href: "/insights/",
+    href: "/blogs/",
   },
 ];
 

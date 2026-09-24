@@ -1,6 +1,24 @@
 import { Factory } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-export const industriesData: Record<string, any> = {
+interface IndustryData {
+  slug: string;
+  icon: LucideIcon;
+  hero: { badge: string; headline: string; subheadline: string };
+  whatIs?: { headline: string; description: string; points?: string[] };
+  whyChoose?: {
+    headline: string;
+    items?: Array<{ title: string; description: string }>;
+  };
+  whoCanUse?: { headline: string; description?: string; points?: string[] };
+  faq: {
+    headline: string;
+    description: string;
+    items: Array<{ question: string; answer: string }>;
+  };
+}
+
+export const industriesData: Record<string, IndustryData> = {
   "manufacturing-industries": {
     slug: "manufacturing-industries",
     icon: Factory,

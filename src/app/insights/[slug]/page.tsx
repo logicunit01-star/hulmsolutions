@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: bestPosRetailBlog.meta.title,
       description: bestPosRetailBlog.meta.description,
-      alternates: { canonical: `/insights/${slug}` },
+      alternates: { canonical: `/blog/${slug}` },
     };
   }
 
@@ -34,9 +34,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Not Found" };
 
   return {
-    title: `${post.title} - Hulm Insights`,
+    title: slug === "what-is-pos" ? "What’s a POS system? What does POS mean & How to use POS" : `${post.title} - Hulm Insights`,
     description: post.excerpt || post.title,
-    alternates: { canonical: `/insights/${slug}` },
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt || post.title,
+      url: `/blog/${slug}`,
+      images: post.imageUrl ? [{ url: post.imageUrl }] : undefined,
+      publishedTime: post.publishedTime,
+      modifiedTime: post.modifiedTime,
+    },
   };
 }
 
@@ -61,8 +70,38 @@ export default async function SingleInsightPage({ params }: Props) {
   const dateStr = post.date || metaItem?.date || "2025";
   const hasToc = post.tocItems && post.tocItems.length > 0;
   const articleHtml = post.contentHtml
-    .replaceAll("https://hulmsolutions.com/blog/", "/insights/")
-    .replaceAll("https://hulmsolutions.com/blogs/", "/insights/");
+    .replaceAll("https://hulmsolutions.com/blog/", "/blog/")
+    .replaceAll("https://hulmsolutions.com/blogs/", "/blogs/");
+
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://hulmsolutions.com").replace(/\/$/, "");
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${siteUrl}/blog/${slug}/#article`,
+    headline: post.title,
+    description: post.excerpt,
+    image: post.imageUrl || undefined,
+    datePublished: post.publishedTime,
+    dateModified: post.modifiedTime || post.publishedTime,
+    author: {
+      "@type": "Organization",
+      name: authorName,
+      url: `${siteUrl}/author/${authorSlug}`,
+    },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    mainEntityOfPage: `${siteUrl}/blog/${slug}/`,
+  };
+  const faqSchema = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null;
 
   // Filter 3 related articles
   const relatedPosts = insightsData
@@ -72,6 +111,16 @@ export default async function SingleInsightPage({ params }: Props) {
 
   return (
     <div className="flex flex-col bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c") }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+        />
+      )}
       <article className="py-12 md:py-20">
         <Container className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -79,7 +128,7 @@ export default async function SingleInsightPage({ params }: Props) {
           <nav className="text-xs text-zinc-400 mb-8 flex items-center gap-2">
             <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/insights" className="hover:text-zinc-900 transition-colors">Insights</Link>
+            <Link href="/blogs" className="hover:text-zinc-900 transition-colors">Insights</Link>
             <span>/</span>
             <span className="text-zinc-600 truncate max-w-xs sm:max-w-md">{post.title}</span>
           </nav>
@@ -132,7 +181,7 @@ export default async function SingleInsightPage({ params }: Props) {
 
             {/* Right Column: Main Article Body */}
             <main className={`${hasToc ? 'lg:col-span-8' : 'lg:col-span-12 max-w-4xl mx-auto'} min-w-0`}>
-              <Link href="/insights" className="inline-flex items-center text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-colors mb-6">
+              <Link href="/blogs" className="inline-flex items-center text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-colors mb-6">
                 <ArrowLeft className="w-3.5 h-3.5 mr-1.5" /> Back to all articles
               </Link>
 
@@ -233,7 +282,7 @@ export default async function SingleInsightPage({ params }: Props) {
                   {relatedPosts.map((rPost, idx) => (
                     <Link
                       key={idx}
-                      href={`/insights/${rPost.slug}`}
+                      href={`/blog/${rPost.slug}`}
                       className="p-5 rounded-[16px] border border-[#EBECEF] hover:border-[#25a18e] transition-all flex flex-col justify-between group bg-white shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
                     >
                       <h4 className="text-xs sm:text-sm font-semibold text-zinc-800 group-hover:text-[#25a18e] transition-colors mb-3 line-clamp-2 leading-snug">

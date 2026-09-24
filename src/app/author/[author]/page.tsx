@@ -88,7 +88,7 @@ export default async function AuthorPage({ params }: AuthorProps) {
                   <p className="text-text-muted text-sm mb-6 flex-grow line-clamp-3">
                     {insight.excerpt}
                   </p>
-                  <Link href={`/insights/${insight.slug}`} className="inline-flex items-center text-primary font-semibold hover:text-primary-hover transition-colors mt-auto">
+                  <Link href={`/blog/${insight.slug}`} className="inline-flex items-center text-primary font-semibold hover:text-primary-hover transition-colors mt-auto">
                     Read Article <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>

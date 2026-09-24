@@ -18,7 +18,7 @@ export function BlogDetail() {
           <nav className="text-xs text-zinc-400 mb-8 flex items-center gap-2">
             <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/insights" className="hover:text-zinc-900 transition-colors">Insights</Link>
+            <Link href="/blogs" className="hover:text-zinc-900 transition-colors">Insights</Link>
             <span>/</span>
             <span className="text-zinc-600 truncate max-w-xs sm:max-w-md">{b.title}</span>
           </nav>
@@ -186,7 +186,7 @@ export function BlogDetail() {
                   <li>• Integrates with accounting and e-commerce platforms</li>
                 </ul>
                 <p className="text-xs text-zinc-500 italic">
-                  Related reading: <Link href="/insights/what-is-pos-skills-understand-pos-skill-meaning" className="text-[#25a18e] hover:underline font-medium">What is POS skills?</Link> and <Link href="/insights/what-is-a-pos-person-meaning-and-responsibilities" className="text-[#25a18e] hover:underline font-medium">What is a POS Person?</Link>
+                  Related reading: <Link href="/blog/what-is-pos-skills-understand-pos-skill-meaning" className="text-[#25a18e] hover:underline font-medium">What is POS skills?</Link> and <Link href="/blog/what-is-a-pos-person-meaning-and-responsibilities" className="text-[#25a18e] hover:underline font-medium">What is a POS Person?</Link>
                 </p>
               </section>
 
@@ -270,7 +270,7 @@ export function BlogDetail() {
                     <p className="text-sm text-zinc-600 leading-relaxed mb-3">
                       Hosted online, accessible from any device, updated automatically. Best for retailers who want real-time access across locations without maintaining local servers. Most retail POS systems for small businesses are cloud-based because they’re affordable to start and easy to scale.
                     </p>
-                    <Link href="/insights/cloud-pos-software-for-retail-stores" className="text-xs font-bold text-[#25a18e] hover:underline">
+                    <Link href="/blog/cloud-pos-software-for-retail-stores" className="text-xs font-bold text-[#25a18e] hover:underline">
                       Learn about Cloud POS Software →
                     </Link>
                   </div>
@@ -439,7 +439,7 @@ export function BlogDetail() {
                   The best retail POS system isn’t the one with the most features on a marketing page. It’s the one that fits your store’s size, market, and compliance requirements without adding operational overhead. For Pakistani and Gulf retailers specifically, that means a system with native FBR or ZATCA compliance, multi-store support, and local customer service.
                 </p>
                 <p className="text-xs text-zinc-500 italic">
-                  Further reading: <Link href="/insights/what-is-point-of-sale-transaction" className="text-[#25a18e] hover:underline font-medium">What is POS Transaction</Link>, <Link href="/insights/pos-reconciliation" className="text-[#25a18e] hover:underline font-medium">POS Reconciliation</Link>, and <Link href="/insights/what-is-a-pos-purchase" className="text-[#25a18e] hover:underline font-medium">POS Purchase</Link>.
+                  Further reading: <Link href="/blog/what-is-point-of-sale-transaction" className="text-[#25a18e] hover:underline font-medium">What is POS Transaction</Link>, <Link href="/blog/pos-reconciliation" className="text-[#25a18e] hover:underline font-medium">POS Reconciliation</Link>, and <Link href="/blog/what-is-a-pos-purchase" className="text-[#25a18e] hover:underline font-medium">POS Purchase</Link>.
                 </p>
               </section>
 
@@ -471,7 +471,7 @@ export function BlogDetail() {
                   {b.relatedPosts.map((post, idx) => (
                     <Link
                       key={idx}
-                      href={`/insights/${post.slug}`}
+                      href={`/blog/${post.slug}`}
                       className="p-5 rounded-[18px] border border-[#EBECEF] hover:border-[#25a18e] hover:shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all flex flex-col justify-between group bg-white"
                     >
                       <h4 className="text-xs sm:text-sm font-bold text-[#152825] group-hover:text-[#25a18e] transition-colors mb-3 line-clamp-2 leading-snug">

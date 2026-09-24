@@ -20,11 +20,12 @@ import {
   Building2,
   Tractor
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export interface AppFeatureItem {
   title: string;
   description: string;
-  icon?: any;
+  icon?: LucideIcon;
 }
 
 export interface AppProblemItem {
@@ -50,7 +51,7 @@ export interface AppDetailData {
   title: string;
   metaTitle: string;
   metaDescription: string;
-  icon: any;
+  icon: LucideIcon;
   hero: {
     badge: string;
     headline: string;

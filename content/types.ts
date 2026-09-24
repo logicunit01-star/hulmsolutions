@@ -48,11 +48,29 @@ export interface TestimonialsSection {
   items: Testimonial[];
 }
 
+export interface AdditionalSectionItem {
+  title?: string;
+  description?: string;
+  label?: string;
+  value?: string;
+  type?: string;
+  [key: string]: unknown;
+}
+
+export interface AdditionalSection {
+  type: string;
+  heading?: string;
+  content?: string;
+  image?: string;
+  items?: AdditionalSectionItem[];
+  [key: string]: unknown;
+}
+
 export interface StandardPageContent {
   seo: SEOProps;
   hero: HeroSection;
   features?: FeaturesSection;
   testimonials?: TestimonialsSection;
-  // Allows for extending with specific sections in the future without breaking the base type
-  additionalSections?: any[];
+  // Allows page-specific sections while keeping commonly rendered fields typed.
+  additionalSections?: AdditionalSection[];
 }

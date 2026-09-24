@@ -112,7 +112,7 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyChoose.items?.map((item: any, index: number) => (
+              {whyChoose.items?.map((item, index) => (
                 <div 
                   key={index} 
                   className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-xs flex flex-col items-center text-center hover:border-[#209f8f]/30 transition-colors"

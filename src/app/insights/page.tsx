@@ -10,7 +10,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Insights & Blog - Hulm Solutions",
   description: "Read the latest news, guides, and insights from the Hulm POS team.",
-  alternates: { canonical: "/insights" },
+  alternates: { canonical: "/blogs" },
 };
 
 export default function InsightsPage() {
@@ -78,7 +78,7 @@ export default function InsightsPage() {
                     </div>
                     <div className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {featuredInsight.readTime}</div>
                   </div>
-                  <Link href={`/insights/${featuredInsight.slug}`} className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#F8FAF9] group-hover:bg-[#209f8f] group-hover:text-white transition-colors">
+                  <Link href={`/blog/${featuredInsight.slug}`} className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#F8FAF9] group-hover:bg-[#209f8f] group-hover:text-white transition-colors">
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -126,7 +126,7 @@ export default function InsightsPage() {
                       </div>
                       <span>{insight.author}</span>
                     </div>
-                    <Link href={`/insights/${insight.slug}`} className="inline-flex items-center text-[#209f8f] font-semibold hover:text-[#1a8578] transition-colors">
+                    <Link href={`/blog/${insight.slug}`} className="inline-flex items-center text-[#209f8f] font-semibold hover:text-[#1a8578] transition-colors">
                       Read Article <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>

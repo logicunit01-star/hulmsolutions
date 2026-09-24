@@ -3,6 +3,28 @@ import { initialGoogleReviews, GoogleReview, GoogleReviewsData } from "@/lib/goo
 
 export const revalidate = 3600; // Cache and revalidate every 1 hour
 
+interface GooglePlacesReview {
+  author_name?: string;
+  author_url?: string;
+  profile_photo_url?: string;
+  rating?: number;
+  relative_time_description?: string;
+  text?: string;
+  time?: number;
+}
+
+interface GooglePlacesResponse {
+  status?: string;
+  error_message?: string;
+  result?: {
+    name?: string;
+    rating?: number;
+    user_ratings_total?: number;
+    url?: string;
+    reviews?: GooglePlacesReview[];
+  };
+}
+
 export async function GET() {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
@@ -33,7 +55,7 @@ export async function GET() {
       });
     }
 
-    const data = await res.json();
+    const data = (await res.json()) as GooglePlacesResponse;
 
     if (data.status !== "OK" || !data.result) {
       console.warn("Google Places API error status:", data.status, data.error_message);
@@ -45,7 +67,7 @@ export async function GET() {
     }
 
     const place = data.result;
-    const fetchedReviews: GoogleReview[] = (place.reviews || []).map((r: any, idx: number) => ({
+    const fetchedReviews: GoogleReview[] = (place.reviews || []).map((r, idx) => ({
       id: `google-${r.time || idx}`,
       author_name: r.author_name || "Google User",
       author_url: r.author_url,
@@ -83,12 +105,12 @@ export async function GET() {
         "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
       },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error fetching Google Reviews:", error);
     return NextResponse.json({
       ...initialGoogleReviews,
       is_live: false,
-      error: error.message,
+      error: error instanceof Error ? error.message : "Unknown Google Places error",
     });
   }
 }

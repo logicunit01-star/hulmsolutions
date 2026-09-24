@@ -10,7 +10,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  return insightMetadata({ params });
+  const metadata = await insightMetadata({ params });
+  const { slug } = await params;
+  return {
+    ...metadata,
+    alternates: { canonical: `/blog/${slug}` },
+  };
 }
 
 export default async function BlogSlugPage({ params }: Props) {

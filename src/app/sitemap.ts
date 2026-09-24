@@ -30,10 +30,12 @@ const staticRoutes = [
   "/pos-software-qatar",
   "/pos-software-uae",
   "/pos-software-usa",
-  "/case-studies",
-  "/insights",
+  "/pos-case-studies",
+  "/blogs",
   "/about",
   "/contact",
+  "/privacy-policy",
+  "/terms-and-conditions",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -59,13 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const caseStudyRoutes = caseStudiesData.map((study) => ({
-    url: `${siteUrl}/case-studies/${study.slug}`,
+    url: `${siteUrl}/pos-case-studies/${study.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
   const insightRoutes = Object.values(allBlogsData).map((post) => ({
-    url: `${siteUrl}/insights/${post.slug}`,
+    url: `${siteUrl}/blog/${post.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

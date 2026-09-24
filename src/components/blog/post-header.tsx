@@ -22,7 +22,7 @@ export function PostHeader({ post }: PostHeaderProps) {
       <Container>
         <div className="max-w-4xl mx-auto flex flex-col items-start space-y-6">
           <Link 
-            href="/insights" 
+            href="/blogs"
             className="text-primary hover:text-primary-hover font-medium flex items-center text-sm mb-2 transition-colors"
           >
             ← Back to Blog

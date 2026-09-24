@@ -66,7 +66,7 @@ export default function IntegrationPage() {
             Connect Your World
           </h1>
           <p className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-2xl mx-auto">
-            Hulm doesn't operate in a silo. Our software integrates seamlessly with the tools you already use, including mandatory tax authorities like FBR.
+            Hulm doesn&apos;t operate in a silo. Our software integrates seamlessly with the tools you already use, including mandatory tax authorities like FBR.
           </p>
         </div>
       </section>

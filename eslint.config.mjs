@@ -12,6 +12,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local capture, scraping, and visual-regression utilities are CommonJS
+    // scripts rather than application source.
+    "capture*.js",
+    "check_routes.js",
+    "extract.js",
+    "scrape*.js",
+    "scratch/**",
   ]),
 ]);
 

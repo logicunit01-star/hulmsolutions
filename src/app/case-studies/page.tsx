@@ -10,7 +10,7 @@ import { GoogleReviewsSection } from "@/components/home/GoogleReviewsSection";
 export const metadata: Metadata = {
   title: "Case Studies - Hulm Solutions",
   description: "See how top businesses are transforming their operations with Hulm POS and Logistics software.",
-  alternates: { canonical: "/case-studies" },
+  alternates: { canonical: "/pos-case-studies" },
 };
 
 export default function CaseStudiesPage() {
@@ -36,7 +36,7 @@ export default function CaseStudiesPage() {
             Customer Success Stories
           </h1>
           <p className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-2xl mx-auto">
-            Discover how businesses across retail, logistics, and hospitality are scaling effortlessly with Hulm's powerful operational ecosystem.
+            Discover how businesses across retail, logistics, and hospitality are scaling effortlessly with Hulm&apos;s powerful operational ecosystem.
           </p>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function CaseStudiesPage() {
                         </span>
                       </div>
 
-                      <Link href={`/case-studies/${study.slug}`} className="group inline-block">
+                      <Link href={`/pos-case-studies/${study.slug}`} className="group inline-block">
                         <h2 className="text-2xl sm:text-3xl font-semibold text-[#152825] mb-2 tracking-tight group-hover:text-[#209f8f] transition-colors">
                           {study.client}
                         </h2>
@@ -91,7 +91,7 @@ export default function CaseStudiesPage() {
 
                     <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                       <Link
-                        href={`/case-studies/${study.slug}`}
+                        href={`/pos-case-studies/${study.slug}`}
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#209f8f] hover:text-[#1a8578] group transition-colors"
                       >
                         Read Full Case Study
@@ -124,7 +124,7 @@ export default function CaseStudiesPage() {
                     <div className="relative bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs mt-auto">
                       <Quote className="absolute top-3 right-3 w-6 h-6 text-[#209f8f]/15" />
                       <p className="text-xs sm:text-sm font-medium text-[#152825] italic mb-3 relative z-10 leading-relaxed">
-                        "{study.quote.text}"
+                        &ldquo;{study.quote.text}&rdquo;
                       </p>
                       <div>
                         <div className="font-semibold text-[#152825] text-xs">{study.quote.author}</div>
