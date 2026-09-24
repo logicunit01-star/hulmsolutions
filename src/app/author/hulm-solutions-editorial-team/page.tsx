@@ -7,6 +7,7 @@ import { PostGrid } from "@/components/blog/post-grid";
 export const metadata: Metadata = {
   title: "Hulm Solutions Editorial Team | Hulm",
   description: "Read all posts by the Hulm Solutions Editorial Team.",
+  alternates: { canonical: "/author/hulm-solutions-editorial-team" },
   openGraph: {
     title: "Hulm Solutions Editorial Team | Hulm",
     description: "Read all posts by the Hulm Solutions Editorial Team.",

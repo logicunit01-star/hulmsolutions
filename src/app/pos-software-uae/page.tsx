@@ -4,6 +4,7 @@ import { CountryTemplate } from "@/components/country/country-template";
 export const metadata: Metadata = {
   title: "Point of Sale Software in UAE | Best POS Software Dubai",
   description: "Discover Point of Sale Software in UAE designed for Restaurant, Retail, Grocery & Salon POS Software. Get Free POS System UAE Now!",
+  alternates: { canonical: "/pos-software-uae" },
   openGraph: {
     title: "Point of Sale Software in UAE | Best POS Software Dubai",
     description: "Discover Point of Sale Software in UAE designed for Restaurant, Retail, Grocery & Salon POS Software. Get Free POS System UAE Now!",

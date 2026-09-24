@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: aboutContent.seo.title,
   description: aboutContent.seo.description,
   keywords: aboutContent.seo.keywords,
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

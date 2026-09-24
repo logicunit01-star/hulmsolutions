@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: bestPosRetailBlog.meta.title,
       description: bestPosRetailBlog.meta.description,
+      alternates: { canonical: `/insights/${slug}` },
     };
   }
 
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} - Hulm Insights`,
     description: post.excerpt || post.title,
+    alternates: { canonical: `/insights/${slug}` },
   };
 }
 
@@ -58,6 +60,9 @@ export default async function SingleInsightPage({ params }: Props) {
   const authorSlug = post.authorSlug || metaItem?.authorSlug || "hulm-editorial-team";
   const dateStr = post.date || metaItem?.date || "2025";
   const hasToc = post.tocItems && post.tocItems.length > 0;
+  const articleHtml = post.contentHtml
+    .replaceAll("https://hulmsolutions.com/blog/", "/insights/")
+    .replaceAll("https://hulmsolutions.com/blogs/", "/insights/");
 
   // Filter 3 related articles
   const relatedPosts = insightsData
@@ -74,7 +79,7 @@ export default async function SingleInsightPage({ params }: Props) {
           <nav className="text-xs text-zinc-400 mb-8 flex items-center gap-2">
             <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/blog/" className="hover:text-zinc-900 transition-colors">Blog</Link>
+            <Link href="/insights" className="hover:text-zinc-900 transition-colors">Insights</Link>
             <span>/</span>
             <span className="text-zinc-600 truncate max-w-xs sm:max-w-md">{post.title}</span>
           </nav>
@@ -127,7 +132,7 @@ export default async function SingleInsightPage({ params }: Props) {
 
             {/* Right Column: Main Article Body */}
             <main className={`${hasToc ? 'lg:col-span-8' : 'lg:col-span-12 max-w-4xl mx-auto'} min-w-0`}>
-              <Link href="/blog/" className="inline-flex items-center text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-colors mb-6">
+              <Link href="/insights" className="inline-flex items-center text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-colors mb-6">
                 <ArrowLeft className="w-3.5 h-3.5 mr-1.5" /> Back to all articles
               </Link>
 
@@ -204,7 +209,7 @@ export default async function SingleInsightPage({ params }: Props) {
               {/* Complete Article Content with Clean Editorial Typography */}
               <div
                 className="blog-content mb-16"
-                dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+                dangerouslySetInnerHTML={{ __html: articleHtml }}
               />
               <BlogFaqEnhancer />
 

@@ -18,7 +18,7 @@ export function BlogDetail() {
           <nav className="text-xs text-zinc-400 mb-8 flex items-center gap-2">
             <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/blog/" className="hover:text-zinc-900 transition-colors">Blog</Link>
+            <Link href="/insights" className="hover:text-zinc-900 transition-colors">Insights</Link>
             <span>/</span>
             <span className="text-zinc-600 truncate max-w-xs sm:max-w-md">{b.title}</span>
           </nav>

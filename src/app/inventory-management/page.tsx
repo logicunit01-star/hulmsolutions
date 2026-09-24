@@ -7,6 +7,7 @@ const data = appsData["inventory-management"];
 export const metadata: Metadata = {
   title: data?.metaTitle || "inventory-management - Hulm Solutions",
   description: data?.metaDescription || data?.hero?.subheadline,
+  alternates: { canonical: "/inventory-management" },
 };
 
 export default function Page() {

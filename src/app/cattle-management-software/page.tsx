@@ -7,6 +7,7 @@ const data = appsData["cattle-management-software"];
 export const metadata: Metadata = {
   title: data?.metaTitle || "cattle-management-software - Hulm Solutions",
   description: data?.metaDescription || data?.hero?.subheadline,
+  alternates: { canonical: "/cattle-management-software" },
 };
 
 export default function Page() {

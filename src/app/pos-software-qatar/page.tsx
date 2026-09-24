@@ -4,6 +4,7 @@ import { CountryTemplate } from "@/components/country/country-template";
 export const metadata: Metadata = {
   title: "Point of Sale in Qatar | POS Qatar | POS System Qatar",
   description: "Looking for best POS system in Qatar? Our cloud POS and mobile POS help businesses to manage sales easily. Try Point of sale in Qatar now!",
+  alternates: { canonical: "/pos-software-qatar" },
   openGraph: {
     title: "Point of Sale in Qatar | POS Qatar | POS System Qatar",
     description: "Looking for best POS system in Qatar? Our cloud POS and mobile POS help businesses to manage sales easily. Try Point of sale in Qatar now!",

@@ -41,6 +41,31 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "Hulm Solutions",
+  url: siteUrl,
+  logo: `${siteUrl}/images/logo/logo.png`,
+  email: "info@hulmsolutions.com",
+  telephone: "+92 339 111 9259",
+  sameAs: [
+    "https://www.linkedin.com/company/hulm-solutions/",
+    "https://www.instagram.com/hulmsolutions1101/",
+    "https://www.youtube.com/@Hulmsolutions",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  name: "Hulm Solutions",
+  url: siteUrl,
+  publisher: { "@id": `${siteUrl}/#organization` },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,6 +74,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} antialiased flex min-h-screen flex-col`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationSchema, websiteSchema]).replace(/</g, "\\u003c"),
+          }}
+        />
         <Header />
         <main className="flex-1">
           {children}

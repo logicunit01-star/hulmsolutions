@@ -1,248 +1,295 @@
-import React from "react";
-import { Metadata } from "next";
-import { pricingContent } from "@content/pages/pricing";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Building2,
+  Check,
+  CheckCircle2,
+  ExternalLink,
+  Layers3,
+  ReceiptText,
+  Users,
+  Workflow,
+  X,
+} from "lucide-react";
+
+import { SiteFaqAccordion } from "@/components/common/site-faq";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
-import { Check, X, CheckCircle2 } from "lucide-react";
-import { SiteFaqAccordion } from "@/components/common/site-faq";
-import { GoogleReviewsSection } from "@/components/home/GoogleReviewsSection";
-import { FinalCta } from "@/components/home/final-cta";
-import Link from "next/link";
+import { pricingContent } from "@content/pages/pricing";
 
 export const metadata: Metadata = {
   title: pricingContent.seo.title,
   description: pricingContent.seo.description,
-  keywords: pricingContent.seo.keywords,
+  keywords: [...pricingContent.seo.keywords],
+  alternates: { canonical: "/pricing" },
 };
 
-export default function PricingPage() {
-  const tabsSection = pricingContent.additionalSections?.find(s => s.type === "pricing-tabs");
-  const plansSection = pricingContent.additionalSections?.find(s => s.type === "pricing-cards");
-  const compareSection = pricingContent.additionalSections?.find(s => s.type === "feature-comparison");
-  const addonsSection = pricingContent.additionalSections?.find(s => s.type === "add-ons");
-  const whySection = pricingContent.additionalSections?.find(s => s.type === "why-choose");
-  const faqSection = pricingContent.additionalSections?.find(s => s.type === "faq");
+const guidanceIcons = [Users, Workflow, ReceiptText];
 
+function SectionIntro({
+  eyebrow,
+  heading,
+  description,
+  centered = false,
+}: {
+  eyebrow: string;
+  heading: string;
+  description?: string;
+  centered?: boolean;
+}) {
   return (
-    <div>
-      <Section className="py-20 lg:py-28 bg-white">
-        <Container>
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#209f8f]/30 text-xs font-semibold text-[#209f8f] uppercase tracking-widest bg-[#209f8f]/10 shadow-xs mb-4">
-              Simple, Transparent Pricing
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#152825] mb-5 tracking-tight">
-              {pricingContent.hero.headline}
-            </h1>
-            <p
-              className="text-base sm:text-lg text-zinc-600 leading-relaxed"
-              dangerouslySetInnerHTML={{
-                __html: (pricingContent.hero?.description || '')
-                  .replace('No hidden fees.', '<strong class="text-[#152825]">No hidden fees.</strong>')
-                  .replace('Start free for 14 days.', '<strong class="text-[#152825]">Start free for 14 days.</strong>'),
-              }}
-            />
+    <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[#209f8f]">{eyebrow}</p>
+      <h2 className="text-3xl font-bold tracking-tight text-[#152825] sm:text-4xl lg:text-5xl">{heading}</h2>
+      {description ? <p className="mt-5 text-base leading-7 text-zinc-600 sm:text-lg">{description}</p> : null}
+    </div>
+  );
+}
+
+function ComparisonValue({ value }: { value: string | boolean }) {
+  if (typeof value === "string") {
+    return <span className="text-sm font-semibold text-[#152825]">{value}</span>;
+  }
+
+  return value ? (
+    <Check className="mx-auto h-5 w-5 text-[#209f8f]" aria-label="Included" />
+  ) : (
+    <X className="mx-auto h-5 w-5 text-zinc-300" aria-label="Not included" />
+  );
+}
+
+export default function PricingPage() {
+  return (
+    <main className="overflow-hidden bg-white">
+      <section className="relative border-b border-[#dcebe8] bg-[linear-gradient(180deg,#f4fbf9_0%,#ffffff_92%)] py-16 sm:py-20 lg:py-24">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[#25a18e]/10 blur-3xl" />
+        <Container className="relative text-center">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#25a18e]/25 bg-white px-4 py-2 text-sm font-semibold text-[#167c70] shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-[#25a18e]" />
+            {pricingContent.hero.eyebrow}
           </div>
+          <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-[#152825] sm:text-5xl lg:text-[3.8rem]">
+            {pricingContent.hero.headline}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-600">{pricingContent.hero.description}</p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg">
+              <Link href={pricingContent.hero.primaryCta.href} target="_blank" rel="noreferrer">
+                {pricingContent.hero.primaryCta.label}
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href={pricingContent.hero.secondaryCta.href}>
+                {pricingContent.hero.secondaryCta.label}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <ul className="mt-8 flex flex-col items-center justify-center gap-3 text-sm font-medium text-zinc-600 sm:flex-row sm:flex-wrap sm:gap-x-6">
+            {pricingContent.hero.proof.map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#209f8f]" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
-          {/* Industry Tabs */}
-          {tabsSection && (
-            <div className="flex flex-wrap justify-center gap-2 mb-16">
-              {tabsSection.tabs?.map((tab: string, i: number) => (
-                <div
-                  key={i}
-                  className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
-                    i === 0
-                      ? 'bg-[#209f8f] text-white shadow-sm'
-                      : 'bg-gray-100 text-zinc-700 hover:bg-[#209f8f]/10 hover:text-[#209f8f]'
-                  }`}
-                >
-                  {tab}
+      <Section className="pt-10 md:pt-14 lg:pt-16">
+        <Container>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {pricingContent.plans.map((plan) => (
+              <article
+                key={plan.name}
+                className={`relative flex h-full flex-col rounded-3xl border p-6 sm:p-7 ${
+                  plan.highlighted
+                    ? "border-[#25a18e] bg-[#f2fbf9] shadow-[0_22px_60px_-34px_rgba(32,159,143,0.65)] ring-1 ring-[#25a18e]/20"
+                    : "border-zinc-200 bg-white shadow-sm"
+                }`}
+              >
+                {plan.highlighted ? (
+                  <span className="absolute -top-3 left-6 rounded-full bg-[#209f8f] px-3 py-1 text-xs font-bold text-white shadow-sm">
+                    For growing teams
+                  </span>
+                ) : null}
+                <div className={plan.highlighted ? "pt-3" : ""}>
+                  <p className="text-sm font-semibold text-[#209f8f]">{plan.name}</p>
+                  <h2 className="mt-2 min-h-14 text-xl font-bold leading-7 text-[#152825]">{plan.audience}</h2>
+                  <p className="mt-3 min-h-18 text-sm leading-6 text-zinc-600">{plan.summary}</p>
                 </div>
-              ))}
-            </div>
-          )}
 
-          {/* Pricing Cards */}
-          {plansSection && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-24">
-              {plansSection.plans?.map((plan: any, i: number) => (
-                <div
-                  key={i}
-                  className={`relative flex flex-col p-7 rounded-2xl h-full border transition-all duration-300 ${
-                    plan.isPopular
-                      ? 'border-[#209f8f] shadow-lg shadow-[#209f8f]/10 bg-white ring-2 ring-[#209f8f]/20 lg:-translate-y-2'
-                      : 'border-gray-200/80 bg-white hover:border-[#209f8f]/40 hover:shadow-md'
-                  }`}
-                >
-                  {plan.isPopular && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#209f8f] text-white text-center px-4 py-1 text-xs font-semibold rounded-full shadow-sm">
-                      Most Popular
-                    </div>
-                  )}
-                  <div className="mb-6 pt-1">
-                    <h3 className="text-xl font-semibold text-[#152825] mb-2">{plan.name}</h3>
-                    <p className="text-xs sm:text-sm text-zinc-500 min-h-[36px]">{plan.description}</p>
-                  </div>
-
-                  <div className="mb-6 pb-6 border-b border-gray-100">
-                    <div className="text-2xl sm:text-3xl font-semibold text-[#152825]">
-                      {plan.price.includes('Contact') ? plan.price : plan.price}
-                    </div>
-                    {!plan.price.includes('Contact') && (
-                      <span className="text-xs text-zinc-500">per month / billed annually</span>
-                    )}
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8 flex-grow">
-                    {plan.features.map((feature: string, idx: number) => (
-                      <li key={idx} className="flex items-start text-xs sm:text-sm text-zinc-700">
-                        <Check className="mr-2.5 mt-0.5 w-4 h-4 text-[#209f8f] flex-shrink-0" strokeWidth={2.5} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-auto pt-4">
-                    <Button
-                      asChild
-                      className={`w-full rounded-xl font-semibold h-11 transition-all ${
-                        plan.isPopular
-                          ? 'bg-[#209f8f] hover:bg-[#1a8578] text-white shadow-sm'
-                          : 'bg-[#209f8f]/10 text-[#209f8f] hover:bg-[#209f8f] hover:text-white'
-                      }`}
-                    >
-                      <Link href="https://app.hulmsolutions.com/Register">
-                        {plan.ctaLabel}
-                      </Link>
-                    </Button>
-                  </div>
+                <div className="mt-6 border-y border-zinc-200/80 py-6">
+                  <p className="text-3xl font-bold tracking-tight text-[#152825]">
+                    {plan.price}
+                    <span className="ml-2 text-sm font-medium text-zinc-500">{plan.cadence}</span>
+                  </p>
+                  <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-zinc-700">
+                    <Building2 className="h-4 w-4 text-[#209f8f]" />
+                    {plan.capacity}
+                  </p>
                 </div>
-              ))}
-            </div>
-          )}
 
-          {/* Feature Comparison */}
-          {compareSection && (
-            <div className="mb-24">
-              <div className="mb-10 text-center max-w-2xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-3 tracking-tight">
-                  {compareSection.heading}
-                </h2>
-                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">{compareSection.subheading}</p>
-              </div>
-              <div className="overflow-x-auto rounded-2xl border border-gray-200/80 bg-white shadow-xs">
-                <table className="w-full text-left border-collapse min-w-[800px]">
-                  <thead>
-                    <tr className="border-b border-gray-200 bg-gray-50/70">
-                      <th className="py-4 px-6 font-semibold text-[#152825] w-1/3 text-sm">Feature</th>
-                      <th className="py-4 px-6 font-semibold text-[#152825] text-center text-sm">Starter</th>
-                      <th className="py-4 px-6 font-semibold text-[#152825] text-center text-sm">Growth</th>
-                      <th className="py-4 px-6 font-semibold text-[#209f8f] text-center text-sm bg-[#209f8f]/5">Business</th>
-                      <th className="py-4 px-6 font-semibold text-[#152825] text-center text-sm">Enterprise</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {compareSection.categories?.map((category: any, cIdx: number) => (
-                      <React.Fragment key={cIdx}>
-                        <tr>
-                          <td colSpan={5} className="py-3 px-6 text-xs font-semibold text-zinc-500 uppercase tracking-wider bg-gray-50/50">
-                            {category.name}
-                          </td>
-                        </tr>
-                        {category.features.map((feature: any, fIdx: number) => (
-                          <tr key={fIdx} className="border-b border-gray-100 last:border-0 hover:bg-gray-50/50 transition-colors">
-                            <td className="py-3.5 px-6 text-sm text-[#152825] font-medium flex items-center gap-2.5">
-                              <CheckCircle2 className="w-4 h-4 text-[#209f8f] shrink-0" />
-                              {feature.name}
-                            </td>
-                            <td className="py-3.5 px-6 text-center text-[#209f8f]">
-                              {feature.starter ? <Check className="w-4 h-4 mx-auto stroke-[2.5]" /> : <X className="w-4 h-4 mx-auto text-gray-300" />}
-                            </td>
-                            <td className="py-3.5 px-6 text-center text-[#209f8f]">
-                              {feature.growth ? <Check className="w-4 h-4 mx-auto stroke-[2.5]" /> : <X className="w-4 h-4 mx-auto text-gray-300" />}
-                            </td>
-                            <td className="py-3.5 px-6 text-center text-[#209f8f] bg-[#209f8f]/5 font-semibold">
-                              {feature.business ? <Check className="w-4 h-4 mx-auto stroke-[2.5]" /> : <X className="w-4 h-4 mx-auto text-gray-300" />}
-                            </td>
-                            <td className="py-3.5 px-6 text-center text-[#209f8f]">
-                              {feature.enterprise ? <Check className="w-4 h-4 mx-auto stroke-[2.5]" /> : <X className="w-4 h-4 mx-auto text-gray-300" />}
-                            </td>
-                          </tr>
-                        ))}
-                      </React.Fragment>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
+                <ul className="mt-6 flex-1 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5 text-sm leading-6 text-zinc-700">
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-[#209f8f]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-          {/* Add-ons and Onboarding */}
-          {addonsSection && (
-            <div className="mb-24">
-              <div className="mb-10 text-center max-w-2xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-3 tracking-tight">
-                  {addonsSection.heading}
-                </h2>
-                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">{addonsSection.subheading}</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {addonsSection.blocks?.map((block: any, i: number) => (
-                  <div key={i} className="bg-gradient-to-br from-[#1b7f70] via-[#209f8f] to-[#16695d] rounded-2xl p-8 text-white shadow-md">
-                    <h3 className="text-xl font-semibold mb-6">{block.title}</h3>
-                    <ul className="space-y-3.5">
-                      {block.items.map((item: string, idx: number) => (
-                        <li key={idx} className="flex items-start text-sm text-white/95">
-                          <Check className="mr-3 mt-0.5 w-4 h-4 text-emerald-200 shrink-0 stroke-[2.5]" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Why Choose Hulm */}
-          {whySection && (
-            <div className="mb-24">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-8 text-center tracking-tight">
-                {whySection.heading}
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {whySection.reasons?.map((reason: string, i: number) => (
-                  <div key={i} className="bg-white border border-gray-200/80 rounded-2xl p-6 text-center text-sm font-semibold text-[#152825] shadow-xs flex items-center justify-center min-h-[110px] hover:border-[#209f8f]/40 transition-colors">
-                    {reason}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* FAQ */}
-          {faqSection && (
-            <div className="mb-12 max-w-4xl mx-auto">
-              <div className="mb-10 text-center">
-                <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-[#209f8f] uppercase tracking-wider mb-4 shadow-xs">
-                  Got Questions?
-                </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-3 tracking-tight">
-                  {faqSection.heading}
-                </h2>
-                <p className="text-sm sm:text-base text-zinc-600">{faqSection.subheading}</p>
-              </div>
-              <SiteFaqAccordion items={faqSection.items} defaultOpenIndex={0} />
-            </div>
-          )}
+                <Button asChild size="lg" variant={plan.highlighted ? "default" : "outline"} className="mt-8 w-full">
+                  <Link
+                    href={plan.cta.href}
+                    target={plan.cta.href.startsWith("http") ? "_blank" : undefined}
+                    rel={plan.cta.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    {plan.cta.label}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </article>
+            ))}
+          </div>
+          <p className="mx-auto mt-7 max-w-3xl text-center text-sm leading-6 text-zinc-500">
+            Prices are shown in PKR. Confirm the billing schedule, applicable taxes, optional services and final payable amount with Hulm before purchase.
+          </p>
         </Container>
       </Section>
 
-      {/* Google Reviews & Final CTA */}
-      <GoogleReviewsSection />
-      <FinalCta />
-    </div>
+      <Section className="bg-[#f4f9f8]">
+        <Container>
+          <SectionIntro {...pricingContent.comparison} centered />
+          <div className="mt-12 overflow-x-auto rounded-3xl border border-[#dcebe8] bg-white shadow-sm">
+            <table className="w-full min-w-[860px] border-collapse text-left">
+              <caption className="sr-only">Comparison of Hulm POS plans</caption>
+              <thead>
+                <tr className="border-b border-zinc-200 bg-[#f8fbfa]">
+                  <th className="px-6 py-5 text-sm font-bold text-[#152825]">Plan capability</th>
+                  <th className="px-5 py-5 text-center text-sm font-bold text-[#152825]">Starter</th>
+                  <th className="bg-[#eaf7f4] px-5 py-5 text-center text-sm font-bold text-[#167c70]">Growth</th>
+                  <th className="px-5 py-5 text-center text-sm font-bold text-[#152825]">Business</th>
+                  <th className="px-5 py-5 text-center text-sm font-bold text-[#152825]">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pricingContent.comparison.rows.map((row) => (
+                  <tr key={row.feature} className="border-b border-zinc-100 last:border-0">
+                    <th scope="row" className="px-6 py-4 text-sm font-semibold text-zinc-700">{row.feature}</th>
+                    <td className="px-5 py-4 text-center"><ComparisonValue value={row.starter} /></td>
+                    <td className="bg-[#f5fbf9] px-5 py-4 text-center"><ComparisonValue value={row.growth} /></td>
+                    <td className="px-5 py-4 text-center"><ComparisonValue value={row.business} /></td>
+                    <td className="px-5 py-4 text-center"><ComparisonValue value={row.enterprise} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-center text-xs leading-5 text-zinc-500">Swipe horizontally on smaller screens to compare every plan.</p>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SectionIntro {...pricingContent.extras} centered />
+          <div className="mt-12 grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+            <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-[#e8f7f4] text-[#209f8f]">
+                  <Layers3 className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#152825]">Capacity and capability add-ons</h3>
+                  <p className="mt-1 text-sm text-zinc-500">Where not already included in your plan</p>
+                </div>
+              </div>
+              <dl className="grid gap-x-8 sm:grid-cols-2">
+                {pricingContent.extras.items.map((item) => (
+                  <div key={item.name} className="flex items-center justify-between gap-4 border-t border-zinc-100 py-4 text-sm">
+                    <dt className="font-medium text-zinc-700">{item.name}</dt>
+                    <dd className="shrink-0 font-bold text-[#152825]">{item.price}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="rounded-3xl bg-[#153f39] p-6 text-white shadow-sm sm:p-8">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[#78d5c8] text-[#153f39]">
+                <ReceiptText className="h-5 w-5" />
+              </div>
+              <h3 className="mt-6 text-xl font-bold text-white">Optional onboarding services</h3>
+              <p className="mt-2 text-sm leading-6 text-white/65">Standard account setup is separate from these hands-on services.</p>
+              <dl className="mt-6">
+                {pricingContent.extras.services.map((service) => (
+                  <div key={service.name} className="flex items-center justify-between gap-4 border-t border-white/10 py-4 text-sm">
+                    <dt className="font-medium text-white/75">{service.name}</dt>
+                    <dd className="shrink-0 font-bold text-white">{service.price}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-[#f8faf9]">
+        <Container>
+          <SectionIntro {...pricingContent.guidance} centered />
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {pricingContent.guidance.items.map((item, index) => {
+              const Icon = guidanceIcons[index];
+              return (
+                <article key={item.title} className="rounded-3xl border border-[#dcebe8] bg-white p-7 shadow-sm">
+                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#e8f7f4] text-[#209f8f]">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <p className="mt-6 text-xs font-bold uppercase tracking-[0.15em] text-zinc-400">Step {index + 1}</p>
+                  <h3 className="mt-2 text-xl font-bold text-[#152825]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{item.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+          <SectionIntro eyebrow={pricingContent.faq.eyebrow} heading={pricingContent.faq.heading} />
+          <SiteFaqAccordion items={[...pricingContent.faq.items]} />
+        </Container>
+      </Section>
+
+      <Section className="pt-0">
+        <Container>
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#153f39] px-7 py-12 text-center text-white sm:px-12 sm:py-16">
+            <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-[#25a18e]/20 blur-3xl" />
+            <div className="relative mx-auto max-w-3xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#78d5c8]">{pricingContent.finalCta.eyebrow}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">{pricingContent.finalCta.heading}</h2>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">{pricingContent.finalCta.description}</p>
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+                <Button asChild size="lg" className="bg-white text-[#153f39] hover:bg-[#e8f7f4]">
+                  <Link href={pricingContent.finalCta.primaryCta.href} target="_blank" rel="noreferrer">
+                    {pricingContent.finalCta.primaryCta.label}
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white">
+                  <Link href={pricingContent.finalCta.secondaryCta.href}>
+                    {pricingContent.finalCta.secondaryCta.label}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </main>
   );
 }

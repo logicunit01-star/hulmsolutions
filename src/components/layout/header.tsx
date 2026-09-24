@@ -25,6 +25,7 @@ const Youtube = (props: React.SVGProps<SVGSVGElement>) => (
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const normalizedPathname = (pathname || "/").replace(/\/$/, "") || "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +60,13 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/hulmsolutions1101/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="Instagram">
                 <Instagram className="w-3.5 h-3.5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/hulm-solutions/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@Hulmsolutions" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="YouTube">
                 <Youtube className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -86,18 +87,20 @@ export function Header() {
       >
         <Container className="flex items-center justify-between py-3.5 sm:py-4">
           {/* Logo & Navigation */}
-          <div className="flex items-center gap-8 xl:gap-12">
+          <div className="flex items-center gap-8 xl:gap-10">
             <Logo />
 
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden xl:flex items-center gap-0.5" aria-label="Primary navigation">
               {mainNav.map((item) => {
-                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                const normalizedHref = item.href.replace(/\/$/, "") || "/";
+                const isActive = normalizedPathname === normalizedHref ||
+                  (normalizedHref !== "/" && normalizedPathname.startsWith(`${normalizedHref}/`));
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "px-3.5 py-2 rounded-full text-[13.5px] font-medium transition-all duration-200",
+                      "px-3 py-2 rounded-full text-[13px] font-medium transition-all duration-200",
                       isActive
                         ? "text-[#152825] font-semibold bg-zinc-100 shadow-xs"
                         : "text-[#475467] hover:text-[#152825] hover:bg-zinc-50"
@@ -112,23 +115,31 @@ export function Header() {
 
           {/* Action CTAs & Mobile Nav */}
           <div className="flex items-center gap-3">
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden xl:flex items-center gap-2">
               <Button
                 asChild
                 variant="ghost"
-                className="text-xs font-semibold text-[#475467] hover:text-[#152825] hover:bg-zinc-100/80 rounded-full h-9 px-4 transition-all duration-200"
+                className="text-xs font-semibold text-[#475467] hover:text-[#152825] hover:bg-zinc-100/80 rounded-full h-9 px-3 transition-all duration-200"
               >
                 <Link href="https://app.hulmsolutions.com/" target="_blank" rel="noopener noreferrer">
-                  Go to apps
+                  Sign in
                 </Link>
               </Button>
 
               <Button
                 asChild
-                className="bg-[#152825] hover:bg-[#25a18e] text-white text-xs font-semibold h-10 px-5 rounded-full shadow-[0_2px_12px_rgba(21,40,37,0.14)] hover:shadow-[0_4px_16px_rgba(37,161,142,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-1.5 group"
+                variant="outline"
+                className="text-xs font-semibold rounded-full h-9 px-4"
+              >
+                <Link href="/contact/">Book a demo</Link>
+              </Button>
+
+              <Button
+                asChild
+                className="bg-[#152825] hover:bg-[#25a18e] text-white text-xs font-semibold h-10 px-4 rounded-full shadow-[0_2px_12px_rgba(21,40,37,0.14)] hover:shadow-[0_4px_16px_rgba(37,161,142,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-1.5 group"
               >
                 <Link href="https://app.hulmsolutions.com/Register" target="_blank" rel="noopener noreferrer">
-                  <span>Get Started</span>
+                  <span>Start free trial</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </Button>

@@ -1,42 +1,70 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { ChevronDown, Globe2, Menu, X } from "lucide-react"
 import { mainNav, type NavItem } from "@/lib/navigation"
 import { REGIONAL_LOCATIONS } from "@/lib/countries/data"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
+function normalizePath(path: string) {
+  return path.replace(/\/$/, "") || "/"
+}
+
 function MobileNavItem({ item, pathname, onClick }: { item: NavItem, pathname: string, onClick: () => void }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const hasChildren = item.children && item.children.length > 0;
-  const isActive = pathname === item.href || (item.children?.some(c => c.href === pathname) ?? false);
+  const [isOpen, setIsOpen] = useState(false)
+  const normalizedPathname = normalizePath(pathname)
+  const normalizedHref = normalizePath(item.href)
+  const hasChildren = Boolean(item.children?.length)
+  const isActive = normalizedPathname === normalizedHref ||
+    normalizedPathname.startsWith(`${normalizedHref}/`) ||
+    (item.children?.some((child) => normalizePath(child.href) === normalizedPathname) ?? false)
+  const submenuId = `mobile-${item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-submenu`
 
   if (hasChildren) {
     return (
       <div className="flex flex-col space-y-1">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={cn(
-            "flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all",
-            isActive ? "bg-[#25a18e]/10 text-[#25a18e]" : "text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
-          )}
-        >
-          <span>{item.title}</span>
-          <ChevronDown className={cn("h-4 w-4 transition-transform text-zinc-400", isOpen && "rotate-180")} />
-        </button>
+        <div className={cn(
+          "flex items-center rounded-xl transition-colors",
+          isActive ? "bg-[#25a18e]/10" : "hover:bg-zinc-50"
+        )}>
+          <Link
+            href={item.href}
+            onClick={onClick}
+            className={cn(
+              "flex-1 px-4 py-3 text-sm font-semibold",
+              isActive ? "text-[#168779]" : "text-zinc-700"
+            )}
+          >
+            {item.title}
+          </Link>
+          <button
+            type="button"
+            onClick={() => setIsOpen((current) => !current)}
+            className="mr-2 flex h-9 w-9 items-center justify-center rounded-lg text-zinc-500 hover:bg-white hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
+            aria-label={`${isOpen ? "Hide" : "Show"} ${item.title} links`}
+            aria-expanded={isOpen}
+            aria-controls={submenuId}
+          >
+            <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
+          </button>
+        </div>
+
         {isOpen && (
-          <div className="flex flex-col space-y-1 pl-4 border-l-2 border-[#25a18e]/20 ml-4 py-1">
+          <div id={submenuId} className="ml-4 flex flex-col space-y-1 border-l-2 border-[#25a18e]/20 py-1 pl-4">
             {item.children!.map((child) => (
               <Link
                 key={child.href}
                 href={child.href}
                 onClick={onClick}
                 className={cn(
-                  "px-3 py-2 rounded-lg text-xs font-medium transition-colors",
-                  pathname === child.href ? "text-[#25a18e] font-semibold" : "text-zinc-500 hover:text-zinc-900"
+                  "rounded-lg px-3 py-2.5 text-xs font-medium transition-colors",
+                  normalizePath(child.href) === normalizedPathname
+                    ? "bg-[#25a18e]/10 font-semibold text-[#168779]"
+                    : "text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900"
                 )}
               >
                 {child.title}
@@ -45,7 +73,7 @@ function MobileNavItem({ item, pathname, onClick }: { item: NavItem, pathname: s
           </div>
         )}
       </div>
-    );
+    )
   }
 
   return (
@@ -53,145 +81,215 @@ function MobileNavItem({ item, pathname, onClick }: { item: NavItem, pathname: s
       href={item.href}
       onClick={onClick}
       className={cn(
-        "flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all",
-        isActive ? "bg-[#25a18e]/10 text-[#25a18e]" : "text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
+        "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all",
+        isActive ? "bg-[#25a18e]/10 text-[#168779]" : "text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
       )}
     >
       <span>{item.title}</span>
-      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#25a18e]" />}
+      {isActive && <span className="h-1.5 w-1.5 rounded-full bg-[#25a18e]" aria-hidden="true" />}
     </Link>
-  );
+  )
+}
+
+function MobileRegionSelector({ pathname, onNavigate }: { pathname: string, onNavigate: () => void }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const normalizedPathname = normalizePath(pathname)
+  const pakistan = REGIONAL_LOCATIONS.find((location) => location.code === "PK") ?? REGIONAL_LOCATIONS[0]
+  const activeLocation = REGIONAL_LOCATIONS.find((location) => normalizePath(location.href) === normalizedPathname) ?? pakistan
+
+  return (
+    <div className="border-t border-zinc-100 pt-4">
+      <button
+        type="button"
+        onClick={() => setIsOpen((current) => !current)}
+        className="flex w-full items-center justify-between rounded-xl border border-zinc-200 bg-zinc-50 px-3.5 py-3 text-left transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
+        aria-expanded={isOpen}
+        aria-controls="mobile-region-options"
+      >
+        <span className="flex items-center gap-3">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#168779] shadow-xs" aria-hidden="true">
+            <Globe2 className="h-4 w-4" />
+          </span>
+          <span>
+            <span className="block text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-400">Region</span>
+            <span className="block text-sm font-semibold text-zinc-800">{activeLocation.country}</span>
+          </span>
+        </span>
+        <ChevronDown className={cn("h-4 w-4 text-zinc-400 transition-transform", isOpen && "rotate-180")} />
+      </button>
+
+      {isOpen && (
+        <div id="mobile-region-options" className="mt-2 grid grid-cols-2 gap-2">
+          {REGIONAL_LOCATIONS.map((location) => {
+            const isActive = location.code === activeLocation.code
+            return (
+              <Link
+                key={location.code}
+                href={location.href}
+                onClick={onNavigate}
+                className={cn(
+                  "rounded-lg border px-3 py-2.5 text-xs font-semibold transition-colors",
+                  isActive
+                    ? "border-[#25a18e]/40 bg-[#25a18e]/10 text-[#168779]"
+                    : "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:text-zinc-900"
+                )}
+              >
+                <span className="mr-1.5" aria-hidden="true">{location.flag}</span>
+                {location.country}
+              </Link>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
 }
 
 export function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
 
-  // Prevent scroll when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+    if (!isOpen) return
+
+    const trigger = triggerRef.current
+    const previousOverflow = document.body.style.overflow
+    const main = document.querySelector("main")
+    const footer = document.querySelector("footer")
+    document.body.style.overflow = "hidden"
+    main?.setAttribute("inert", "")
+    footer?.setAttribute("inert", "")
+    closeButtonRef.current?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault()
+        setIsOpen(false)
+        return
+      }
+
+      if (event.key !== "Tab" || !panelRef.current) return
+
+      const focusable = Array.from(panelRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )).filter((element) => !element.hasAttribute("hidden"))
+
+      if (!focusable.length) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
     }
+
+    document.addEventListener("keydown", handleKeyDown)
     return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
+      document.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = previousOverflow
+      main?.removeAttribute("inert")
+      footer?.removeAttribute("inert")
+      trigger?.focus()
+    }
+  }, [isOpen])
+
+  const closeMenu = () => setIsOpen(false)
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
+        ref={triggerRef}
+        type="button"
         onClick={() => setIsOpen(true)}
-        className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200/80 bg-white text-zinc-700 hover:text-[#152825] hover:bg-zinc-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
+        className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200/80 bg-white text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-[#152825] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
         aria-label="Open menu"
         aria-expanded={isOpen}
+        aria-controls="mobile-navigation-drawer"
       >
         <Menu className="h-5 w-5" />
       </button>
 
-      {/* Backdrop */}
       {isOpen && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Menu Panel */}
-      <div
-        className={cn(
-          "fixed inset-y-0 right-0 z-50 w-full max-w-xs sm:max-w-sm border-l border-zinc-200 bg-white shadow-2xl transition-transform duration-300 ease-in-out flex flex-col",
-          isOpen ? "translate-x-0" : "translate-x-full"
-        )}
-      >
-        {/* Drawer Header */}
-        <div className="flex items-center justify-between border-b border-zinc-100 px-5 py-4">
-          <Link href="/" onClick={() => setIsOpen(false)}>
-            <img 
-              src="/images/logo/logo.png" 
-              alt="Hulm Solutions" 
-              className="h-8 w-auto object-contain" 
-            />
-          </Link>
+        <div className="fixed inset-0 z-[80]">
           <button
-            onClick={() => setIsOpen(false)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
-            aria-label="Close menu"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-        
-        {/* Nav Links */}
-        <div className="flex-1 overflow-y-auto p-5 flex flex-col space-y-2">
-          <nav className="flex flex-col space-y-1">
-            {mainNav.map((item) => (
-              <MobileNavItem 
-                key={item.title} 
-                item={item} 
-                pathname={pathname} 
-                onClick={() => setIsOpen(false)} 
-              />
-            ))}
-          </nav>
+            type="button"
+            className="absolute inset-0 h-full w-full bg-black/45 backdrop-blur-sm"
+            onClick={closeMenu}
+            aria-label="Close navigation menu"
+          />
 
-          {/* Regional Editions */}
-          <div className="pt-4 border-t border-zinc-100">
-            <div className="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider px-1 mb-2">
-              Global Editions
+          <div
+            ref={panelRef}
+            id="mobile-navigation-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="mobile-navigation-title"
+            className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col border-l border-zinc-200 bg-white shadow-2xl"
+          >
+            <div className="flex items-center justify-between border-b border-zinc-100 px-5 py-4">
+              <Link href="/" onClick={closeMenu} aria-label="Hulm homepage">
+                <Image
+                  src="/images/logo/logo.png"
+                  alt="Hulm Solutions"
+                  width={160}
+                  height={51}
+                  className="h-8 w-auto object-contain"
+                />
+              </Link>
+              <h2 id="mobile-navigation-title" className="sr-only">Site navigation</h2>
+              <button
+                ref={closeButtonRef}
+                type="button"
+                onClick={closeMenu}
+                className="flex h-10 w-10 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
-            <div className="grid grid-cols-1 gap-1.5">
-              {REGIONAL_LOCATIONS.map((loc) => (
-                <Link
-                  key={loc.code}
-                  href={loc.href}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "flex items-center justify-between p-2.5 rounded-xl text-xs font-medium border transition-all",
-                    pathname === loc.href
-                      ? "bg-[#152825] text-white border-[#152825]"
-                      : "bg-zinc-50 hover:bg-zinc-100 text-zinc-700 border-zinc-200/60"
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-base leading-none">{loc.flag}</span>
-                    <span className="font-semibold">{loc.country}</span>
-                  </div>
-                  <span className={cn(
-                    "text-[10px] px-2 py-0.5 rounded-full font-medium",
-                    pathname === loc.href ? "bg-[#7ae582]/20 text-[#a7f3d0]" : "bg-zinc-200/60 text-zinc-600"
-                  )}>
-                    {loc.role}
-                  </span>
-                </Link>
-              ))}
+
+            <div className="flex flex-1 flex-col gap-5 overflow-y-auto p-5">
+              <nav className="flex flex-col space-y-1" aria-label="Mobile navigation">
+                {mainNav.map((item) => (
+                  <MobileNavItem
+                    key={item.title}
+                    item={item}
+                    pathname={pathname}
+                    onClick={closeMenu}
+                  />
+                ))}
+              </nav>
+
+              <MobileRegionSelector pathname={pathname} onNavigate={closeMenu} />
+            </div>
+
+            <div className="border-t border-zinc-100 bg-zinc-50/70 p-5">
+              <div className="grid grid-cols-2 gap-2.5">
+                <Button variant="outline" className="h-11 rounded-xl text-xs" asChild>
+                  <Link href="https://app.hulmsolutions.com/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                    Sign in
+                  </Link>
+                </Button>
+                <Button className="h-11 rounded-xl bg-[#152825] text-xs text-white hover:bg-[#25a18e]" asChild>
+                  <Link href="https://app.hulmsolutions.com/Register" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                    Start free trial
+                  </Link>
+                </Button>
+              </div>
+              <Link href="/contact/" onClick={closeMenu} className="mt-3 block text-center text-xs font-semibold text-[#168779] hover:underline">
+                Prefer a guided setup? Book a demo
+              </Link>
             </div>
           </div>
         </div>
-
-        {/* Bottom Actions */}
-        <div className="border-t border-zinc-100 p-5 space-y-3 bg-zinc-50/50">
-          <Button 
-            variant="outline" 
-            className="w-full text-xs font-semibold h-10 rounded-xl border-zinc-200 text-zinc-700 hover:bg-zinc-100" 
-            asChild
-          >
-            <Link href="https://app.hulmsolutions.com/" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
-              Go to apps
-            </Link>
-          </Button>
-
-          <Button 
-            className="w-full bg-[#152825] hover:bg-[#25a18e] text-white text-xs font-semibold h-10 rounded-xl shadow-md transition-colors" 
-            asChild
-          >
-            <Link href="https://app.hulmsolutions.com/Register" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
-              Get Started
-            </Link>
-          </Button>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

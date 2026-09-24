@@ -7,6 +7,7 @@ const data = appsData["logistics-management-software"];
 export const metadata: Metadata = {
   title: data?.metaTitle || "logistics-management-software - Hulm Solutions",
   description: data?.metaDescription || data?.hero?.subheadline,
+  alternates: { canonical: "/logistics-management-software" },
 };
 
 export default function Page() {

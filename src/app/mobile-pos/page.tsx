@@ -7,6 +7,7 @@ const data = appsData["mobile-pos"];
 export const metadata: Metadata = {
   title: data?.metaTitle || "mobile-pos - Hulm Solutions",
   description: data?.metaDescription || data?.hero?.subheadline,
+  alternates: { canonical: "/mobile-pos" },
 };
 
 export default function Page() {

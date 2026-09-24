@@ -4,6 +4,7 @@ import { ComplianceTemplate } from "@/components/country/compliance-template";
 export const metadata: Metadata = {
   title: "FBR Integrated POS Software in Pakistan | Hulm POS",
   description: "Get FBR-compliant POS with automated tax invoicing, QR codes, and real-time reporting. Free FBR integration setup for retailers across Pakistan.",
+  alternates: { canonical: "/fbr-integrated-pos-pakistan" },
   openGraph: {
     title: "FBR Integrated POS Software in Pakistan | Hulm POS",
     description: "Get FBR-compliant POS with automated tax invoicing, QR codes, and real-time reporting. Free FBR integration setup for retailers across Pakistan.",

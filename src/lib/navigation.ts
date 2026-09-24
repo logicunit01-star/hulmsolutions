@@ -6,29 +6,36 @@ export interface NavItem {
 
 export const mainNav: NavItem[] = [
   {
-    title: "Apps",
+    title: "Product",
     href: "/apps/",
+    children: [
+      { title: "POS & Billing", href: "/features/" },
+      { title: "Inventory Management", href: "/inventory-management/" },
+      { title: "Purchasing & Vendors", href: "/purchase-orders/" },
+      { title: "Customer Management", href: "/customer-management/" },
+      { title: "Order Management", href: "/order-management/" },
+      { title: "Reporting & Insights", href: "/reporting-module/" },
+    ],
   },
   {
     title: "Industries",
     href: "/industries/",
   },
   {
-    title: "Case Studies",
-    href: "/case-studies/",
-  },
-  {
-    title: "Insights",
-    href: "/insights/",
+    title: "FBR Compliance",
+    href: "/fbr-integrated-pos-pakistan/",
   },
   {
     title: "Pricing",
     href: "/pricing/",
   },
-
   {
-    title: "Contact",
-    href: "/contact/",
+    title: "Customers",
+    href: "/case-studies/",
+  },
+  {
+    title: "Resources",
+    href: "/insights/",
   },
 ];
 
@@ -45,7 +52,7 @@ export const footerNav = [
     ],
   },
   {
-    title: "Apps",
+    title: "Product",
     links: [
       { title: "POS & Billing", href: "/features/" },
       { title: "Inventory Management", href: "/inventory-management/" },

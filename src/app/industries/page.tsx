@@ -1,503 +1,201 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, BarChart3, Boxes, Check, CheckCircle2, ExternalLink, ReceiptText, ShieldCheck } from "lucide-react";
+
+import { SiteFaqAccordion } from "@/components/common/site-faq";
+import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
-import {
-  Sparkles,
-  ShieldCheck,
-  Zap,
-  Globe2,
-  Cpu,
-  CheckCircle2,
-  ArrowRight,
-  ChevronRight,
-  Store,
-  Factory,
-  Armchair,
-  Coffee,
-  Gamepad2,
-  Gem,
-  Lightbulb,
-  Cake,
-  Scissors,
-  Shirt,
-  Utensils,
-  Pill,
-} from "lucide-react";
-import { IndustriesGrid, IndustryCardItem } from "@/components/industries/industries-grid";
-import { IndustriesFaq } from "@/components/industries/industries-faq";
-import { GoogleReviewsSection } from "@/components/home/GoogleReviewsSection";
-import { FinalCta } from "@/components/home/final-cta";
+import { industriesContent } from "@content/pages/industries";
 
 export const metadata: Metadata = {
-  title: "POS Software for All Industries | Point of Sale Systems | Hulm",
-  description:
-    "Hulm Solutions provides POS systems for retail, restaurants, salons, pharmacies, cafes and all industries to streamline your operations.",
+  title: industriesContent.seo.title,
+  description: industriesContent.seo.description,
+  keywords: [...industriesContent.seo.keywords],
+  alternates: { canonical: "/industries" },
 };
 
-const industriesList: IndustryCardItem[] = [
-  {
-    slug: "manufacturing-industries",
-    name: "Manufacturing Industry",
-    title: "POS For Manufacturing Industry",
-    category: "Specialty & Luxury",
-    description:
-      "Discover how POS systems can help the manufacturing industry streamline operations and optimize workflows.",
-    image: "/images/industries/manufacturing.jpg",
-    highlights: ["Raw Materials vs Finished Goods", "BOM & Unit Cost Automation", "Automated FBR Tax Reporting"],
-  },
-  {
-    slug: "furniture-store",
-    name: "Furniture Store",
-    title: "POS For Furniture Store",
-    category: "Specialty & Luxury",
-    description:
-      "Discover how POS systems can help the furniture store streamline operations and optimize workflows.",
-    image: "/images/industries/furniture.jpg",
-    highlights: ["Multi-Piece Set Tracking", "Custom Build Milestones", "Showroom vs Warehouse Sync"],
-  },
-  {
-    slug: "cafe",
-    name: "Cafe",
-    title: "POS For Cafe",
-    category: "Food & Beverage",
-    description:
-      "Discover how POS systems can help the cafe streamline operations and optimize workflows.",
-    image: "/images/industries/cafe.jpg",
-    highlights: ["1-Touch Fast Modifiers", "Sub-Second Ticket Routing", "Bean & Milk Recipe Depletion"],
-  },
-  {
-    slug: "toys-store",
-    name: "Toys Store",
-    title: "POS For Toys Store",
-    category: "Retail & Boutiques",
-    description:
-      "Discover how POS systems can help the toys store streamline operations and optimize workflows.",
-    image: "/images/industries/toys.jpg",
-    highlights: ["1-Click Barcode Generator", "Age & Brand Filtering", "Hassle-Free Gift Exchanges"],
-  },
-  {
-    slug: "jewellery-shop",
-    name: "Jewelry Shop",
-    title: "POS For Jewelry Shop",
-    category: "Specialty & Luxury",
-    description:
-      "Discover how POS systems can help the jewelry shop streamline operations and optimize workflows.",
-    image: "/images/industries/jewelry.jpg",
-    highlights: ["Dynamic Daily Gold Board", "Net Weight & Making Charges", "Appraisal Certificate Logging"],
-  },
-  {
-    slug: "electric-store",
-    name: "Electric Store",
-    title: "POS For Electric Store",
-    category: "Specialty & Luxury",
-    description:
-      "Discover how POS systems can help the electric store streamline operations and optimize workflows.",
-    image: "/images/industries/electric.jpg",
-    highlights: ["Fractional Units (Meter/Roll)", "Serialized Appliance Warranty", "Contractor Credit Ledgers"],
-  },
-  {
-    slug: "bakery-pos-system",
-    name: "Bakery",
-    title: "POS For Bakery",
-    category: "Food & Beverage",
-    description:
-      "Discover how POS systems can help the bakery streamline operations and optimize workflows.",
-    image: "/images/industries/bakery.jpg",
-    highlights: ["Custom Cake Booking Studio", "Integrated Weighing Scale", "Fresh Batch Expiry Markdown"],
-  },
-  {
-    slug: "salon-pos",
-    name: "Salon / Spa",
-    title: "POS For Salon/Spa",
-    category: "Healthcare & Services",
-    description:
-      "Discover how POS systems can help the salon/spa streamline operations and optimize workflows.",
-    image: "/images/industries/salon.jpg",
-    highlights: ["Visual Appointment Calendar", "Automatic Stylist Commissions", "Client Color Formula Cards"],
-  },
-  {
-    slug: "clothing-store",
-    name: "Clothing Store",
-    title: "POS For Clothing Store",
-    category: "Retail & Boutiques",
-    description:
-      "Explore top POS solutions for fashion retailers to optimize sales, track inventory, and improve customer service.",
-    image: "/images/industries/clothing.jpg",
-    highlights: ["Deep Size/Color Variant Matrix", "Apparel Hangtag Printing", "Instant In-Store Exchanges"],
-  },
-  {
-    slug: "restaurant-pos",
-    name: "Restaurant",
-    title: "POS For Restaurants",
-    category: "Food & Beverage",
-    description:
-      "Explore how the right POS system can improve restaurant operations, speed, and customer satisfaction.",
-    image: "/images/industries/restaurant.jpg",
-    highlights: ["Interactive Table Floor Plan", "Station-Specific KOT Routing", "1-Tap Split Bill Calculator"],
-  },
-  {
-    slug: "pharmacy-store",
-    name: "Pharmacy Store",
-    title: "POS For Pharmacies",
-    category: "Healthcare & Services",
-    description:
-      "Discover how POS systems can help pharmacies manage prescriptions, customer data, and billing more efficiently.",
-    image: "/images/industries/pharmacy.jpg",
-    highlights: ["Automated Expiry Alerts", "Generic Salt Composition Search", "Blister Pack & Box Conversion"],
-  },
-  {
-    slug: "retail-store",
-    name: "Retail Store",
-    title: "POS For Retail Stores",
-    category: "Retail & Boutiques",
-    description:
-      "Discover the best POS systems tailored for retail stores to streamline sales, inventory, and customer management.",
-    image: "/images/industries/retail.jpg",
-    highlights: ["Sub-Second Lane Scanning", "Multi-Store Chain Sync", "Smart Reorder Thresholds"],
-  },
-];
+const foundationIcons = [ReceiptText, Boxes, BarChart3];
 
-const checklistColumns = [
-  [
-    { name: "Manufacturing Industry", slug: "manufacturing-industries" },
-    { name: "Furniture Store", slug: "furniture-store" },
-    { name: "Food / Cafe", slug: "cafe" },
-    { name: "Toys Store", slug: "toys-store" },
-  ],
-  [
-    { name: "Jewelry Shop", slug: "jewellery-shop" },
-    { name: "Electric Store", slug: "electric-store" },
-    { name: "Bakery", slug: "bakery-pos-system" },
-    { name: "Salon / Spa", slug: "salon-pos" },
-  ],
-  [
-    { name: "Fashion Boutique", slug: "clothing-store" },
-    { name: "Restaurant", slug: "restaurant-pos" },
-    { name: "Pharmacy", slug: "pharmacy-store" },
-    { name: "Retail Store", slug: "retail-store" },
-  ],
-];
-
-export default function IndustriesPage() {
+function SectionIntro({ eyebrow, heading, description, centered = false }: {
+  eyebrow: string;
+  heading: string;
+  description?: string;
+  centered?: boolean;
+}) {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      {/* SECTION 1: HERO BANNER (Verbatim Live Content) */}
-      <section className="relative w-full py-16 sm:py-24 bg-gradient-to-br from-[#1b7f70] via-[#209f8f] to-[#16695d] text-white text-center overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none bg-repeat bg-center"
-          style={{
-            backgroundImage: "url('/images/home/cta-bg-pattern.png')",
-            backgroundSize: "600px",
-          }}
-        />
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-black/15 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-widest border border-white/20 shadow-xs mb-5">
-            <Sparkles className="w-3.5 h-3.5 text-[#55dfcc]" />
-            <span>Vertical-Specific Solutions</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-6 leading-tight">
-            HulmPOS Software for All POS Industries
-          </h1>
-
-          <p className="text-base sm:text-xl text-white/90 font-normal leading-relaxed max-w-3xl mx-auto mb-8">
-            Hulm Solutions provides POS systems for retail, restaurants, salons, pharmacies, cafes and all industries to streamline your operations.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <Button
-              asChild
-              size="lg"
-              className="w-full sm:w-auto h-12 px-8 rounded-xl font-semibold text-base bg-white text-[#152825] hover:bg-white/90 shadow-md transition-all active:scale-[0.98]"
-            >
-              <Link href="https://app.hulmsolutions.com/Register">
-                Start for free
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto h-12 px-8 rounded-xl font-semibold text-base bg-transparent border-white/30 text-white hover:bg-white/10 transition-colors"
-            >
-              <Link href="https://wa.me/923391119259" target="_blank" rel="noopener noreferrer">
-                Connect with sales team
-              </Link>
-            </Button>
-          </div>
-        </div>
-
-        {/* Floating Value Badges */}
-        <div className="relative z-10 mt-12 pt-8 border-t border-white/15 max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div className="bg-white/10 backdrop-blur-xs p-3.5 rounded-xl border border-white/10">
-              <div className="text-lg sm:text-xl font-bold text-[#55dfcc]">12+ Verticals</div>
-              <div className="text-xs text-white/80">Tailored Feature Sets</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-xs p-3.5 rounded-xl border border-white/10">
-              <div className="text-lg sm:text-xl font-bold text-[#55dfcc]">100% Compliant</div>
-              <div className="text-xs text-white/80">FBR & ZATCA Certified</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-xs p-3.5 rounded-xl border border-white/10">
-              <div className="text-lg sm:text-xl font-bold text-[#55dfcc]">&lt; 3 Seconds</div>
-              <div className="text-xs text-white/80">Sub-Second Checkout</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-xs p-3.5 rounded-xl border border-white/10">
-              <div className="text-lg sm:text-xl font-bold text-[#55dfcc]">Multi-Store</div>
-              <div className="text-xs text-white/80">Unified Cloud Sync</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2: HULM POS INDUSTRIES (Verbatim Live Content & 3-Column Checklist) */}
-      <Section className="py-20 sm:py-28 bg-white border-b border-gray-100">
-        <Container>
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#209f8f]/10 border border-[#209f8f]/20 text-xs font-semibold text-[#209f8f] uppercase tracking-wider shadow-xs">
-                Comprehensive Coverage
-              </div>
-              <h2 className="text-2xl sm:text-4xl font-semibold text-[#152825] tracking-tight leading-tight">
-                Hulm POS Industries
-              </h2>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
-                Hulm Solutions brings the most advanced POS systems solutions across industries like retail, restaurants, hospitality, and health care, which increases the volume of sales, supplies, and excellent customer satisfaction scores efficiently.
-              </p>
-
-              {/* 3-Column Checklist from Live Site */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-                {checklistColumns.map((col, colIdx) => (
-                  <div key={colIdx} className="space-y-3">
-                    {col.map((item, itemIdx) => (
-                      <Link
-                        key={itemIdx}
-                        href={`/industries/${item.slug}`}
-                        className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#209f8f] font-medium transition-colors group"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#209f8f] shrink-0 group-hover:scale-110 transition-transform" />
-                        <span>{item.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-6">
-                <Button
-                  asChild
-                  className="bg-[#209f8f] hover:bg-[#1a8578] text-white font-semibold text-sm h-11 px-6 rounded-xl shadow-xs transition-colors"
-                >
-                  <Link href="https://app.hulmsolutions.com/Register">
-                    Get Started with HulmPOS
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Visual Industry Showcase Grid */}
-            <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden border border-gray-200/80 shadow-lg bg-gradient-to-br from-[#F8FAF9] to-[#EBF5F3] p-8 sm:p-10">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Store className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Retail</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Utensils className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Restaurant</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Coffee className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Cafe</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Pill className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Pharmacy</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Scissors className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Salon / Spa</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Shirt className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Clothing</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Cake className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Bakery</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Gem className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Jewelry</span>
-                  </div>
-                  <div className="bg-white p-4 rounded-2xl border border-gray-200/60 shadow-xs flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-2.5">
-                      <Factory className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#152825]">Manufacturing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 3: INDUSTRIES WE SERVE (12 Verbatim Live Cards) */}
-      <Section className="py-20 sm:py-28 bg-[#F8FAF9]">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-[#209f8f] uppercase tracking-wider mb-4 shadow-xs">
-              Tailored Solutions
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
-              Industries We Serve
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
-              We provide customized POS System designed for unique needs of businesses for any industry. Our focus is enhancing efficiency, improving customer experiences, and driving success with tailored strategies and advanced technologies.
-            </p>
-          </div>
-
-          {/* Interactive Client-side Filter Grid with exact cards */}
-          <IndustriesGrid items={industriesList} />
-        </Container>
-      </Section>
-
-      {/* SECTION 4: INNOVATIVE SOLUTIONS FOR EVERY INDUSTRY */}
-      <Section className="py-20 sm:py-28 bg-white border-t border-gray-100">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#209f8f]/10 border border-[#209f8f]/20 text-xs font-semibold text-[#209f8f] uppercase tracking-wider mb-4 shadow-xs">
-              <Zap className="w-3.5 h-3.5" />
-              <span>Advanced Infrastructure</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
-              Innovative Solutions for Every Industry
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
-              Unlock the power of tailored solutions designed to meet the unique needs of your business. Whether you’re in retail, hospitality, or any other sector, our POS system is engineered to streamline operations and boost efficiency.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-            <div className="bg-[#F8FAF9] p-7 rounded-2xl border border-gray-200/80 shadow-xs hover:border-[#209f8f]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-5">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-semibold text-[#152825] mb-2">
-                100% Tax Compliant
-              </h3>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Pre-configured for FBR (Pakistan) and ZATCA (Saudi Arabia) electronic tax invoicing with verifiable digital QR codes.
-              </p>
-            </div>
-
-            <div className="bg-[#F8FAF9] p-7 rounded-2xl border border-gray-200/80 shadow-xs hover:border-[#209f8f]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-5">
-                <Globe2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-semibold text-[#152825] mb-2">
-                Multi-Store Cloud Sync
-              </h3>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Connect multiple branches and warehouses. View live inventory, balance sheets, and counter sales on any device.
-              </p>
-            </div>
-
-            <div className="bg-[#F8FAF9] p-7 rounded-2xl border border-gray-200/80 shadow-xs hover:border-[#209f8f]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-5">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-semibold text-[#152825] mb-2">
-                Offline Mode Shield
-              </h3>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Keep ringing up customer sales and printing kitchen tickets even if your internet connection drops unexpectedly.
-              </p>
-            </div>
-
-            <div className="bg-[#F8FAF9] p-7 rounded-2xl border border-gray-200/80 shadow-xs hover:border-[#209f8f]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#209f8f]/10 text-[#209f8f] flex items-center justify-center mb-5">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <h3 className="text-base font-semibold text-[#152825] mb-2">
-                Hardware Compatibility
-              </h3>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Compatible with all thermal receipt printers, electronic weighing scales, barcode scanners, and cash drawers.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* SECTION 5: CUSTOMER SUCCESS STORIES */}
-      <section className="py-20 sm:py-28 bg-[#F8FAF9] border-t border-gray-100">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-[#209f8f] uppercase tracking-wider mb-4 shadow-xs">
-              Client Feedback
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
-              Customer Success Stories
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
-              Discover how our solutions have empowered businesses to reach their goals through real-life customer success stories. See the impact and growth achieved with us by their side.
-            </p>
-          </div>
-
-          <GoogleReviewsSection />
-        </Container>
-      </section>
-
-      {/* SECTION 6: FREQUENTLY ASKED QUESTIONS (Verbatim Live Content) */}
-      <section className="py-20 sm:py-28 bg-white border-t border-gray-100">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#209f8f]/10 border border-[#209f8f]/20 text-xs font-semibold text-[#209f8f] uppercase tracking-wider mb-4 shadow-xs">
-              Got Questions?
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-              Get quick answers to common questions about our services and support in our FAQ section.
-            </p>
-          </div>
-
-          <IndustriesFaq />
-        </Container>
-      </section>
-
-      {/* SECTION 7: FINAL CTA (Verbatim Live Heading & Subtitle) */}
-      <FinalCta
-        heading="Ready to build your team’s dream ERP?"
-        subheading="Start ringing up sales in minutes. No credit card required, instant setup, and 100% compliant invoicing."
-      />
+    <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[#209f8f]">{eyebrow}</p>
+      <h2 className="text-3xl font-bold tracking-tight text-[#152825] sm:text-4xl lg:text-5xl">{heading}</h2>
+      {description ? <p className="mt-5 text-base leading-7 text-zinc-600 sm:text-lg">{description}</p> : null}
     </div>
   );
 }
 
+export default function IndustriesPage() {
+  return (
+    <main className="overflow-hidden bg-white">
+      <section className="relative border-b border-[#dcebe8] bg-[linear-gradient(180deg,#f4fbf9_0%,#ffffff_92%)] py-16 sm:py-20 lg:py-24">
+        <div className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-[#25a18e]/10 blur-3xl" />
+        <Container className="relative">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#25a18e]/25 bg-white px-4 py-2 text-sm font-semibold text-[#167c70] shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-[#25a18e]" />
+                {industriesContent.hero.eyebrow}
+              </div>
+              <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-[-0.035em] text-[#152825] sm:text-5xl lg:text-[3.8rem]">
+                {industriesContent.hero.headline}
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">{industriesContent.hero.description}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg">
+                  <Link href={industriesContent.hero.primaryCta.href} target="_blank" rel="noreferrer">
+                    {industriesContent.hero.primaryCta.label}<ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href={industriesContent.hero.secondaryCta.href}>
+                    {industriesContent.hero.secondaryCta.label}<ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+              <ul className="mt-8 flex flex-col gap-3 text-sm font-medium text-zinc-600 sm:flex-row sm:flex-wrap sm:gap-x-6">
+                {industriesContent.hero.proof.map((item) => (
+                  <li key={item} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#209f8f]" />{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {industriesContent.priority.items.slice(0, 4).map((industry, index) => (
+                <Link key={industry.slug} href={`/industries/${industry.slug}`} className={`group relative min-h-44 overflow-hidden rounded-3xl shadow-sm sm:min-h-52 ${index % 2 ? "translate-y-5" : ""}`}>
+                  <Image src={industry.image} alt={`${industry.name} POS workflow`} fill priority={index < 2} sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#102e2a]/90 via-[#102e2a]/10 to-transparent" />
+                  <span className="absolute inset-x-0 bottom-0 p-5 text-base font-bold text-white sm:text-lg">{industry.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <Section>
+        <Container>
+          <SectionIntro {...industriesContent.priority} centered />
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {industriesContent.priority.items.map((industry) => (
+              <article key={industry.slug} className="group overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition hover:border-[#25a18e]/45 hover:shadow-lg">
+                <div className="grid h-full sm:grid-cols-[0.8fr_1.2fr]">
+                  <div className="relative min-h-56 sm:min-h-full">
+                    <Image src={industry.image} alt={`${industry.name} business`} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 40vw, 28vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                  </div>
+                  <div className="flex flex-col p-6 sm:p-7">
+                    <h3 className="text-2xl font-bold text-[#152825]">{industry.name}</h3>
+                    <p className="mt-3 text-sm leading-6 text-zinc-600">{industry.description}</p>
+                    <ul className="mt-5 space-y-2.5">
+                      {industry.highlights.map((highlight) => (
+                        <li key={highlight} className="flex items-start gap-2 text-sm font-medium text-zinc-700"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#209f8f]" />{highlight}</li>
+                      ))}
+                    </ul>
+                    <Link href={`/industries/${industry.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#167c70] hover:text-[#105f56]">
+                      Explore {industry.name.toLowerCase()}<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-[#153f39] text-white">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#78d5c8]">{industriesContent.foundation.eyebrow}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">{industriesContent.foundation.heading}</h2>
+              <p className="mt-5 text-base leading-7 text-white/70 sm:text-lg">{industriesContent.foundation.description}</p>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-3">
+              {industriesContent.foundation.items.map((item, index) => {
+                const Icon = foundationIcons[index];
+                return (
+                  <article key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.06] p-6">
+                    <div className="grid h-11 w-11 place-items-center rounded-xl bg-[#78d5c8] text-[#153f39]"><Icon className="h-5 w-5" /></div>
+                    <h3 className="mt-6 text-xl font-bold text-white">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-white/65">{item.description}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-[#f7faf9]">
+        <Container>
+          <SectionIntro {...industriesContent.additional} />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {industriesContent.additional.items.map((industry) => (
+              <Link key={industry.slug} href={`/industries/${industry.slug}`} className="group overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#25a18e]/45 hover:shadow-lg">
+                <div className="relative h-44 overflow-hidden">
+                  <Image src={industry.image} alt={`${industry.name} business`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between gap-4"><h3 className="text-xl font-bold text-[#152825]">{industry.name}</h3><ArrowRight className="h-5 w-5 shrink-0 text-[#209f8f] transition-transform group-hover:translate-x-1" /></div>
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{industry.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#bfe2dc] bg-[#eaf7f4] p-7 sm:p-10 lg:p-12">
+            <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#25a18e]/15 blur-3xl" />
+            <div className="relative grid items-center gap-8 lg:grid-cols-[auto_1fr_auto]">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#153f39] text-[#78d5c8]"><ShieldCheck className="h-7 w-7" /></div>
+              <div className="max-w-3xl">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#167c70]">{industriesContent.compliance.eyebrow}</p>
+                <h2 className="mt-3 text-2xl font-bold tracking-tight text-[#152825] sm:text-3xl">{industriesContent.compliance.heading}</h2>
+                <p className="mt-4 text-sm leading-6 text-zinc-600 sm:text-base">{industriesContent.compliance.description}</p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <Button asChild><Link href={industriesContent.compliance.primaryCta.href}>{industriesContent.compliance.primaryCta.label}<ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
+                <Button asChild variant="outline" className="border-[#25a18e]/35 bg-white"><Link href={industriesContent.compliance.secondaryCta.href}>{industriesContent.compliance.secondaryCta.label}</Link></Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-[#f8faf9]">
+        <Container className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+          <SectionIntro eyebrow={industriesContent.faq.eyebrow} heading={industriesContent.faq.heading} />
+          <SiteFaqAccordion items={[...industriesContent.faq.items]} />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#153f39] px-7 py-12 text-center text-white sm:px-12 sm:py-16">
+            <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-[#25a18e]/20 blur-3xl" />
+            <div className="relative mx-auto max-w-3xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#78d5c8]">{industriesContent.finalCta.eyebrow}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">{industriesContent.finalCta.heading}</h2>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">{industriesContent.finalCta.description}</p>
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+                <Button asChild size="lg" className="bg-white text-[#153f39] hover:bg-[#e8f7f4]"><Link href={industriesContent.finalCta.primaryCta.href} target="_blank" rel="noreferrer">{industriesContent.finalCta.primaryCta.label}<ExternalLink className="ml-2 h-4 w-4" /></Link></Button>
+                <Button asChild size="lg" variant="outline" className="border-white/35 bg-transparent text-white hover:bg-white/10 hover:text-white"><Link href={industriesContent.finalCta.secondaryCta.href}>{industriesContent.finalCta.secondaryCta.label}<ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </main>
+  );
+}

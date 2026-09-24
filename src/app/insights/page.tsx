@@ -10,6 +10,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Insights & Blog - Hulm Solutions",
   description: "Read the latest news, guides, and insights from the Hulm POS team.",
+  alternates: { canonical: "/insights" },
 };
 
 export default function InsightsPage() {

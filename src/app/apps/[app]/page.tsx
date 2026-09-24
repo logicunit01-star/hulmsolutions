@@ -1,43 +1,35 @@
-import { notFound } from "next/navigation";
-import { Metadata } from "next";
-import { appsData } from "@/lib/apps/data";
-import { AppTemplate } from "@/components/apps/app-template";
+import { notFound, permanentRedirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ app: string }>;
 };
 
-export async function generateStaticParams() {
-  return Object.keys(appsData).map((app) => ({
+const canonicalAppRoutes: Record<string, string> = {
+  "purchase-orders": "/purchase-orders/",
+  "vendors-management": "/vendors-management/",
+  "cattle-management-software": "/cattle-management-software/",
+  "customer-management": "/customer-management/",
+  "order-management": "/order-management/",
+  "logistics-management-software": "/logistics-management-software/",
+  "inventory-management": "/inventory-management/",
+  "reporting-module": "/reporting-module/",
+  website: "/website/",
+  "mobile-pos": "/mobile-pos/",
+};
+
+export function generateStaticParams() {
+  return Object.keys(canonicalAppRoutes).map((app) => ({
     app,
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const p = await params;
-  const data = appsData[p.app];
-
-  if (!data) {
-    return { title: "App Not Found - Hulm Solutions" };
-  }
-
-  return {
-    title: data.metaTitle || `${data.title} - Hulm Solutions`,
-    description: data.metaDescription || data.hero.subheadline,
-    openGraph: {
-      title: data.metaTitle || `${data.title} - Hulm Solutions`,
-      description: data.metaDescription || data.hero.subheadline,
-    },
-  };
-}
-
 export default async function SubAppPage({ params }: Props) {
-  const p = await params;
-  const data = appsData[p.app];
+  const { app } = await params;
+  const destination = canonicalAppRoutes[app];
 
-  if (!data) {
+  if (!destination) {
     notFound();
   }
 
-  return <AppTemplate appSlug={p.app} />;
+  permanentRedirect(destination);
 }

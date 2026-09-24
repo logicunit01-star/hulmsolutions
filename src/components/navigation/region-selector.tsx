@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { REGIONAL_LOCATIONS } from "@/lib/countries/data";
-import { ChevronDown, Globe, ArrowUpRight } from "lucide-react";
+import { ChevronDown, ArrowUpRight } from "lucide-react";
 
 export function RegionSelector() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +13,11 @@ export function RegionSelector() {
 
   // Find active location based on pathname
   const normalizedPath = (pathname || "").replace(/\/$/, "");
+  const pakistan = REGIONAL_LOCATIONS.find((loc) => loc.code === "PK") || REGIONAL_LOCATIONS[0];
   const activeLocation = REGIONAL_LOCATIONS.find(loc => {
     const locNorm = loc.href.replace(/\/$/, "");
     return normalizedPath === locNorm;
-  }) || REGIONAL_LOCATIONS[0];
+  }) || pakistan;
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -25,7 +26,14 @@ export function RegionSelector() {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
   return (
@@ -36,6 +44,8 @@ export function RegionSelector() {
         className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-[#152825] hover:bg-zinc-100/90 transition-all duration-200 border border-zinc-200/80 bg-white shadow-2xs"
         aria-label="Select Region"
         aria-expanded={isOpen}
+        aria-haspopup="menu"
+        aria-controls="regional-editions-menu"
       >
         <span className="w-5 h-4 rounded bg-[#1b7f70]/10 border border-[#1b7f70]/20 text-[9.5px] font-bold text-[#1b7f70] flex items-center justify-center shrink-0">
           {activeLocation.code}
@@ -46,7 +56,7 @@ export function RegionSelector() {
 
       {/* Dropdown Menu (Styled to match the dark high-tech popover in the user screenshot) */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 sm:w-64 rounded-2xl bg-[#0d1715] border border-white/15 p-2 shadow-[0_25px_60px_rgba(0,0,0,0.5)] z-[100] animate-in fade-in zoom-in-95 duration-150">
+        <div id="regional-editions-menu" role="menu" className="absolute right-0 mt-2 w-56 sm:w-64 rounded-2xl bg-[#0d1715] border border-white/15 p-2 shadow-[0_25px_60px_rgba(0,0,0,0.5)] z-[100] animate-in fade-in zoom-in-95 duration-150">
           <div className="px-3 py-1.5 text-[10px] font-semibold tracking-wider uppercase text-zinc-400 border-b border-white/10 mb-1 flex items-center justify-between">
             <span>Global Editions</span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#7ae582] animate-pulse" />
@@ -60,6 +70,7 @@ export function RegionSelector() {
                   key={loc.code}
                   href={loc.href}
                   onClick={() => setIsOpen(false)}
+                  role="menuitem"
                   className={`group flex items-start gap-3 p-2.5 rounded-xl transition-all duration-150 ${
                     isActive
                       ? "bg-white/10 text-white"

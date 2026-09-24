@@ -7,6 +7,7 @@ const data = appsData["reporting-module"];
 export const metadata: Metadata = {
   title: data?.metaTitle || "reporting-module - Hulm Solutions",
   description: data?.metaDescription || data?.hero?.subheadline,
+  alternates: { canonical: "/reporting-module" },
 };
 
 export default function Page() {

@@ -7,6 +7,7 @@ const data = appsData["customer-management"];
 export const metadata: Metadata = {
   title: data?.metaTitle || "customer-management - Hulm Solutions",
   description: data?.metaDescription || data?.hero?.subheadline,
+  alternates: { canonical: "/customer-management" },
 };
 
 export default function Page() {

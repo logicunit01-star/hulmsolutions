@@ -8,6 +8,7 @@ import { FinalCta } from "@/components/home/final-cta";
 export const metadata: Metadata = {
   title: "POS & Billing Features - Hulm Solutions",
   description: "Explore the powerful POS and billing features designed to accelerate your checkout process and secure your revenue.",
+  alternates: { canonical: "/features" },
 };
 
 const posFeatures = [

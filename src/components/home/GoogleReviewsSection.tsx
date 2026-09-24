@@ -9,8 +9,7 @@ import {
   ChevronRight, 
   Star, 
   CheckCircle2, 
-  ExternalLink,
-  ShieldCheck
+  ExternalLink
 } from "lucide-react";
 
 // Official Google Multi-Color "G" Icon
@@ -36,15 +35,6 @@ export interface GoogleReviewItem {
 }
 
 export const googleReviews: GoogleReviewItem[] = [
-  {
-    id: "review-1",
-    name: "Meesum Shaikh",
-    business: "Cab & Fleet Service",
-    date: "8 months ago",
-    rating: 5,
-    avatar: "/images/home/reviews/review-1-meesum-shaikh.jpg",
-    text: "I have a cab business, I was unable to manage properly in this scenario HULM Solutions came to rescue my business with their logistics app! Highly recomended"
-  },
   {
     id: "review-2",
     name: "Muhammad Rizwan",
@@ -214,12 +204,12 @@ export function GoogleReviewsSection({
 
               {/* Heading */}
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#152825] tracking-tight leading-[1.25] mb-3">
-                Pakistani Businesses Run on Hulm
+                {heading}
               </h2>
 
               {/* Subheading */}
               <p className="text-sm text-zinc-600 leading-relaxed font-normal mb-6">
-                Real reviews from verified retail, restaurant, bakery, and mart owners across Pakistan.
+                {subheading}
               </p>
 
               {/* Rating Card Box */}

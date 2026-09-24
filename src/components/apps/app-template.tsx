@@ -55,7 +55,7 @@ export function AppTemplate({ appSlug }: AppTemplateProps) {
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
             <Link href="/apps" className="hover:text-white transition-colors">
-              Apps
+              Product
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
             <span className="text-white font-medium truncate max-w-[220px] sm:max-w-md">
@@ -118,7 +118,7 @@ export function AppTemplate({ appSlug }: AppTemplateProps) {
                       {data.name}
                     </h3>
                     <p className="text-xs text-white/70">
-                      Hulm Business Suite · Cloud Module
+                      Hulm POS · Connected capability
                     </p>
                   </div>
                 </div>
@@ -127,23 +127,23 @@ export function AppTemplate({ appSlug }: AppTemplateProps) {
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/10 border border-white/10 text-xs text-white font-medium">
                     <span className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#55dfcc]" />
-                      Status: Active & Real-Time Sync
+                      Connected to your Hulm workspace
                     </span>
-                    <span className="text-[#55dfcc] font-semibold">Ready</span>
+                    <span className="text-[#55dfcc] font-semibold">Available</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/10 border border-white/10 text-xs text-white font-medium">
                     <span className="flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-[#55dfcc]" />
-                      FBR & POS Integration
+                      FBR integration where required
                     </span>
-                    <span className="text-[#55dfcc] font-semibold">100% Compliant</span>
+                    <span className="text-[#55dfcc] font-semibold">Supported</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/10 border border-white/10 text-xs text-white font-medium">
                     <span className="flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-[#55dfcc]" />
-                      Deployment Time
+                      Setup guidance
                     </span>
-                    <span className="text-white/90 font-semibold">Under 5 Mins</span>
+                    <span className="text-white/90 font-semibold">Included</span>
                   </div>
                 </div>
               </div>
@@ -189,13 +189,13 @@ export function AppTemplate({ appSlug }: AppTemplateProps) {
                     <Layers className="w-7 h-7" strokeWidth={2} />
                   </div>
                   <h3 className="text-xl font-semibold text-[#152825] mb-3">
-                    Connected to Your Complete Platform
+                    Connected to Your Hulm POS Workspace
                   </h3>
                   <p className="text-sm text-zinc-600 leading-relaxed mb-6">
                     Unlike disconnected tools that require complex APIs, this module works natively with your point of sale, inventory counts, and financial ledgers without delays.
                   </p>
                   <div className="pt-4 border-t border-gray-200/60 flex items-center justify-between text-xs font-semibold text-[#209f8f]">
-                    <span>Part of Hulm All-in-One Suite</span>
+                    <span>Part of the connected Hulm product</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -353,7 +353,7 @@ export function AppTemplate({ appSlug }: AppTemplateProps) {
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyChoose.items?.map((item: any, index: number) => (
+              {whyChoose.items?.map((item, index) => (
                 <div 
                   key={index} 
                   className="bg-[#F8FAF9] rounded-2xl p-7 border border-gray-200/80 shadow-xs flex flex-col hover:border-[#209f8f]/30 transition-all duration-200"

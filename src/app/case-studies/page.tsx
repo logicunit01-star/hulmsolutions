@@ -10,6 +10,7 @@ import { GoogleReviewsSection } from "@/components/home/GoogleReviewsSection";
 export const metadata: Metadata = {
   title: "Case Studies - Hulm Solutions",
   description: "See how top businesses are transforming their operations with Hulm POS and Logistics software.",
+  alternates: { canonical: "/case-studies" },
 };
 
 export default function CaseStudiesPage() {

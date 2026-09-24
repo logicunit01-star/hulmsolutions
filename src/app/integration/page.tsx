@@ -9,6 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Integrations - Hulm Solutions",
   description: "Connect Hulm POS with FBR, WooCommerce, accounting software, and more.",
+  alternates: { canonical: "/integration" },
 };
 
 const integrations = [
