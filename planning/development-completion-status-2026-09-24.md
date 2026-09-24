@@ -35,6 +35,9 @@ Environment policy: Netlify is staging only; `hulmsolutions.com` remains product
 - All 59 sitemap URLs returned `200` on staging and matched their intended production canonical paths.
 - A rendered internal-link crawl exposed and led to removal of four placeholder article links, an outdated case-study URL and avoidable trailing-slash redirect hops.
 - The canonical editorial author page now lists the 13 real migrated articles rather than temporary placeholder cards.
+- The final rendered-link crawl covered 65 internal paths with zero non-`200` destinations and zero canonical failures across the 59 sitemap URLs.
+- Representative desktop and `390px` mobile QA covered the homepage, insights index, long-form article and navigation drawer.
+- Visual QA corrected mobile article metadata wrapping and duplicate primary-page landmarks across all affected templates.
 
 ## Not development blockers
 
@@ -42,7 +45,7 @@ These items require business data, account access or launch authorization:
 
 - Search Console, GA4 and backlink reconciliation for the final historical URL matrix.
 - Product-owner confirmation of prices, trial length, support availability, compliance claims and customer evidence.
-- Final staging crawl and browser/device QA after the updated commit is deployed.
+- Physical-device and Safari-specific QA beyond the representative browser viewport checks.
 - Analytics and conversion event verification.
 - GEO/LLM baseline measurement and production crawler/CDN verification.
 - Production DNS/domain switch, rollback readiness and post-launch monitoring.

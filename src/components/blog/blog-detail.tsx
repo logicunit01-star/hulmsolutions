@@ -70,7 +70,7 @@ export function BlogDetail() {
             </aside>
 
             {/* Right Column: Main Article Body */}
-            <main className="lg:col-span-8 min-w-0">
+            <div className="lg:col-span-8 min-w-0">
               
               {/* Category Pill */}
               <div className="mb-4">
@@ -85,7 +85,7 @@ export function BlogDetail() {
               </h1>
 
               {/* Author & Meta Row */}
-              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-zinc-500 border-t border-b border-zinc-100 py-4 mb-8">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-zinc-500 border-t border-b border-zinc-100 py-4 mb-8">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full overflow-hidden border border-[#EBECEF] bg-white flex items-center justify-center shrink-0 shadow-sm">
                     <img 
@@ -99,12 +99,12 @@ export function BlogDetail() {
                     {b.author}
                   </Link>
                 </div>
-                <span>•</span>
+                <span className="hidden sm:inline" aria-hidden="true">•</span>
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5 text-zinc-400" />
                   <span>Updated {b.updatedDate}</span>
                 </div>
-                <span>•</span>
+                <span className="hidden sm:inline" aria-hidden="true">•</span>
                 <div className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-zinc-400" />
                   <span>{b.readTime}</span>
@@ -485,7 +485,7 @@ export function BlogDetail() {
                 </div>
               </div>
 
-            </main>
+            </div>
           </div>
         </Container>
       </article>

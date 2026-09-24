@@ -63,7 +63,7 @@ function SectionIntro({
 
 export default function HomePage() {
   return (
-    <main className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-white">
       <section className="relative border-b border-[#dcebe8] bg-[linear-gradient(180deg,#f4fbf9_0%,#ffffff_88%)] py-14 sm:py-18 lg:py-24">
         <div className="pointer-events-none absolute -right-32 top-4 h-96 w-96 rounded-full bg-[#25a18e]/10 blur-3xl" />
         <Container className="relative grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
@@ -363,6 +363,6 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
-    </main>
+    </div>
   );
 }

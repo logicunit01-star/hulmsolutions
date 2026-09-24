@@ -188,7 +188,7 @@ export default async function SingleInsightPage({ params }: Props) {
             </aside>
 
             {/* Right Column: Main Article Body */}
-            <main className={`${hasToc ? 'lg:col-span-8' : 'lg:col-span-12 max-w-4xl mx-auto'} min-w-0`}>
+            <div className={`${hasToc ? 'lg:col-span-8' : 'lg:col-span-12 max-w-4xl mx-auto'} min-w-0`}>
               <Link href="/blogs" className="inline-flex items-center text-xs font-semibold text-zinc-500 hover:text-zinc-900 transition-colors mb-6">
                 <ArrowLeft className="w-3.5 h-3.5 mr-1.5" /> Back to all articles
               </Link>
@@ -206,7 +206,7 @@ export default async function SingleInsightPage({ params }: Props) {
               </h1>
 
               {/* Metadata Row */}
-              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-zinc-500 border-t border-b border-zinc-100 py-4 mb-8">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-zinc-500 border-t border-b border-zinc-100 py-4 mb-8">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full overflow-hidden border border-[#EBECEF] bg-white flex items-center justify-center shrink-0 shadow-sm">
                     <img
@@ -220,12 +220,12 @@ export default async function SingleInsightPage({ params }: Props) {
                     {authorName}
                   </Link>
                 </div>
-                <span>•</span>
+                <span className="hidden sm:inline" aria-hidden="true">•</span>
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5 text-zinc-400" />
                   <span>{dateStr}</span>
                 </div>
-                <span>•</span>
+                <span className="hidden sm:inline" aria-hidden="true">•</span>
                 <div className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-zinc-400" />
                   <span>{readTime}</span>
@@ -304,7 +304,7 @@ export default async function SingleInsightPage({ params }: Props) {
                 </div>
               </div>
 
-            </main>
+            </div>
           </div>
         </Container>
       </article>

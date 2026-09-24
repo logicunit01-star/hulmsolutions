@@ -89,7 +89,7 @@ export default async function IndustrySubpage({ params }: Props) {
     .slice(0, 4);
 
   return (
-    <main className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-white">
       <section className="relative border-b border-[#dcebe8] bg-[linear-gradient(180deg,#f4fbf9_0%,#ffffff_92%)] py-14 sm:py-18 lg:py-22">
         <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#25a18e]/10 blur-3xl" />
         <Container className="relative">
@@ -306,6 +306,6 @@ export default async function IndustrySubpage({ params }: Props) {
           </div>
         </Container>
       </Section>
-    </main>
+    </div>
   );
 }

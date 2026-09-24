@@ -35,7 +35,7 @@ function SectionIntro({ eyebrow, heading, description, centered = false }: {
 
 export default function IndustriesPage() {
   return (
-    <main className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-white">
       <section className="relative border-b border-[#dcebe8] bg-[linear-gradient(180deg,#f4fbf9_0%,#ffffff_92%)] py-16 sm:py-20 lg:py-24">
         <div className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-[#25a18e]/10 blur-3xl" />
         <Container className="relative">
@@ -196,6 +196,6 @@ export default function IndustriesPage() {
           </div>
         </Container>
       </Section>
-    </main>
+    </div>
   );
 }

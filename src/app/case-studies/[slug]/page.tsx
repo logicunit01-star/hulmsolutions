@@ -121,7 +121,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Left Column: Case Content */}
-            <main className="lg:col-span-8 space-y-10 min-w-0">
+            <div className="lg:col-span-8 space-y-10 min-w-0">
               
               {/* Client Featured Image */}
               {study.image && (
@@ -339,7 +339,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                   Back to All Case Studies
                 </Link>
               </div>
-            </main>
+            </div>
 
             {/* Right Column: Sticky Sidebar */}
             <aside className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
