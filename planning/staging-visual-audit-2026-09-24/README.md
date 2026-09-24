@@ -36,7 +36,7 @@ Viewports: desktop `1536 × 673`; mobile `390 × 844`
 - `05-insights-desktop.png` — insights index desktop
 - `06-article-desktop.png` — long-form article desktop
 - `07-home-mobile.png` — homepage mobile
-- `08-article-mobile.png` — article mobile before the separator fix was deployed
+- `08-article-mobile.png` — article mobile after the separator and landmark fixes were deployed
 - `09-mobile-menu.png` — mobile navigation drawer
 
 ## Evidence limits
