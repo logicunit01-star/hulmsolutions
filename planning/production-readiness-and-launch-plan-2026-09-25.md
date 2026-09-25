@@ -20,6 +20,16 @@ The rebuilt site is functionally complete on staging and preserves the existing 
 | Pricing, certification, support and customer claims | Owner approval required | See section 4. These claims must be verified against current commercial and legal evidence before cutover. |
 | Rollback path | Defined | See sections 6 and 7. WordPress must remain recoverable and online during the observation period. |
 
+### Verified staging release
+
+- Git commit: `445bd1d` (`prepare production SEO and tracking safeguards`)
+- Lint: passed with zero errors.
+- Production build: passed; 100 routes generated.
+- Public staging crawl: all 58 production sitemap URLs reached a final `200` response.
+- Staging sitemap: 59 canonical URLs.
+- Historical redirects: `/author/` and `/pos-case-studies/laptop-store-pos-system-karachi/` reached their intended canonical pages.
+- Rendered metadata: GTM container and Google Search Console verification token were both present on public staging.
+
 ## 2. URL and SEO preservation
 
 ### Reconciliation result
@@ -119,15 +129,15 @@ Before any DNS change, export the complete DNS zone and capture Cloudflare redir
 ## 6. Pre-cutover checklist
 
 - [ ] Business owner approves or revises every claim category in section 4.
-- [ ] Final staging build passes lint and production build.
-- [ ] All 58 historical sitemap URLs end at a relevant `200` page through no more than the expected redirect chain.
-- [ ] Sitemap, robots, canonicals, structured data, social metadata, and the preserved PDF are verified on staging.
+- [x] Final staging build passes lint and production build.
+- [x] All 58 historical sitemap URLs end at a relevant `200` page through the expected redirect chain.
+- [x] Sitemap, robots, canonicals, structured data, social metadata, and the preserved PDF are verified on staging.
 - [ ] GTM/GA4 and conversion events are validated with account access.
 - [ ] Search Console baseline is exported: queries, pages, countries, devices, indexing, and sitemap state.
 - [ ] Analytics baseline is exported: organic sessions, landing pages, conversions, and referral sources.
 - [ ] WordPress database, `wp-content`, configuration, and web-server rules are backed up and restoration-tested.
 - [ ] Existing DNS zone and Cloudflare configuration are exported.
-- [ ] Final Git commit, Netlify deploy ID, environment variables, Node version, and build command are recorded.
+- [ ] Final Git commit, Netlify deploy ID, environment variables, Node version, and build command are recorded. Git commit is recorded above; remaining Netlify runtime details still need to be captured from the project settings.
 - [ ] Netlify custom domains, TLS certificate, primary-domain preference, and redirects are configured before traffic moves.
 - [ ] A low-risk cutover window and responsible operator are agreed.
 
