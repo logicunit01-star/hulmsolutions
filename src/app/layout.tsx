@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -10,6 +11,7 @@ const outfit = Outfit({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hulmsolutions.com";
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-TMMQ565S";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -30,6 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+  },
+  verification: {
+    google: "eja9u_sG9QlN7Hwff1OOVI1tP9koIfOzBF-XbvrzNEI",
   },
   icons: {
     icon: [
@@ -74,6 +79,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} antialiased flex min-h-screen flex-col`}>
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`}
+        </Script>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+            height="0"
+            width="0"
+            className="hidden"
+            aria-hidden="true"
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

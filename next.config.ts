@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/pos-case-studies/laptop-store-pos-system-karachi',
+        destination: '/pos-case-studies/implementing-a-pos-system-for-retail-the-laptop-store',
+        permanent: true,
+      },
+      {
         source: '/industries/bakery',
         destination: '/industries/bakery-pos-system',
         permanent: true,
@@ -50,6 +55,11 @@ const nextConfig: NextConfig = {
       {
         source: '/point-of-sale-2',
         destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/author',
+        destination: '/author/hulm-solutions-editorial-team',
         permanent: true,
       },
       {
