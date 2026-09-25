@@ -38,6 +38,7 @@ Environment policy: Netlify is staging only; `hulmsolutions.com` remains product
 - The final rendered-link crawl covered 65 internal paths with zero non-`200` destinations and zero canonical failures across the 59 sitemap URLs.
 - Representative desktop and `390px` mobile QA covered the homepage, insights index, long-form article and navigation drawer.
 - Visual QA corrected mobile article metadata wrapping and duplicate primary-page landmarks across all affected templates.
+- A final anchor-only crawl identified one downloadable inventory-checklist PDF that existed on the current site but was absent from the rebuild. The original one-page PDF is now preserved at its exact historical `/wp-content/uploads/2026/09/` URL.
 
 ## Not development blockers
 
