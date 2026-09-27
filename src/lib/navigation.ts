@@ -31,7 +31,7 @@ export const mainNav: NavItem[] = [
   },
   {
     title: "Customers",
-    href: "/pos-case-studies",
+    href: "/pos-case-studies/",
   },
   {
     title: "Resources",
@@ -58,7 +58,7 @@ export const footerNav = [
       { title: "Inventory Management", href: "/inventory-management" },
       { title: "Purchase Orders", href: "/purchase-orders" },
       { title: "Vendor Management", href: "/vendors-management" },
-      { title: "Mobile POS", href: "/mobile-pos" },
+      { title: "Mobile POS", href: "/mobile-pos/" },
     ],
   },
   {

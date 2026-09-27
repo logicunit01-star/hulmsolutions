@@ -1,14 +1,7 @@
-import { Metadata } from "next";
 import { AppTemplate } from "@/components/apps/app-template";
-import { appsData } from "@/lib/apps/data";
+import { productionMetadata } from "@/lib/production-parity";
 
-const data = appsData["cattle-management-software"];
-
-export const metadata: Metadata = {
-  title: data?.metaTitle || "cattle-management-software - Hulm Solutions",
-  description: data?.metaDescription || data?.hero?.subheadline,
-  alternates: { canonical: "/cattle-management-software" },
-};
+export const metadata = productionMetadata("/cattle-management-software/");
 
 export default function Page() {
   return <AppTemplate appSlug="cattle-management-software" />;

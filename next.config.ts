@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: true,
   turbopack: {
     root: process.cwd(),
   },
@@ -58,23 +59,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/author',
-        destination: '/author/hulm-solutions-editorial-team',
-        permanent: true,
-      },
-      {
         source: '/author/hulm-editorial-team',
-        destination: '/author/hulm-solutions-editorial-team',
+        destination: '/author/',
         permanent: true,
       },
       {
         source: '/author/hulm-team',
-        destination: '/author/hulm-solutions-editorial-team',
+        destination: '/author/',
         permanent: true,
       },
       {
         source: '/author/aamir-khan',
-        destination: '/author/hulm-solutions-editorial-team',
+        destination: '/author/',
+        permanent: true,
+      },
+      {
+        source: '/author/hulm-solutions-editorial-team',
+        destination: '/author/',
         permanent: true,
       },
     ];

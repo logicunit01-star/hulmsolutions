@@ -1,2 +1,10 @@
-export { metadata } from "@/app/case-studies/page";
-export { default } from "@/app/case-studies/page";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
+
+const route = "/pos-case-studies/";
+
+export const metadata = productionMetadata(route);
+
+export default function Page() {
+  return <ProductionParityPage path={route} />;
+}

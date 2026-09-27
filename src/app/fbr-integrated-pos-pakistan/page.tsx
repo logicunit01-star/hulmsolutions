@@ -1,16 +1,10 @@
-import { Metadata } from "next";
-import { ComplianceTemplate } from "@/components/country/compliance-template";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-export const metadata: Metadata = {
-  title: "FBR Integrated POS Software in Pakistan | Hulm POS",
-  description: "Get FBR-compliant POS with automated tax invoicing, QR codes, and real-time reporting. Free FBR integration setup for retailers across Pakistan.",
-  alternates: { canonical: "/fbr-integrated-pos-pakistan" },
-  openGraph: {
-    title: "FBR Integrated POS Software in Pakistan | Hulm POS",
-    description: "Get FBR-compliant POS with automated tax invoicing, QR codes, and real-time reporting. Free FBR integration setup for retailers across Pakistan.",
-  }
-};
+const route = "/fbr-integrated-pos-pakistan/";
+
+export const metadata = productionMetadata(route);
 
 export default function Page() {
-  return <ComplianceTemplate complianceKey="fbr-integrated-pos-pakistan" />;
+  return <ProductionParityPage path={route} />;
 }

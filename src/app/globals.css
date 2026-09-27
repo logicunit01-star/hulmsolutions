@@ -578,3 +578,137 @@
     }
   }
 }
+
+/* Production-parity content keeps the current indexed copy and document order
+   while the WordPress site is replaced by the React application. */
+.production-parity-page {
+  color: #243331;
+  background: #fff;
+  overflow-wrap: anywhere;
+}
+
+.production-parity-page > div {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+  padding-block: clamp(2rem, 5vw, 5rem);
+}
+
+.production-parity-page :where(h1, h2, h3, h4, h5, h6) {
+  color: #152825;
+  font-weight: 700;
+  line-height: 1.18;
+  text-wrap: balance;
+  margin-block: 1.5em 0.6em;
+}
+
+.production-parity-page h1 { font-size: clamp(2.25rem, 5vw, 4.25rem); margin-top: 0; }
+.production-parity-page h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
+.production-parity-page h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
+.production-parity-page h4 { font-size: 1.2rem; }
+
+.production-parity-page :where(p, li, td, th, label, figcaption, blockquote) {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.production-parity-page :where(p, ul, ol, table, figure, blockquote) {
+  margin-block: 1rem;
+}
+
+.production-parity-page :where(ul, ol) {
+  padding-left: 1.5rem;
+}
+
+.production-parity-page ul { list-style: disc; }
+.production-parity-page ol { list-style: decimal; }
+
+.production-parity-page a {
+  color: #137f72;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.production-parity-page a:hover { color: #0d6259; }
+
+.production-parity-page :where(img, video, iframe) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+}
+
+.production-parity-page .toc-toggle img {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block !important;
+}
+
+.production-parity-page iframe {
+  width: 100%;
+  min-height: 360px;
+}
+
+.production-parity-page table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.production-parity-page :where(th, td) {
+  min-width: 8rem;
+  padding: 0.75rem;
+  border: 1px solid #dce7e4;
+  text-align: left;
+  vertical-align: top;
+}
+
+.production-parity-page th { background: #eff8f6; }
+
+.production-parity-page blockquote {
+  padding: 1rem 1.25rem;
+  border-left: 4px solid #25a18e;
+  background: #f4f9f8;
+}
+
+.production-parity-page :where(input, select, textarea) {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #cad8d5;
+  border-radius: 0.65rem;
+  background: #fff;
+}
+
+.production-parity-page textarea { min-height: 8rem; }
+
+.production-parity-page :where(button, input[type="submit"], .elementor-button, .wp-element-button) {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.15rem;
+  border-radius: 0.65rem;
+  background: #25a18e;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.production-parity-page .elementor-container,
+.production-parity-page .e-con-inner,
+.production-parity-page .elementor-row {
+  width: 100%;
+}
+
+.production-parity-page .elementor-column,
+.production-parity-page .elementor-widget,
+.production-parity-page .elementor-widget-container {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .production-parity-page > div { width: min(100% - 1.25rem, 1180px); }
+  .production-parity-page iframe { min-height: 220px; }
+  .production-parity-page :where(p, li, td, th, label, figcaption, blockquote) { font-size: 0.96rem; }
+}

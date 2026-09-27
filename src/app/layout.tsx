@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "Hulm Solutions - Making Every Sale Seamless",
-    template: "%s | Hulm Solutions",
+    template: "%s",
   },
   description: "Hulm Solutions delivers innovative POS software and management systems to revolutionize your business operations.",
   openGraph: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Hulm Solutions",
     title: {
       default: "Hulm Solutions",
-      template: "%s | Hulm Solutions",
+      template: "%s",
     },
     description: "Hulm Solutions delivers innovative POS software and management systems to revolutionize your business operations.",
     url: siteUrl,

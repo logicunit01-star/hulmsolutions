@@ -1,16 +1,10 @@
-import { Metadata } from "next";
-import { CountryTemplate } from "@/components/country/country-template";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-export const metadata: Metadata = {
-  title: "Point of Sale Software in UAE | Best POS Software Dubai",
-  description: "Discover Point of Sale Software in UAE designed for Restaurant, Retail, Grocery & Salon POS Software. Get Free POS System UAE Now!",
-  alternates: { canonical: "/pos-software-uae" },
-  openGraph: {
-    title: "Point of Sale Software in UAE | Best POS Software Dubai",
-    description: "Discover Point of Sale Software in UAE designed for Restaurant, Retail, Grocery & Salon POS Software. Get Free POS System UAE Now!",
-  }
-};
+const route = "/pos-software-uae/";
+
+export const metadata = productionMetadata(route);
 
 export default function Page() {
-  return <CountryTemplate countryKey="pos-software-uae" />;
+  return <ProductionParityPage path={route} />;
 }

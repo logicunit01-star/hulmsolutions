@@ -85,7 +85,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
-            <Link href="/pos-case-studies" className="hover:text-white transition-colors">
+            <Link href="/pos-case-studies/" className="hover:text-white transition-colors">
               Case Studies
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/50 shrink-0" />
@@ -332,7 +332,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               {/* Back to Case Studies Link */}
               <div className="pt-4">
                 <Link
-                  href="/pos-case-studies"
+                  href="/pos-case-studies/"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#209f8f] hover:text-[#1a8578] transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />

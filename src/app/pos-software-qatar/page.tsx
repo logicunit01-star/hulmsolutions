@@ -1,16 +1,10 @@
-import { Metadata } from "next";
-import { CountryTemplate } from "@/components/country/country-template";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-export const metadata: Metadata = {
-  title: "Point of Sale in Qatar | POS Qatar | POS System Qatar",
-  description: "Looking for best POS system in Qatar? Our cloud POS and mobile POS help businesses to manage sales easily. Try Point of sale in Qatar now!",
-  alternates: { canonical: "/pos-software-qatar" },
-  openGraph: {
-    title: "Point of Sale in Qatar | POS Qatar | POS System Qatar",
-    description: "Looking for best POS system in Qatar? Our cloud POS and mobile POS help businesses to manage sales easily. Try Point of sale in Qatar now!",
-  }
-};
+const route = "/pos-software-qatar/";
+
+export const metadata = productionMetadata(route);
 
 export default function Page() {
-  return <CountryTemplate countryKey="pos-software-qatar" />;
+  return <ProductionParityPage path={route} />;
 }

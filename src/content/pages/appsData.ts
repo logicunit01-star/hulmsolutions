@@ -62,7 +62,7 @@ export const appsData: AppData[] = [
   },
   {
     title: "Mobile POS",
-    href: "/mobile-pos",
+    href: "/mobile-pos/",
     description: "Take your checkout anywhere. Lightning-fast mobile billing that works on any smart device.",
     iconName: "Smartphone"
   }

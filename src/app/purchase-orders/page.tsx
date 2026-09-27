@@ -1,15 +1,10 @@
-import { Metadata } from "next";
-import { AppTemplate } from "@/components/apps/app-template";
-import { appsData } from "@/lib/apps/data";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-const data = appsData["purchase-orders"];
+const route = "/purchase-orders/";
 
-export const metadata: Metadata = {
-  title: data?.metaTitle || "purchase-orders - Hulm Solutions",
-  description: data?.metaDescription || data?.hero?.subheadline,
-  alternates: { canonical: "/purchase-orders" },
-};
+export const metadata = productionMetadata(route);
 
 export default function Page() {
-  return <AppTemplate appSlug="purchase-orders" />;
+  return <ProductionParityPage path={route} />;
 }

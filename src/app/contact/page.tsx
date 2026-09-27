@@ -1,25 +1,10 @@
-import { Metadata } from "next";
-import { contactContent } from "@content/pages/contact";
-import { ContactForm } from "@/components/pages/contact/contact-form";
-import { GoogleReviewsSection } from "@/components/home/GoogleReviewsSection";
-import { FinalCta } from "@/components/home/final-cta";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-export const metadata: Metadata = {
-  title: contactContent.seo.title,
-  description: contactContent.seo.description,
-  keywords: contactContent.seo.keywords,
-  alternates: { canonical: "/contact" },
-};
+const route = "/contact/";
 
-export default function ContactPage() {
-  return (
-    <div>
-      <ContactForm contact={contactContent} />
-      <GoogleReviewsSection />
-      <FinalCta
-        heading="Ready to get started with Hulm?"
-        subheading="Join hundreds of businesses across Pakistan streamlining operations with our smart POS & ERP."
-      />
-    </div>
-  );
+export const metadata = productionMetadata(route);
+
+export default function Page() {
+  return <ProductionParityPage path={route} />;
 }

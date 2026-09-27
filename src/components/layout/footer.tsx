@@ -25,7 +25,7 @@ const industryLinks = [
 const resourceLinks = [
   { title: "FBR compliance", href: "/fbr-integrated-pos-pakistan" },
   { title: "Pricing", href: "/pricing" },
-  { title: "Customer stories", href: "/pos-case-studies" },
+  { title: "Customer stories", href: "/pos-case-studies/" },
   { title: "Insights", href: "/blogs" },
   { title: "Integrations", href: "/integration" },
 ]

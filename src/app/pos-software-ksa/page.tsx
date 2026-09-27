@@ -1,16 +1,10 @@
-import { Metadata } from "next";
-import { CountryTemplate } from "@/components/country/country-template";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-export const metadata: Metadata = {
-  title: "POS | Point of Sale Software in Saudi Arabia | POS in KSA",
-  description: "Discover Point of Sale POS Software designed to simplify businesses operations with a POS system in Saudi Arabia. Get Free POS Demo Now!",
-  alternates: { canonical: "/pos-software-ksa" },
-  openGraph: {
-    title: "POS | Point of Sale Software in Saudi Arabia | POS in KSA",
-    description: "Discover Point of Sale POS Software designed to simplify businesses operations with a POS system in Saudi Arabia. Get Free POS Demo Now!",
-  }
-};
+const route = "/pos-software-ksa/";
+
+export const metadata = productionMetadata(route);
 
 export default function Page() {
-  return <CountryTemplate countryKey="pos-software-ksa" />;
+  return <ProductionParityPage path={route} />;
 }

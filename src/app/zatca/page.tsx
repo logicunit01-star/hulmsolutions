@@ -1,16 +1,10 @@
-import { Metadata } from "next";
-import { ComplianceTemplate } from "@/components/country/compliance-template";
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata } from "@/lib/production-parity";
 
-export const metadata: Metadata = {
-  title: "ZATCA-Compliant POS Software | E-Invoicing for KSA",
-  description: "Meet ZATCA Phase 1 & 2 requirements with Hulm's e-invoicing POS. QR codes, real-time reporting, and FATOORA integration for Saudi businesses.",
-  alternates: { canonical: "/zatca" },
-  openGraph: {
-    title: "ZATCA-Compliant POS Software | E-Invoicing for KSA",
-    description: "Meet ZATCA Phase 1 & 2 requirements with Hulm's e-invoicing POS. QR codes, real-time reporting, and FATOORA integration for Saudi businesses.",
-  }
-};
+const route = "/zatca/";
+
+export const metadata = productionMetadata(route);
 
 export default function Page() {
-  return <ComplianceTemplate complianceKey="zatca" />;
+  return <ProductionParityPage path={route} />;
 }

@@ -1,23 +1,22 @@
-import { Metadata } from "next";
-import SingleInsightPage, { generateMetadata as insightMetadata, generateStaticParams as insightStaticParams } from "@/app/insights/[slug]/page";
+import type { Metadata } from "next";
 
-type Props = {
-  params: Promise<{ slug: string }>;
-};
+import { ProductionParityPage } from "@/components/seo/production-parity-page";
+import { productionMetadata, productionParityPaths } from "@/lib/production-parity";
 
-export async function generateStaticParams() {
-  return insightStaticParams();
+type Props = { params: Promise<{ slug: string }> };
+
+export function generateStaticParams() {
+  return productionParityPaths
+    .filter((route) => route.startsWith("/blog/"))
+    .map((route) => ({ slug: route.split("/")[2] }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const metadata = await insightMetadata({ params });
   const { slug } = await params;
-  return {
-    ...metadata,
-    alternates: { canonical: `/blog/${slug}` },
-  };
+  return productionMetadata(`/blog/${slug}/`);
 }
 
-export default async function BlogSlugPage({ params }: Props) {
-  return SingleInsightPage({ params });
+export default async function BlogPage({ params }: Props) {
+  const { slug } = await params;
+  return <ProductionParityPage path={`/blog/${slug}/`} />;
 }

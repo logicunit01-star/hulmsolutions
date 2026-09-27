@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title: productContent.seo.title,
   description: productContent.seo.description,
   keywords: [...productContent.seo.keywords],
-  alternates: { canonical: "/apps" },
+  alternates: { canonical: "/apps/" },
 };
 
 const workflowIcons = [ReceiptText, Boxes, Building2, BarChart3];
