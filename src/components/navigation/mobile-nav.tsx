@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ChevronDown, Globe2, Menu, X } from "lucide-react"
@@ -9,6 +8,7 @@ import { mainNav, type NavItem } from "@/lib/navigation"
 import { REGIONAL_LOCATIONS } from "@/lib/countries/data"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { LogoLockup } from "@/components/layout/logo"
 
 function normalizePath(path: string) {
   return path.replace(/\/$/, "") || "/"
@@ -48,8 +48,12 @@ function MobileNavItem({ item, pathname, onClick }: { item: NavItem, pathname: s
             aria-label={`${isOpen ? "Hide" : "Show"} ${item.title} links`}
             aria-expanded={isOpen}
             aria-controls={submenuId}
+            style={{ backgroundColor: "transparent", color: "#71717a" }}
           >
-            <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
+            <ChevronDown
+              className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")}
+              style={{ width: 16, minWidth: 16, height: 16, color: "#71717a" }}
+            />
           </button>
         </div>
 
@@ -108,14 +112,17 @@ function MobileRegionSelector({ pathname, onNavigate }: { pathname: string, onNa
       >
         <span className="flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#168779] shadow-xs" aria-hidden="true">
-            <Globe2 className="h-4 w-4" />
+            <Globe2 className="h-4 w-4" style={{ width: 16, minWidth: 16, height: 16, color: "#168779" }} />
           </span>
           <span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-400">Region</span>
             <span className="block text-sm font-semibold text-zinc-800">{activeLocation.country}</span>
           </span>
         </span>
-        <ChevronDown className={cn("h-4 w-4 text-zinc-400 transition-transform", isOpen && "rotate-180")} />
+        <ChevronDown
+          className={cn("h-4 w-4 text-zinc-400 transition-transform", isOpen && "rotate-180")}
+          style={{ width: 16, minWidth: 16, height: 16, color: "#a1a1aa" }}
+        />
       </button>
 
       {isOpen && (
@@ -203,17 +210,18 @@ export function MobileNav() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <div className="xl:hidden">
+    <div className="lg:hidden">
       <button
         ref={triggerRef}
         type="button"
         onClick={() => setIsOpen(true)}
-        className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200/80 bg-white text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-[#152825] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
+        className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200/80 bg-white text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-[#0F2A26] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
         aria-label="Open menu"
         aria-expanded={isOpen}
         aria-controls="mobile-navigation-drawer"
+        style={{ backgroundColor: "#fff", color: "#3f3f46" }}
       >
-        <Menu className="h-5 w-5" />
+        <Menu className="h-5 w-5" style={{ width: 20, minWidth: 20, height: 20, color: "#3f3f46" }} />
       </button>
 
       {isOpen && (
@@ -235,13 +243,7 @@ export function MobileNav() {
           >
             <div className="flex items-center justify-between border-b border-zinc-100 px-5 py-4">
               <Link href="/" onClick={closeMenu} aria-label="Hulm homepage">
-                <Image
-                  src="/images/logo/logo.png"
-                  alt="Hulm Solutions"
-                  width={160}
-                  height={51}
-                  className="h-8 w-auto object-contain"
-                />
+                <LogoLockup height={40} />
               </Link>
               <h2 id="mobile-navigation-title" className="sr-only">Site navigation</h2>
               <button
@@ -250,8 +252,9 @@ export function MobileNav() {
                 onClick={closeMenu}
                 className="flex h-10 w-10 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
                 aria-label="Close menu"
+                style={{ backgroundColor: "transparent", color: "#52525b" }}
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5" style={{ width: 20, minWidth: 20, height: 20, color: "#52525b" }} />
               </button>
             </div>
 
@@ -267,7 +270,6 @@ export function MobileNav() {
                 ))}
               </nav>
 
-              <MobileRegionSelector pathname={pathname} onNavigate={closeMenu} />
             </div>
 
             <div className="border-t border-zinc-100 bg-zinc-50/70 p-5">
@@ -277,13 +279,19 @@ export function MobileNav() {
                     Sign in
                   </Link>
                 </Button>
-                <Button className="h-11 rounded-xl bg-[#152825] text-xs text-white hover:bg-[#25a18e]" asChild>
-                  <Link href="https://app.hulmsolutions.com/Register" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                <Button className="h-11 rounded-xl bg-[#0F2A26] text-xs text-white hover:bg-[#25a18e]" asChild>
+                  <Link
+                    href="https://app.hulmsolutions.com/Register"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMenu}
+                    style={{ backgroundColor: "#152825", color: "#fff" }}
+                  >
                     Start free trial
                   </Link>
                 </Button>
               </div>
-              <Link href="/contact" onClick={closeMenu} className="mt-3 block text-center text-xs font-semibold text-[#168779] hover:underline">
+              <Link href="/book-a-demo/" onClick={closeMenu} className="mt-3 block text-center text-xs font-semibold text-[#168779] hover:underline">
                 Prefer a guided setup? Book a demo
               </Link>
             </div>

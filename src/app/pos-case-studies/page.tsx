@@ -1,10 +1,7 @@
-import { ProductionParityPage } from "@/components/seo/production-parity-page";
-import { productionMetadata } from "@/lib/production-parity";
+import CaseStudiesPage from "@/app/case-studies/page";
+import { seoMetadata } from "@/lib/seo/page-seo";
 
-const route = "/pos-case-studies/";
+// Live WordPress title + meta description (they carry the current rankings).
+export const metadata = seoMetadata("/pos-case-studies/");
 
-export const metadata = productionMetadata(route);
-
-export default function Page() {
-  return <ProductionParityPage path={route} />;
-}
+export default CaseStudiesPage;

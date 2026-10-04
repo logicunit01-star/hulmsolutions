@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
-import Script from "next/script";
+import { Inter, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
+import { RevealObserver } from "@/components/motion/reveal-observer";
+import { StickyMobileCta } from "@/components/leads/sticky-mobile-cta";
+import { GoogleTagManager } from "@/components/analytics/google-tag-manager";
+import { SiteTracking } from "@/components/analytics/site-tracking";
+import { WhatsAppFloat } from "@/components/leads/whatsapp-float";
+import { contactInfo } from "@/lib/contact-info";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-const outfit = Outfit({
-  variable: "--font-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hulmsolutions.com";
@@ -33,6 +46,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": [{ url: "/feed/", title: "Hulm Solutions Insights RSS" }],
+      "text/plain": [{ url: "/llms.txt", title: "LLM-readable site summary" }],
+    },
+  },
+  manifest: "/manifest.webmanifest",
   verification: {
     google: "eja9u_sG9QlN7Hwff1OOVI1tP9koIfOzBF-XbvrzNEI",
   },
@@ -53,9 +73,23 @@ const organizationSchema = {
   name: "Hulm Solutions",
   url: siteUrl,
   logo: `${siteUrl}/images/logo/logo.png`,
-  email: "info@hulmsolutions.com",
-  telephone: "+92 339 111 9259",
+  description:
+    "Hulm Solutions builds Hulm POS, cloud-based POS and business management software with FBR integration in Pakistan and ZATCA / UAE e-invoicing readiness for Gulf businesses.",
+  knowsAbout: ["POS software", "FBR integrated POS", "ZATCA e-invoicing", "Inventory management", "Restaurant POS", "Retail POS"],
+  email: contactInfo.email,
+  telephone: contactInfo.phoneDisplay,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: contactInfo.address.streetAddress,
+    addressLocality: contactInfo.address.addressLocality,
+    addressRegion: contactInfo.address.addressRegion,
+    addressCountry: contactInfo.address.addressCountry,
+  },
+  contactPoint: [
+    { "@type": "ContactPoint", contactType: "sales", telephone: contactInfo.phoneDisplay, email: contactInfo.email, areaServed: ["PK", "SA", "AE", "QA", "US"], availableLanguage: ["en"] },
+  ],
   sameAs: [
+    "https://www.facebook.com/Hulmsolutions",
     "https://www.linkedin.com/company/hulm-solutions/",
     "https://www.instagram.com/hulmsolutions1101/",
     "https://www.youtube.com/@Hulmsolutions",
@@ -69,6 +103,7 @@ const websiteSchema = {
   name: "Hulm Solutions",
   url: siteUrl,
   publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: "en",
 };
 
 export default function RootLayout({
@@ -78,10 +113,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} antialiased flex min-h-screen flex-col`}>
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`}
-        </Script>
+      <body className={`${inter.variable} ${schibsted.variable} antialiased flex min-h-screen flex-col text-[#0F2A26]`}>
+        <GoogleTagManager id={gtmId} />
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
@@ -102,6 +135,10 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppFloat />
+        <StickyMobileCta />
+        <RevealObserver />
+        <SiteTracking />
       </body>
     </html>
   );

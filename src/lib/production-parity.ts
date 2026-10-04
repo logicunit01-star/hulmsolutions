@@ -1,3 +1,4 @@
+import { SITE_FEEDS } from "@/lib/seo/page-seo";
 import type { Metadata } from "next";
 
 import snapshot from "@/content/productionParityData.json";
@@ -41,7 +42,7 @@ export function productionMetadata(input: string): Metadata {
   return {
     title: { absolute: page.title },
     description: page.description,
-    alternates: { canonical: page.path },
+    alternates: { canonical: page.path, types: SITE_FEEDS },
     robots: {
       index: !/noindex/i.test(page.robots),
       follow: !/nofollow/i.test(page.robots),

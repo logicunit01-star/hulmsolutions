@@ -15,10 +15,10 @@ export function BlogDetail() {
         <Container className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Breadcrumbs */}
-          <nav className="text-xs text-zinc-400 mb-8 flex items-center gap-2">
+          <nav className="text-xs text-zinc-500 mb-8 flex items-center gap-2">
             <Link href="/" className="hover:text-zinc-900 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/blogs" className="hover:text-zinc-900 transition-colors">Insights</Link>
+            <Link href="/blogs/" className="hover:text-zinc-900 transition-colors">Insights</Link>
             <span>/</span>
             <span className="text-zinc-600 truncate max-w-xs sm:max-w-md">{b.title}</span>
           </nav>
@@ -32,7 +32,7 @@ export function BlogDetail() {
               <div className="bg-[#FAFAFA] border border-[#EBECEF] rounded-[22px] p-6 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
                 <div className="flex items-center gap-2 mb-3.5 pb-2.5 border-b border-[#EBECEF]/80">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25a18e]" />
-                  <p className="text-[11px] font-bold tracking-[0.1em] text-[#8C93A3] uppercase">
+                  <p className="text-[11px] font-bold tracking-[0.1em] text-[#6b7280] uppercase">
                     Table of Contents
                   </p>
                 </div>
@@ -54,7 +54,7 @@ export function BlogDetail() {
 
               {/* Attractive Minimalist Trial Card */}
               <div className="bg-gradient-to-b from-white to-[#F8FAFB] border border-[#EBECEF] rounded-[20px] p-6 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
-                <div className="w-9 h-9 rounded-xl bg-[#25a18e]/10 text-[#25a18e] flex items-center justify-center font-bold mb-4">
+                <div className="w-9 h-9 rounded-xl bg-[#25a18e]/10 text-[#146b60] flex items-center justify-center font-bold mb-4">
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <h4 className="text-base font-bold text-[#152825] mb-1.5 leading-snug">
@@ -74,7 +74,7 @@ export function BlogDetail() {
               
               {/* Category Pill */}
               <div className="mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#25a18e]/10 text-[#25a18e]">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#25a18e]/10 text-[#146b60]">
                   {b.category}
                 </span>
               </div>
@@ -95,7 +95,7 @@ export function BlogDetail() {
                     />
                   </div>
                   <span>By</span>
-                  <Link href={`/author/${b.authorSlug}`} className="font-semibold text-zinc-900 hover:text-[#25a18e] transition-colors">
+                  <Link href="/author/" className="font-semibold text-zinc-900 hover:text-[#25a18e] transition-colors">
                     {b.author}
                   </Link>
                 </div>
@@ -127,10 +127,10 @@ export function BlogDetail() {
               {/* Mobile Table of Contents */}
               <details className="lg:hidden bg-[#FAFAFA] border border-[#EBECEF] rounded-[20px] p-5 mb-8 text-sm [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex items-center justify-between font-bold text-[#152825] cursor-pointer select-none">
-                  <span className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#8C93A3] font-bold">
+                  <span className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#6b7280] font-bold">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#25a18e]" /> Table of Contents
                   </span>
-                  <span className="text-zinc-400 text-xs font-normal">Tap to expand</span>
+                  <span className="text-zinc-500 text-xs font-normal">Tap to expand</span>
                 </summary>
                 <nav className="max-h-[45vh] overflow-y-auto toc-scrollbar pr-2 space-y-2.5 mt-4 pt-3 border-t border-zinc-200/60 text-[13.5px]">
                   {b.toc.map((item) => (
@@ -250,7 +250,7 @@ export function BlogDetail() {
                 <div className="grid sm:grid-cols-2 gap-3 mb-6">
                   {b.mustHaveFeatures.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAFAFA] border border-[#EBECEF]">
-                      <div className="w-5 h-5 rounded-full bg-[#25a18e]/15 text-[#25a18e] flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-[#25a18e]/15 text-[#146b60] flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                       </div>
                       <span className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium">{feat}</span>
@@ -369,7 +369,7 @@ export function BlogDetail() {
                     <thead>
                       <tr className="bg-[#F9FAFB] text-[#152825] font-bold border-b border-[#EBECEF]">
                         <th className="p-3.5 sm:p-4">Feature</th>
-                        <th className="p-3.5 sm:p-4 bg-[#25a18e]/10 text-[#25a18e] font-extrabold">HULM POS</th>
+                        <th className="p-3.5 sm:p-4 bg-[#25a18e]/10 text-[#146b60] font-extrabold">HULM POS</th>
                         <th className="p-3.5 sm:p-4">Square</th>
                         <th className="p-3.5 sm:p-4">Shopify</th>
                         <th className="p-3.5 sm:p-4">Lightspeed</th>
@@ -379,7 +379,7 @@ export function BlogDetail() {
                       {b.comparisonTable.map((row, idx) => (
                         <tr key={idx} className="hover:bg-[#F9FAFB]/50">
                           <td className="p-3.5 sm:p-4 font-semibold text-[#152825]">{row.feature}</td>
-                          <td className="p-3.5 sm:p-4 bg-[#25a18e]/5 font-bold text-[#25a18e]">{row.hulm}</td>
+                          <td className="p-3.5 sm:p-4 bg-[#25a18e]/5 font-bold text-[#146b60]">{row.hulm}</td>
                           <td className="p-3.5 sm:p-4 text-zinc-600">{row.square}</td>
                           <td className="p-3.5 sm:p-4 text-zinc-600">{row.shopify}</td>
                           <td className="p-3.5 sm:p-4 text-zinc-600">{row.lightspeed}</td>
@@ -464,14 +464,14 @@ export function BlogDetail() {
 
               {/* Related Articles */}
               <div className="border-t border-zinc-100 pt-10">
-                <p className="text-xs font-bold tracking-wider text-zinc-400 uppercase mb-6">
+                <p className="text-xs font-bold tracking-wider text-zinc-500 uppercase mb-6">
                   Related Articles
                 </p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {b.relatedPosts.map((post, idx) => (
                     <Link
                       key={idx}
-                      href={`/blog/${post.slug}`}
+                      href={`/blog/${post.slug}/`}
                       className="p-5 rounded-[18px] border border-[#EBECEF] hover:border-[#25a18e] hover:shadow-[0_4px_16px_rgba(0,0,0,0.04)] transition-all flex flex-col justify-between group bg-white"
                     >
                       <h4 className="text-xs sm:text-sm font-bold text-[#152825] group-hover:text-[#25a18e] transition-colors mb-3 line-clamp-2 leading-snug">

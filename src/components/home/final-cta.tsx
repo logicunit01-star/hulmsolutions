@@ -15,30 +15,28 @@ interface FinalCtaProps {
 
 export function FinalCta({
   heading = "Transform Your Business with Hulm POS",
-  subheading = "Join hundreds of thriving retail stores, restaurants, pharmacies, and manufacturers in Pakistan automating their entire workflow.",
+  subheading = "Join retail stores, restaurants, pharmacies and manufacturers that run sales, stock and reporting on Hulm.",
   badge = "Start Growing Today — Zero Risk",
   points = [
     "Full access to all 10+ business modules",
-    "Automatic FBR-compliant digital invoicing",
-    "Free onboarding support via WhatsApp & Call",
+    "FBR-integrated invoicing available in Pakistan",
+    "Onboarding support on WhatsApp and phone",
   ],
   formHeading,
   formSubheading,
 }: FinalCtaProps) {
   return (
-    <Section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-br from-[#1b7f70] via-[#209f8f] to-[#16695d]">
+    <Section data-reveal className="py-20 lg:py-28 relative overflow-hidden bg-[#0F2A26]">
       {/* Subtle Background POS Equipment Pattern */}
       <div
         className="absolute inset-0 opacity-[0.08] pointer-events-none bg-repeat bg-center"
         style={{
-          backgroundImage: "url('/images/home/cta-bg-pattern.png')",
+          backgroundImage: "url('/images/home/cta-bg-pattern.webp')",
           backgroundSize: "600px",
         }}
       />
 
       {/* Ambient Radial Lighting Glows */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-black/15 rounded-full blur-3xl pointer-events-none" />
 
       <Container className="relative z-10 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -74,10 +72,10 @@ export function FinalCta({
               <div className="flex -space-x-2">
                 <div className="w-8 h-8 rounded-full bg-emerald-700 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">AK</div>
                 <div className="w-8 h-8 rounded-full bg-teal-800 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">MR</div>
-                <div className="w-8 h-8 rounded-full bg-emerald-600 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">FN</div>
+                <div className="w-8 h-8 rounded-full bg-emerald-800 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">FN</div>
               </div>
               <div className="text-xs sm:text-sm text-white/90">
-                <span className="font-semibold text-white">Join 500+ businesses</span> across Pakistan running on Hulm
+                <span className="font-semibold text-white">Join growing businesses</span> running on Hulm
               </div>
             </div>
           </div>

@@ -24,19 +24,19 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <Section className="pt-20 md:pt-32 pb-16 md:pb-24 bg-white">
+      <Section data-reveal className="pt-20 md:pt-32 pb-16 md:pb-24 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="flex flex-col items-start space-y-6 max-w-xl">
               {hero.badge && (
-                <div className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#209f8f]/30 text-xs font-semibold text-[#209f8f] uppercase tracking-widest bg-[#209f8f]/10 shadow-xs">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#167C70]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#209f8f] mr-2"></span>
                   {hero.badge}
                 </div>
               )}
               
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#152825] tracking-tight leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0F2A26] tracking-tight leading-tight">
                   {hero.headline}
                 </h1>
                 <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-lg">
@@ -45,10 +45,10 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
               </div>
               
               <div className="pt-2 flex flex-col sm:flex-row gap-3.5 items-center w-full sm:w-auto">
-                <Link href="https://app.hulmsolutions.com/Register" className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-[#209f8f] text-white text-base font-semibold hover:bg-[#1a8578] transition-all shadow-sm active:scale-[0.98]">
+                <Link href="https://app.hulmsolutions.com/Register" className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-[#167c70] text-white text-base font-semibold hover:bg-[#1a8578] transition-all shadow-sm active:scale-[0.98]">
                   Request Free Demo
                 </Link>
-                <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white text-[#152825] border border-gray-200 text-base font-semibold hover:bg-gray-50 transition-colors shadow-xs">
+                <Link href="/contact/" className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white text-[#0F2A26] border border-gray-200 text-base font-semibold hover:bg-gray-50 transition-colors shadow-xs">
                   Talk to sales
                 </Link>
               </div>
@@ -59,7 +59,7 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
                 <div className="absolute top-4 left-4 right-4 bottom-4 border border-dashed border-border rounded-xl flex items-center justify-center">
                   <div className="flex flex-col items-center justify-center space-y-4 text-primary/40">
                     <MainIcon className="w-24 h-24 stroke-[1.5]" />
-                    <span className="text-sm font-medium tracking-widest uppercase">{hero.badge}</span>
+                    <span className="text-sm font-medium">{hero.badge}</span>
                   </div>
                 </div>
               </div>
@@ -70,11 +70,11 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
 
       {/* What is Section */}
       {whatIs && (
-        <Section className="bg-white py-16 md:py-24 border-t border-gray-100">
+        <Section data-reveal className="bg-white py-16 md:py-24 border-t border-gray-100">
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-6 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#0F2A26] mb-6 tracking-tight">
                   {whatIs.headline}
                 </h2>
                 <p className="text-sm sm:text-base text-zinc-600 mb-8 leading-relaxed">
@@ -84,15 +84,15 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
                   {whatIs.points?.map((point: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#209f8f]/10 flex items-center justify-center mt-0.5">
-                        <Check className="w-3.5 h-3.5 text-[#209f8f]" strokeWidth={2.5} />
+                        <Check className="w-3.5 h-3.5 text-[#167c70]" strokeWidth={2.5} />
                       </div>
                       <span className="text-sm text-zinc-700 leading-relaxed">{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-[#F8FAF9] p-8 rounded-3xl border border-gray-200/80 flex items-center justify-center aspect-square md:aspect-auto md:h-full min-h-[300px]">
-                <div className="text-[#209f8f]/25">
+              <div className="bg-[#F7F6F2] p-8 rounded-2xl border border-gray-200/80 flex items-center justify-center aspect-square md:aspect-auto md:h-full min-h-[300px]">
+                <div className="text-[#167c70]/25">
                   <MainIcon className="w-32 h-32" strokeWidth={1.5} />
                 </div>
               </div>
@@ -103,10 +103,10 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
 
       {/* Why Choose Section */}
       {whyChoose && (
-        <Section className="bg-[#F8FAF9] py-16 md:py-24 border-t border-gray-100">
+        <Section data-reveal className="bg-[#F7F6F2] py-16 md:py-24 border-t border-gray-100">
           <Container>
             <div className="text-center mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#0F2A26] mb-4 tracking-tight">
                 {whyChoose.headline}
               </h2>
             </div>
@@ -117,7 +117,7 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
                   key={index} 
                   className="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-xs flex flex-col items-center text-center hover:border-[#209f8f]/30 transition-colors"
                 >
-                  <h3 className="text-base font-semibold text-[#152825] mb-2">
+                  <h3 className="text-base font-semibold text-[#0F2A26] mb-2">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
@@ -132,10 +132,10 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
 
       {/* Who Can Use Section */}
       {whoCanUse && (
-        <Section className="bg-white py-16 md:py-24 border-t border-gray-100">
+        <Section data-reveal className="bg-white py-16 md:py-24 border-t border-gray-100">
           <Container>
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#0F2A26] mb-4 tracking-tight">
                 {whoCanUse.headline}
               </h2>
               <p className="text-sm sm:text-base text-zinc-600">
@@ -150,7 +150,7 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
                     <li key={idx} className="flex items-start gap-3 py-2 border-b border-gray-100 last:border-0 md:last:border-b-0">
                       <div className="w-2 h-2 rounded-full bg-[#209f8f] mt-2 shrink-0"></div>
                       <span className="text-sm leading-relaxed text-zinc-700">
-                        <strong className="text-[#152825] font-semibold">{parts[0]}</strong>
+                        <strong className="text-[#0F2A26] font-semibold">{parts[0]}</strong>
                         {parts[1] ? ` - ${parts[1]}` : ''}
                       </span>
                     </li>
@@ -164,13 +164,13 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
 
       {/* FAQ Section */}
       {faq && (
-        <Section className="bg-[#F8FAF9] py-16 md:py-24 border-t border-gray-100">
+        <Section data-reveal className="bg-[#F7F6F2] py-16 md:py-24 border-t border-gray-100">
           <Container>
             <div className="text-center max-w-3xl mx-auto mb-14 flex flex-col items-center">
-              <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-[#209f8f] uppercase tracking-wider mb-4 shadow-xs">
+              <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#167C70] mb-4">
                 Got Questions?
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#152825] mb-4 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#0F2A26] mb-4 tracking-tight">
                 {faq.headline}
               </h2>
               <p className="text-sm sm:text-base text-zinc-600">
@@ -186,7 +186,7 @@ export function IndustryTemplate({ industrySlug }: IndustryTemplateProps) {
       )}
 
       {/* Global Shared Sections */}
-      <GoogleReviewsSection />
+      <GoogleReviewsSection focus={industrySlug} />
       <FinalCta />
     </div>
   );

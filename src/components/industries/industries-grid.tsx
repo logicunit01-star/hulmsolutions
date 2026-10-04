@@ -54,8 +54,8 @@ export function IndustriesGrid({ items }: IndustriesGridProps) {
               className={cn(
                 "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 cursor-pointer",
                 isActive
-                  ? "bg-white text-[#152825] shadow-xs"
-                  : "text-gray-600 hover:text-[#152825] hover:bg-white/50"
+                  ? "bg-white text-[#0F2A26] shadow-xs"
+                  : "text-gray-600 hover:text-[#0F2A26] hover:bg-white/50"
               )}
             >
               <span>{cat}</span>
@@ -63,7 +63,7 @@ export function IndustriesGrid({ items }: IndustriesGridProps) {
                 className={cn(
                   "text-[10px] px-1.5 py-0.5 rounded-full font-bold",
                   isActive
-                    ? "bg-[#209f8f]/10 text-[#209f8f]"
+                    ? "bg-[#209f8f]/10 text-[#167c70]"
                     : "bg-gray-200/70 text-gray-500"
                 )}
               >
@@ -91,7 +91,7 @@ export function IndustriesGrid({ items }: IndustriesGridProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-3.5 left-3.5">
-                <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#152825] text-[11px] font-semibold uppercase tracking-wider shadow-xs">
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#167C70]">
                   {item.category}
                 </span>
               </div>
@@ -112,7 +112,7 @@ export function IndustriesGrid({ items }: IndustriesGridProps) {
               <div className="space-y-2 pt-2 border-t border-gray-100">
                 {item.highlights.map((h, hIdx) => (
                   <div key={hIdx} className="flex items-center gap-2 text-xs text-gray-700 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#209f8f] shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#167c70] shrink-0" />
                     <span>{h}</span>
                   </div>
                 ))}
@@ -122,7 +122,7 @@ export function IndustriesGrid({ items }: IndustriesGridProps) {
               <div className="pt-3 border-t border-gray-100">
                 <Link
                   href={`/industries/${item.slug}`}
-                  className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F8FAF9] hover:bg-[#209f8f] text-[#152825] hover:text-white text-xs font-semibold transition-all duration-200 group/btn"
+                  className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#F7F6F2] hover:bg-[#209f8f] text-[#0F2A26] hover:text-white text-xs font-semibold transition-all duration-200 group/btn"
                 >
                   <span>Explore {item.name} POS</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />

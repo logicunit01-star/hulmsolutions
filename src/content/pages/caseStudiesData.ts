@@ -52,7 +52,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Computer Retail & Electronics",
     location: "Karachi, Pakistan",
     businessSize: "Medium-sized Retailer",
-    image: "/images/case-studies/laptop-store.jpg",
+    image: "/images/case-studies/laptop-store.webp",
     excerpt: "Mustafa Sheikh decided to implement a POS system integrated with the FBR to automate sales data reporting directly to the tax authority. He chose Hulm POS Solutions specifically for retail Point Of Sale systems.",
     clientProfile: {
       name: "The Laptop Store",
@@ -128,7 +128,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Computer Retail & Hardware",
     location: "Karachi, Pakistan",
     businessSize: "Medium-sized Retailer",
-    image: "/images/case-studies/real-tech.jpg",
+    image: "/images/case-studies/real-tech.webp",
     excerpt: "Muhammad Khurram selected Hulm POS Solutions to manage a wide spread of fast-moving accessories, streamline warranty lookups from minutes to seconds, and automate FBR tax filing.",
     clientProfile: {
       name: "Real Tech System",
@@ -204,7 +204,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Medical Equipment & Surgical Supplies",
     location: "Karachi, Pakistan",
     businessSize: "Large Enterprise (12+ Years)",
-    image: "/images/case-studies/elate.jpeg",
+    image: "/images/case-studies/elate.webp",
     excerpt: "Elate CC Pvt Ltd, one of Pakistan's largest suppliers of medical devices, surgical instruments, and hospital linens, deployed Hulm POS to master batch tracking, order fulfillment, and automated FBR compliance.",
     clientProfile: {
       name: "Elate CC Pvt Ltd",
@@ -281,7 +281,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Bakery, Cafe & Confectionery",
     location: "Doha, Qatar",
     businessSize: "Multi-Branch (3 Locations)",
-    image: "/images/case-studies/cupcake-queen.jpg",
+    image: "/images/case-studies/cupcake-queen.webp",
     excerpt: "A fast-growing Doha bakery chain replaces disconnected branch registers and a WhatsApp order book with one centralized, VAT-ready POS system built for perishable inventory and custom cake orders.",
     clientProfile: {
       name: "Cupcake Queen",
@@ -363,7 +363,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Event Catering & Hospitality",
     location: "Karachi, Pakistan",
     businessSize: "Medium Enterprise",
-    image: "/images/case-studies/farhan-caterers.jpg",
+    image: "/images/case-studies/farhan-caterers.webp",
     excerpt: "A busy Karachi event caterer replaces a diary-and-spreadsheet booking process with an FBR-integrated Hulm POS system built around advance bookings and per-event costing.",
     clientProfile: {
       name: "Farhan Caterers",

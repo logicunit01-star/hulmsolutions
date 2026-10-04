@@ -112,8 +112,8 @@ export const appsData: Record<string, AppDetailData> = {
       subheadline: "Simplify how your business creates, tracks, and manages purchase orders. Automate approvals, reduce errors, and gain full control over suppliers.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to Sales",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
       headline: "What is Purchase Order Management?",
@@ -125,7 +125,7 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     features: {
-      headline: "Key Features of HULM Purchase Order Software",
+      headline: "Key Features of Hulm Purchase Order Software",
       description: "Everything you need to control procurement from order creation to warehouse delivery.",
       items: [
         {
@@ -161,8 +161,8 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     benefits: {
-      headline: "HULM Purchase Order Management Benefits",
-      description: "Purchase Order Management Software from HULM Solutions is intended to simplify your procurement processes, automate tasks, and reduce errors in smooth operations as well as faster fulfillment. This software is also managed via the cloud, allowing one to control the actions from anywhere while managing efficient orders as your business grows.",
+      headline: "Hulm Purchase Order Management Benefits",
+      description: "Purchase Order Management Software from Hulm Solutions is intended to simplify your procurement processes, automate tasks, and reduce errors in smooth operations as well as faster fulfillment. This software is also managed via the cloud, allowing one to control the actions from anywhere while managing efficient orders as your business grows.",
       points: [
         "Save valuable time with automated procurement workflows.",
         "Reduce costs by avoiding duplicate or wrong orders.",
@@ -177,7 +177,7 @@ export const appsData: Record<string, AppDetailData> = {
       items: [
         {
           title: "Trusted Expertise",
-          description: "With years of experience in delivering software solutions, HULM Solutions has earned a reputation as a trusted provider for businesses across Pakistan."
+          description: "With years of experience in delivering software solutions, Hulm Solutions has earned a reputation as a trusted provider for businesses across Pakistan."
         },
         {
           title: "Innovative Design",
@@ -189,7 +189,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Reliable Performance",
-          description: "HULM Solutions provides reliable, cloud-hosted software that scales seamlessly with your transaction volume."
+          description: "Hulm Solutions provides cloud-hosted software that can be configured as transaction volumes and operating requirements change."
         }
       ]
     },
@@ -247,7 +247,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "How to generate a purchase order?",
-          answer: "With HULM software, you can easily generate a purchase order using pre-filled templates and send it directly to your suppliers from the dashboard."
+          answer: "With Hulm software, you can easily generate a purchase order using pre-filled templates and send it directly to your suppliers from the dashboard."
         },
         {
           question: "What is a purchase order invoice?",
@@ -270,12 +270,12 @@ export const appsData: Record<string, AppDetailData> = {
       subheadline: "Simplify supplier relationships, communication, and effective procurement workflows. Scale according to your precise business needs, from local suppliers to nationwide distribution.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to Sales",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
-      headline: "Effortless Vendor Management with HULM",
-      description: "Supplier management is required for effective supply chain operations. HULM Solutions' Vendor Management System simplifies supplier relationship management, communication, and procurement workflows. Streamlining activities allows you to build stronger relationships, improve procurement efficiency, and enhance growth while cutting costs and reducing errors.",
+      headline: "Vendor Management Connected to Purchasing and Stock",
+      description: "Supplier management is required for effective supply chain operations. Hulm Solutions' Vendor Management System simplifies supplier relationship management, communication, and procurement workflows. Streamlining activities allows you to build stronger relationships, improve procurement efficiency, and enhance growth while cutting costs and reducing errors.",
       points: [
         "Consolidate all supplier agreements, payment terms, and product catalogs in one place.",
         "Track delivery timeliness and order fulfillment accuracy per vendor.",
@@ -283,8 +283,8 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     features: {
-      headline: "Core Functions of Hulm Vendor Management",
-      description: "End-to-end tooling to manage vendor data, purchase orders, performance, and compliance.",
+      headline: "Core Functions of the Hulm Vendor Management System",
+      description: "End-to-end vendor management software to manage vendor data, purchase orders, performance, and compliance.",
       items: [
         {
           title: "Centralized Supplier Profiles",
@@ -302,8 +302,8 @@ export const appsData: Record<string, AppDetailData> = {
           icon: Clock
         },
         {
-          title: "Seamless POS & Inventory Integration",
-          description: "Seamlessly connect your vendor management system with procurement tools and inventory management to ensure a smooth supply chain process.",
+          title: "Connected POS and Inventory Records",
+          description: "Connect vendor records with purchasing and inventory workflows so teams can review supplier activity in one workspace.",
           icon: Package
         },
         {
@@ -319,14 +319,14 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     benefits: {
-      headline: "Benefits of Using HULM Vendor Management",
+      headline: "Benefits of Using Hulm Vendor Management Software",
       description: "Develop supplier relationships through open communication and automate tasks such as onboarding and contract renewals. Track prices to save costs, ensure compliance, and mitigate risks.",
       points: [
         "Improved Vendor Relationships - Foster trust and collaboration with timely orders and payments.",
         "Enhanced Efficiency - Automate repetitive purchasing tasks and eliminate manual back-and-forth.",
         "Cost Optimization - Track historical pricing to negotiate the best rates and catch unexpected increases.",
         "Risk Mitigation - Maintain backup supplier contacts and monitor performance trends to prevent stockouts.",
-        "Scalable Solution - Manage 5 vendors or 500 vendors across multiple branches effortlessly.",
+        "Scalable records - Organise vendor records across branches based on your selected plan and configuration.",
         "Audit-Ready Records - Full digital paper trail of every purchase, delivery note, and supplier payment."
       ]
     },
@@ -352,7 +352,7 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     whoCanUse: {
-      headline: "Who Benefits from Vendor Management?",
+      headline: "Who Benefits from a Vendor Management System?",
       description: "Tailored for operations that rely on regular supplier replenishment:",
       points: [
         "Retail Chains - Manage hundreds of FMCG and apparel suppliers across multiple store locations.",
@@ -378,8 +378,8 @@ export const appsData: Record<string, AppDetailData> = {
           answer: "Yes, you can import your entire vendor directory, including contact details, addresses, NTN numbers, and item lists in one click using our CSV/Excel template."
         },
         {
-          question: "Does vendor management connect directly with my purchase orders?",
-          answer: "Yes. When creating a purchase order, selecting a vendor automatically pulls in their catalog, negotiated rates, and delivery addresses for instant processing."
+          question: "Does the vendor management system connect directly with my purchase orders?",
+          answer: "Vendor details can be connected to purchase-order workflows. Confirm the catalogue, rate and delivery fields required for your setup."
         }
       ]
     }
@@ -395,15 +395,15 @@ export const appsData: Record<string, AppDetailData> = {
     hero: {
       badge: "PAKISTAN'S ONLY CATTLE SUITE",
       headline: "Best Cattle Management Software to Simplify Your Farm Operations",
-      subheadline: "Move past manual ledgers and WhatsApp groups. Hulm is the only platform in Pakistan specifically engineered for livestock traders and dairy farmers, unifying animal profiles, feed inventory, and FBR-compliant billing in one place.",
+      subheadline: "Move past manual ledgers and WhatsApp groups. Hulm is the only cattle management software in Pakistan specifically engineered for livestock traders and dairy farmers, unifying animal profiles, feed inventory, and FBR-compliant billing in one place.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to Sales",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
       headline: "Complex Farm Operations, Simplified on One Screen",
-      description: "One powerful platform that replaces spreadsheets, paper records, and guesswork. Whether you run a commercial dairy farm, a feedlot fattening project, or seasonal Eid livestock trading, Hulm gives you total operational control from anywhere.",
+      description: "Hulm's cattle management software is one powerful platform that replaces spreadsheets, paper records, and guesswork. Whether you run a commercial dairy farm, a feedlot fattening project, or seasonal Eid livestock trading, Hulm gives you total operational control from anywhere.",
       points: [
         "Create digital animal profiles with tag numbers, purchase costs, and breed classification.",
         "Track daily feed consumption, silage costs, and veterinary treatments per animal or batch.",
@@ -429,14 +429,14 @@ export const appsData: Record<string, AppDetailData> = {
         {
           title: "Financial Leakage in B2B Trading",
           problem: "Managing complex vendor payments, partial credits, or broker commissions natively.",
-          solution: "Handle complex multi-party transactions instantly and issue professional, compliant invoices.",
+          solution: "Configure multi-party transaction workflows and invoice fields around the requirements confirmed during implementation.",
           solutionTitle: "The Hulm Fix: Cattle-Specific Ledgers"
         }
       ]
     },
     features: {
       headline: "Purpose-Built Features for Livestock Management",
-      description: "Designed on actual Pakistani farms to handle real-world dairy and feedlot workflows.",
+      description: "Farm management software designed on actual Pakistani farms to handle real-world dairy and feedlot workflows.",
       items: [
         {
           title: "Classify Your Herd",
@@ -482,7 +482,7 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     whoCanUse: {
-      headline: "Who Uses Hulm Cattle Management?",
+      headline: "Who Uses Hulm Cattle Management Software?",
       description: "Engineered for livestock businesses across Punjab, Sindh, KPK, and Balochistan:",
       points: [
         "Dairy Farms - Track milk yield per cow, lactation cycles, and feed efficiency.",
@@ -493,7 +493,7 @@ export const appsData: Record<string, AppDetailData> = {
     },
     faq: {
       headline: "Frequently Asked Questions",
-      description: "Get quick answers to common questions about our cattle management platform.",
+      description: "Get quick answers to common questions about our cattle management software.",
       items: [
         {
           question: "Can I track individual animal costs and profit?",
@@ -505,7 +505,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "Can I access the cattle management software on my phone at the farm?",
-          answer: "Yes, Hulm is a fully cloud-based suite. You or your farm manager can log data directly from an Android smartphone or tablet while out in the field."
+          answer: "Yes, Hulm is a fully cloud-based suite. You or your farm manager can log data from a smartphone or tablet browser while out in the field."
         }
       ]
     }
@@ -516,20 +516,20 @@ export const appsData: Record<string, AppDetailData> = {
     name: "Customer Management",
     title: "Customer Relationship Management System | Hulm CRM",
     metaTitle: "Customer Relationship Management System - Hulm CRM",
-    metaDescription: "Drive sales, improve customer satisfaction, and boost productivity with HULM Solutions CRM. Simplified and secure customer relationship management.",
+    metaDescription: "Drive sales, improve customer satisfaction, and boost productivity with Hulm Solutions CRM. Simplified and secure customer relationship management.",
     icon: Users,
     hero: {
       badge: "CUSTOMER LOYALTY & RETENTION",
       headline: "Streamline Your Business with Hulm Customer Relationship Management",
-      subheadline: "Drive sales, improve customer satisfaction, and boost productivity with HULM CRM. Connect every counter sale with actionable customer profiles and loyalty incentives.",
+      subheadline: "Drive sales, improve customer satisfaction, and boost productivity with Hulm CRM. Connect every counter sale with actionable customer profiles and loyalty incentives.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to Sales",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
-      headline: "Effortless Customer Relationship Management with HULM",
-      description: "Customer relationship management (CRM) is a strategic approach that uses technology to manage and improve a company's interactions with its customers. HULM Solutions CRM brings sales, customer service, and marketing together into one seamless platform, enabling businesses to nurture leads, drive customer retention, and enhance overall operational efficiency.",
+      headline: "Customer Records Connected to the Sale",
+      description: "Hulm customer management is a customer relationship management system that connects customer records with relevant sales activity, helping authorised teams review purchase history, contact information and service context from the same operating workspace.",
       points: [
         "Turn anonymous shoppers into identified repeat customers at checkout.",
         "Track purchase frequency, favorite items, and lifetime spending per customer.",
@@ -562,7 +562,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Integrated Support & Feedback",
-          description: "Manage customer inquiries and feedback seamlessly across channels to resolve issues quickly and boost customer satisfaction.",
+          description: "Keep customer enquiries and feedback organised so staff can follow up with the relevant sales context.",
           icon: CheckCircle2
         },
         {
@@ -573,8 +573,8 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     benefits: {
-      headline: "Benefits of Using HULM Customer Relationship Management",
-      description: "The HULM Solutions CRM enables organizations to deliver personalized customer experiences, improve team collaboration, and maximize customer retention.",
+      headline: "Benefits of Using Hulm Customer Relationship Management",
+      description: "The Hulm Solutions CRM software enables organizations to deliver personalized customer experiences, improve team collaboration, and maximize customer retention.",
       points: [
         "Stronger Customer Loyalty - Reward frequent buyers with point-based incentives.",
         "Higher Repeat Purchases - Send tailored offers based on previous shopping habits.",
@@ -593,14 +593,14 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Zero Hardware Required",
-          description: "Access customer records from any browser, tablet, or smartphone without installing dedicated servers."
+          description: "Access customer records in the CRM software from any browser, tablet, or smartphone without installing dedicated servers."
         },
         {
           title: "Privacy & Data Protection",
-          description: "Your customer contact lists and purchasing history remain 100% private to your business and are never shared."
+          description: "Customer access should be limited through appropriate staff roles and handled according to your privacy and retention requirements."
         },
         {
-          title: "Instant Counter Lookup",
+          title: "Counter Lookup",
           description: "Cashiers can look up customer accounts in less than 2 seconds by typing a mobile number during billing."
         }
       ]
@@ -617,7 +617,7 @@ export const appsData: Record<string, AppDetailData> = {
     },
     faq: {
       headline: "Frequently Asked Questions",
-      description: "Common questions about Hulm CRM and loyalty management.",
+      description: "Common questions about Hulm customer relationship management and loyalty points.",
       items: [
         {
           question: "Can cashiers quickly search customers by phone number at the counter?",
@@ -644,20 +644,20 @@ export const appsData: Record<string, AppDetailData> = {
     name: "Order Management",
     title: "Order Management | Order Management System - Hulm",
     metaTitle: "Order Management | Order Management System - Hulm",
-    metaDescription: "Optimize your Order Management with HULM Solutions Order Management System. Streamline order processing, improve accuracy, and enhance efficiency.",
+    metaDescription: "Optimize your Order Management with Hulm Solutions Order Management System. Streamline order processing, improve accuracy, and enhance efficiency.",
     icon: FileText,
     hero: {
       badge: "ORDER LIFECYCLE CONTROL",
-      headline: "Best Order Management Software - Hulm Solutions",
-      subheadline: "Orders getting messy and hard to track? Hulm's cloud-based order management software brings everything into one clear dashboard. Manage orders faster, eliminate fulfillment errors, and keep operations organized.",
+      headline: "Best Order Management System - Hulm Solutions",
+      subheadline: "Orders getting messy and hard to track? Hulm's cloud-based order management system brings everything into one clear dashboard. Manage orders faster, eliminate fulfillment errors, and keep operations organized.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to Sales",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
-      headline: "Powerful Order Management Dashboard with an Easy-to-Use Interface",
-      description: "Manage everything from one clean, simple dashboard with our order management software. This cloud-based order management system software helps you handle daily orders smoothly and stay in control. Built for growing teams looking for the best order management software to keep operations fast, clear, and stress-free.",
+      headline: "Order Management Dashboard for Daily Fulfilment",
+      description: "Manage orders from one clear dashboard. Hulm's order management software helps growing teams review order status, coordinate daily fulfilment and keep customer and operational records connected.",
       points: [
         "Consolidate in-store, phone, and online orders into a unified processing queue.",
         "Track live progress: Pending, In Preparation, Out for Delivery, and Completed.",
@@ -666,7 +666,7 @@ export const appsData: Record<string, AppDetailData> = {
     },
     features: {
       headline: "Complete Order Management System Software Features",
-      description: "Struggling with messy orders? Hulm's order management system software simplifies sales order management. Manage, track, and fulfill effortlessly.",
+      description: "Organise sales orders, fulfilment stages and related stock activity in a clearer operational workflow.",
       items: [
         {
           title: "Multi-Channel Order Centralization",
@@ -680,7 +680,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Automated Stock Reservation",
-          description: "When an order is placed, stock is instantly reserved so your team never oversells items to in-store or online customers.",
+          description: "Stock can be reserved when an order is placed, depending on the configured sales channel and inventory rules.",
           icon: Package
         },
         {
@@ -701,12 +701,12 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     benefits: {
-      headline: "Benefits of Using HULM Order Management",
+      headline: "Benefits of Using Hulm Order Management",
       description: "Hulm's order management system software streamlines your workflow and automates processes for faster, error-free operations. With our cloud-based order management system, you get real-time insights and full control over sales order management.",
       points: [
-        "Improved Efficiency - Automate order routing and reduce processing time by up to 60%.",
+        "Improved Efficiency - Fewer manual steps between taking an order and delivering it.",
         "Enhanced Customer Satisfaction - Provide accurate delivery estimates and real-time updates.",
-        "Better Inventory Control - Prevent stock discrepancies with instant real-time reservations.",
+        "Better inventory control - Use configured reservation rules to reduce stock discrepancies.",
         "Gain Real-Time Insights - Identify order surges, peak hours, and delivery bottlenecks.",
         "Simplify Sales Order Management - Manage high-volume order days without chaotic paperwork."
       ]
@@ -715,25 +715,25 @@ export const appsData: Record<string, AppDetailData> = {
       headline: "Why Pakistani Businesses Choose Hulm Order Management",
       items: [
         {
-          title: "Top Rated on Google",
-          description: "Rated 4.9/5 by retailers and distributors across Pakistan for outstanding reliability and speed."
+          title: "Connected to POS and Inventory",
+          description: "Order management, stock and invoices update together, so the counter, warehouse and accounts work from the same order record."
         },
         {
           title: "Multi-Branch Ready",
-          description: "Route orders to the nearest store or warehouse automatically to minimize shipping costs and transit time."
+          description: "Manage orders for several stores or warehouses from one order management system and see which location fulfils each order."
         },
         {
-          title: "100% Cloud-Based",
+          title: "Cloud-Based Access",
           description: "Check order queues and daily revenues from home or on the road without being tied to the store counter."
         },
         {
-          title: "Dedicated Pakistani Support",
-          description: "Get direct phone and WhatsApp assistance from our Karachi and Lahore operational support teams."
+          title: "Local Support",
+          description: "Get phone and WhatsApp help from the Hulm team while you set up order management and in day-to-day use."
         }
       ]
     },
     whoCanUse: {
-      headline: "Who Relies on Hulm Order Management?",
+      headline: "Who Relies on the Hulm Order Management System?",
       description: "Built for businesses handling continuous daily transaction volume:",
       points: [
         "E-Commerce & Retail Stores - Manage customer orders from placement to doorstep dispatch.",
@@ -743,8 +743,8 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     faq: {
-      headline: "Frequently Asked Questions",
-      description: "Answers to common questions regarding Hulm Order Management software.",
+      headline: "Order Management FAQs",
+      description: "Answers to common questions about Hulm order management software.",
       items: [
         {
           question: "What is Sales Order Management?",
@@ -756,7 +756,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "What is Order Management?",
-          answer: "Order Management is the system used to receive, process, track, and fulfill orders across all sales channels. Hulm Solutions centralizes orders, inventory, and fulfillment into one intuitive dashboard."
+          answer: "Order management is how a business receives, processes, tracks, and fulfills orders across all sales channels, and an order management system is the software that runs it. Hulm Solutions centralizes orders, inventory, and fulfillment into one intuitive dashboard."
         },
         {
           question: "When evaluating a sales order management system, what should businesses look for?",
@@ -764,7 +764,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "How do platforms manage recurring orders for hospitality businesses?",
-          answer: "They automate repeat orders, update inventory, and handle billing on schedule. Hulm Solutions makes recurring order management effortless."
+          answer: "Configured recurring orders can help teams schedule repeat activity, inventory updates and billing steps. Confirm the exact workflow during setup."
         },
         {
           question: "How does Hulm Solutions reduce order errors?",
@@ -787,8 +787,8 @@ export const appsData: Record<string, AppDetailData> = {
       subheadline: "Manage fleet, warehouse, delivery, documents, and third-party logistics from a single, intelligent platform. Designed for businesses that need accuracy, visibility, and scalability without operational complexity.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to an Expert",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
       headline: "What Is Logistics Management Software?",
@@ -796,12 +796,12 @@ export const appsData: Record<string, AppDetailData> = {
       points: [
         "Real-time GPS tracking for delivery drivers and company vehicles.",
         "Automated route optimization to cut fuel consumption and avoid traffic bottlenecks.",
-        "Instant digital proof of delivery with customer signatures and photo verification."
+        "Digital proof-of-delivery records can include customer signatures or photos where configured."
       ]
     },
     features: {
       headline: "Core Features of Hulm Logistics Management",
-      description: "Full end-to-end tooling to operate delivery fleets and third-party couriers seamlessly.",
+      description: "Coordinate fleet tracking, delivery management and supported third-party courier workflows from a connected operating view.",
       items: [
         {
           title: "Real-Time Fleet & Driver Tracking",
@@ -830,7 +830,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Fuel & Vehicle Maintenance Logs",
-          description: "Log vehicle mileage, service dates, and fuel expenses to manage fleet maintenance proactively.",
+          description: "Log vehicle mileage, service dates, and fuel expenses so fleet management and maintenance stay proactive.",
           icon: TrendingUp
         }
       ]
@@ -842,12 +842,12 @@ export const appsData: Record<string, AppDetailData> = {
         "Designed by logistics and software experts with deep operational experience.",
         "Proven across real-world logistics operations in urban and intercity routes.",
         "Secure, scalable, and future-ready cloud architecture.",
-        "Easy onboarding with dedicated onboarding specialists and 24/7 support.",
+        "Easy onboarding with dedicated onboarding specialists and local support on WhatsApp and phone.",
         "Continuous product improvements tailored to local transport requirements."
       ]
     },
     whyChoose: {
-      headline: "All-in-One Logistics Management System Software",
+      headline: "Logistics Management Connected to Your POS and Inventory",
       items: [
         {
           title: "Powerful Unified Dashboard",
@@ -855,7 +855,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Reduced Fuel & Operational Costs",
-          description: "Smart route planning reduces unnecessary mileage and fuel consumption by up to 25%."
+          description: "Route planning in the logistics management system helps cut unnecessary mileage and fuel spend."
         },
         {
           title: "Eliminate Delivery Disputes",
@@ -868,7 +868,7 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     whoCanUse: {
-      headline: "Who We Serve",
+      headline: "Who Uses Our Logistics Management Software",
       description: "Customized for industries requiring rapid, dependable product distribution:",
       points: [
         "Logistics & Courier Companies - Track daily parcels, driver runs, and cash on delivery (COD) reconciliations.",
@@ -878,16 +878,16 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     faq: {
-      headline: "Frequently Asked Questions",
-      description: "Common questions regarding Hulm Logistics Management Software.",
+      headline: "Logistics Management Software FAQs",
+      description: "Common questions about Hulm logistics management software.",
       items: [
         {
           question: "Is this suitable for small businesses?",
-          answer: "Yes. The platform scales easily from small 2-vehicle delivery teams to enterprise logistics fleets with hundreds of routes."
+          answer: "Hulm can support different fleet sizes. Capacity, route volume and required controls should be confirmed before rollout."
         },
         {
           question: "Can it integrate with ERP or accounting systems?",
-          answer: "Yes, our logistics management system software integrates seamlessly with existing business tools, POS systems, and inventory modules."
+          answer: "Supported integrations can connect logistics, POS, inventory and accounting workflows. Compatibility and data scope must be confirmed for each system."
         },
         {
           question: "Is the software customizable?",
@@ -907,11 +907,11 @@ export const appsData: Record<string, AppDetailData> = {
     hero: {
       badge: "REAL-TIME STOCK CONTROL",
       headline: "Cloud Based Inventory Management Software",
-      subheadline: "Keeping track of your inventory during busy seasons can be stressful, and running out of popular items disappoints customers. With Hulm's inventory management software, streamline tracking, manage stock in real-time, and automate reordering effortlessly.",
+      subheadline: "Track stock movement, review current quantities and configure reorder workflows around the way your business purchases and sells products.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Request Free Demo",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
       headline: "Smarter Inventory Management Software for Every Business",
@@ -924,7 +924,7 @@ export const appsData: Record<string, AppDetailData> = {
     },
     features: {
       headline: "Complete Inventory Control Software Features",
-      description: "Every tool you need to eliminate stock shrinkage, overselling, and inventory guessing.",
+      description: "Every inventory management tool you need to eliminate shrinkage, overselling, and inventory guessing.",
       items: [
         {
           title: "Real-Time Stock Auditing",
@@ -960,9 +960,9 @@ export const appsData: Record<string, AppDetailData> = {
     },
     benefits: {
       headline: "Benefits of Inventory Management Software",
-      description: "At Hulm Solutions, we empower businesses to thrive by simplifying stock tracking and minimizing carrying expenses.",
+      description: "At Hulm Solutions, we empower businesses to thrive by simplifying stock management and minimizing carrying expenses.",
       points: [
-        "Real-time inventory tracking across all physical counters and online channels.",
+        "Real-time inventory management across all physical counters and online channels.",
         "Prevent costly stockouts of your highest-margin and best-selling products.",
         "Minimize shrinkage, theft, and administrative counting errors.",
         "Faster stock audits with handheld barcode scanning.",
@@ -971,7 +971,7 @@ export const appsData: Record<string, AppDetailData> = {
         "Reduced working capital tied up in slow-moving or dead stock.",
         "Automated purchase order creation when stock reaches reorder levels.",
         "Multi-location synchronization without manual phone calls or spreadsheets.",
-        "Seamless customer experience with accurate in-stock promises."
+        "Clearer customer communication based on available stock records."
       ]
     },
     whyChoose: {
@@ -990,13 +990,13 @@ export const appsData: Record<string, AppDetailData> = {
           description: "Tailored features for retail, pharmacies, apparel variants, restaurants, and wholesale."
         },
         {
-          title: "24/7 Dedicated Support",
-          description: "Our local support engineers are available on WhatsApp and phone whenever you need guidance."
+          title: "Dedicated Local Support",
+          description: "Our local support team helps on WhatsApp and phone during setup and day-to-day use."
         }
       ]
     },
     whoCanUse: {
-      headline: "Who We Serve",
+      headline: "Who Uses Hulm Inventory Management Software",
       description: "Designed for operations where accurate stock numbers directly determine profitability:",
       points: [
         "Retail Stores - Keep fast-moving consumer goods and electronics accurately balanced.",
@@ -1007,8 +1007,8 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     faq: {
-      headline: "Frequently Asked Questions",
-      description: "Quick answers to common questions about our inventory management solution.",
+      headline: "Inventory Management FAQs",
+      description: "Quick answers to common questions about Hulm inventory management software.",
       items: [
         {
           question: "How to improve inventory management?",
@@ -1020,7 +1020,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "How to manage inventory?",
-          answer: "To manage inventory effectively, businesses should categorize items, set reorder levels, and monitor stock movement regularly. The most efficient way is using cloud-based POS inventory software like Hulm."
+          answer: "To manage inventory effectively, businesses should categorize items, set reorder levels, and monitor stock movement regularly. The most efficient way is using cloud-based POS inventory management software like Hulm."
         },
         {
           question: "How does inventory management software work?",
@@ -1031,12 +1031,16 @@ export const appsData: Record<string, AppDetailData> = {
           answer: "The first step of inventory management is recording and categorizing all products in your system, including details like SKUs, quantities, and storage locations."
         },
         {
+          question: "Is inventory management included in every Hulm POS plan?",
+          answer: "Yes. Inventory management is included in every Hulm plan: basic inventory management on Starter, and multi-branch stock and transfers on Growth and Business."
+        },
+        {
           question: "How much does inventory management software cost?",
           answer: "The cost depends on features and business size. Hulm provides full inventory management integrated into its POS platform for just PKR 2,500 per month with a 14-day free trial."
         },
         {
           question: "Which inventory management system is best?",
-          answer: "The best inventory management system is one that matches your business size and industry needs. For Pakistani SMEs, Hulm is rated top because it combines multi-location inventory, FBR compliance, and affordable monthly pricing."
+          answer: "The best inventory management system is one that matches your business size and industry needs. Hulm is one option for Pakistani SMEs that want inventory, multi-location controls, FBR integration and POS workflows in one system. Compare the required features, setup and support before choosing."
         }
       ]
     }
@@ -1052,15 +1056,15 @@ export const appsData: Record<string, AppDetailData> = {
     hero: {
       badge: "DATA-DRIVEN DECISIONS",
       headline: "Streamline Your Business with Hulm Reporting Module",
-      subheadline: "Transform raw transactional data into actionable insights that inspire performance, streamline operations, and optimize business strategies—all from one centralized, easy-to-use platform.",
+      subheadline: "Hulm's reporting module transforms raw transactional data into actionable insights that inspire performance, streamline operations, and optimize business strategies—all from one centralized, easy-to-use platform.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Talk to Sales",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
-      headline: "Effortless Reporting Module with HULM",
-      description: "Data-driven decisions facilitate a business's success. With HULM Solutions' Reporting Module, transform raw sales and operational data into valuable insights that boost profitability, highlight top performers, and eliminate bottlenecks. Our pro reporting tools help you track key metrics while making confident decisions.",
+      headline: "Reporting Connected to Daily Operations",
+      description: "Data-driven decisions facilitate a business's success. With Hulm Solutions' Reporting Module, transform raw sales and operational data into valuable insights that boost profitability, highlight top performers, and eliminate bottlenecks. Our pro reporting tools help you track key metrics while making confident decisions.",
       points: [
         "Real-time visibility into gross sales, net profit, discounts, and tax liabilities.",
         "Identify your top-performing products, quietest store hours, and most profitable sales reps.",
@@ -1069,7 +1073,7 @@ export const appsData: Record<string, AppDetailData> = {
     },
     features: {
       headline: "Functions of Hulm Reporting Module",
-      description: "Comprehensive reporting and analytics designed to answer every question about your business.",
+      description: "Review sales and operational data through POS reports configured for the questions your team needs to answer.",
       items: [
         {
           title: "Tailored Custom Reports",
@@ -1098,14 +1102,14 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Cross-Functional System Data",
-          description: "Pull data seamlessly from sales, CRM, inventory, and financial systems to generate comprehensive, cross-functional business reports.",
+          description: "Bring supported sales, customer, inventory and financial data into reports based on the configured sources and fields.",
           icon: Laptop
         }
       ]
     },
     benefits: {
-      headline: "Benefits of Using HULM Reporting Module",
-      description: "The HULM Solutions Reporting Module enables organizations to drive business decisions from accurate real-time insights at remarkably short notice and without hesitation.",
+      headline: "Benefits of Using Hulm Reporting Module",
+      description: "The Hulm Solutions Reporting Module enables organizations to drive business decisions from accurate real-time insights at remarkably short notice and without hesitation.",
       points: [
         "Better Decision-Making - Base hiring, inventory purchasing, and expansion on verified data.",
         "Increased Operational Efficiency - Spot underperforming items or departments and fix them rapidly.",
@@ -1127,7 +1131,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "One-Click Exporting",
-          description: "Export any report to Excel, CSV, or PDF in seconds to share with your accountant or management team."
+          description: "Export any of your business reports to Excel, CSV, or PDF in seconds to share with your accountant or management team."
         },
         {
           title: "Mobile Dashboard Access",
@@ -1136,7 +1140,7 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     whoCanUse: {
-      headline: "Who Relies on Hulm Reporting?",
+      headline: "Who Relies on the Hulm Reporting Module?",
       description: "Crucial for business owners and managers who want to understand their numbers:",
       points: [
         "Multi-Branch Retailers - Compare revenue, overhead, and margin across every store location.",
@@ -1147,11 +1151,11 @@ export const appsData: Record<string, AppDetailData> = {
     },
     faq: {
       headline: "Frequently Asked Questions",
-      description: "Questions about Hulm business reporting and analytics.",
+      description: "Questions about the Hulm reporting module, POS reports and business reporting and analytics.",
       items: [
         {
           question: "Can I view sales reports from my phone when I am away from the store?",
-          answer: "Yes. Hulm is 100% cloud-based. You can log into your dashboard on any smartphone or tablet to see live sales, register balances, and daily totals from anywhere in the world."
+          answer: "Hulm uses cloud-based access. Available dashboards, devices and permissions depend on the selected plan and configuration."
         },
         {
           question: "Does Hulm generate reports for FBR tax filing?",
@@ -1163,7 +1167,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "Can I export data to Excel or PDF for my accountant?",
-          answer: "Every report in Hulm can be exported with a single click to Excel, CSV, or PDF."
+          answer: "Every report in the reporting module can be exported with a single click to Excel, CSV, or PDF."
         }
       ]
     }
@@ -1172,31 +1176,31 @@ export const appsData: Record<string, AppDetailData> = {
   "website": {
     slug: "website",
     name: "Website & Ecommerce Store",
-    title: "One-Click Ecommerce Store | Launch Your Shop Instantly",
-    metaTitle: "One-Click Ecommerce Store | Launch Your Shop Instantly - Hulm",
+    title: "Connected Ecommerce Store | Hulm Solutions",
+    metaTitle: "Connected Ecommerce Store | Hulm Solutions",
     metaDescription: "Start selling online with Hulm's one-click ecommerce store. Fast setup, management, & integrations to grow your business. Get your free demo!",
     icon: Store,
     hero: {
       badge: "ONE-TAP ECOMMERCE",
-      headline: "One-Tap Ecommerce - Turn Inventory into an Online Store",
+      headline: "One-Tap Ecommerce Store - Turn Your Inventory into Online Sales",
       subheadline: "The only POS module that turns your entire business inventory into a professional e-commerce store with one single click. No developers, no hosting headaches, just your products live and ready to sell.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Request Free Demo",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
-      headline: "From POS to Online Store in Three Taps",
-      description: "Most businesses are invisible to customers outside walking distance. Building a custom website or using complicated foreign platforms means months of setup, expensive developers, and ongoing maintenance headaches. The Hulm Website module changes that overnight.",
+      headline: "From POS to Ecommerce Store in Three Taps",
+      description: "Most businesses are invisible to customers outside walking distance. Building a custom website or using complicated foreign platforms means months of setup, expensive developers, and ongoing maintenance headaches. The Hulm Website module changes that overnight with a one-click ecommerce store connected to your POS inventory.",
       points: [
         "Select the products you want to sell online directly from your existing POS inventory.",
-        "Choose your brand colors, upload your logo, and your mobile-optimized store goes live instantly.",
-        "Online orders arrive directly into your POS register screen with instant notification alerts."
+        "Choose your brand colours, upload your logo and prepare a mobile-friendly storefront for launch.",
+        "Supported online orders can connect to the POS workflow with configured notifications."
       ]
     },
     features: {
-      headline: "Everything You Need to Sell Online in Pakistan",
-      description: "Built for real businesses—from corner retail shops to large wholesalers—with zero technical skills required.",
+      headline: "Online Store Features: Everything You Need to Sell Online in Pakistan",
+      description: "Built for real businesses—from corner retail shops to large wholesalers—with zero technical skills required to run an ecommerce website.",
       items: [
         {
           title: "One-Tap Product Publishing",
@@ -1209,8 +1213,8 @@ export const appsData: Record<string, AppDetailData> = {
           icon: Package
         },
         {
-          title: "Pakistani Payment Methods Built-In",
-          description: "Support Cash on Delivery (COD), JazzCash, EasyPaisa, and bank transfer out of the box with zero third-party setup fees.",
+          title: "Cash on Delivery & Bank Transfer",
+          description: "Take orders with cash on delivery (COD) or direct bank transfer. Online payment gateways are planned and will be added to the store.",
           icon: CreditCard
         },
         {
@@ -1232,7 +1236,7 @@ export const appsData: Record<string, AppDetailData> = {
     },
     benefits: {
       headline: "Website Module vs Everything Else",
-      description: "Comparing traditional web development and complex platforms with Hulm's native e-commerce integration:",
+      description: "Comparing traditional ecommerce website development and complex platforms with Hulm's native e-commerce integration:",
       points: [
         "Live order notifications the second a customer checks out on your website.",
         "Online + POS sales unified in one single financial and operational view.",
@@ -1242,11 +1246,11 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     whyChoose: {
-      headline: "Why Pakistani Businesses Choose Hulm Ecommerce",
+      headline: "Why Pakistani Businesses Choose the Hulm Ecommerce Store",
       items: [
         {
           title: "Live in Under 60 Seconds",
-          description: "Your product images, descriptions, and prices are already in your POS. Activate the module and your store is live."
+          description: "Your product images, descriptions, and prices are already in your POS. Activate the module and your ecommerce store is live."
         },
         {
           title: "No Technical Knowledge Required",
@@ -1263,7 +1267,7 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     whoCanUse: {
-      headline: "Perfect for Every Retail Category",
+      headline: "An Online Store for Every Retail Category",
       description: "Expand your reach beyond your physical neighborhood:",
       points: [
         "Fashion & Clothing Boutiques - Showcase new seasonal arrivals and take orders nationwide.",
@@ -1273,11 +1277,11 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     faq: {
-      headline: "Frequently Asked Questions",
+      headline: "Ecommerce Online Store FAQs",
       description: "Answers to common questions about launching an online store with Hulm.",
       items: [
         {
-          question: "Do I need any technical knowledge to set up my store?",
+          question: "Do I need any technical knowledge to set up my ecommerce store?",
           answer: "None at all. The Website module is a one-tap activation inside your existing POS dashboard. No code, no configuration, and no design work required. Your products and categories appear online automatically."
         },
         {
@@ -1294,7 +1298,7 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "What payment methods are available for my customers?",
-          answer: "The Website module includes JazzCash, EasyPaisa, direct bank transfer, and cash on delivery — out of the box, with no additional setup."
+          answer: "Customers can pay by cash on delivery or direct bank transfer. Online payment gateways are not available yet; they are planned for a future update."
         }
       ]
     }
@@ -1310,28 +1314,28 @@ export const appsData: Record<string, AppDetailData> = {
     hero: {
       badge: "SELL ANYWHERE ON ANY SMARTPHONE",
       headline: "Best Mobile POS System for Modern Business",
-      subheadline: "Sell anywhere with our powerful mobile POS system designed for retail, restaurants, and service businesses. Accept payments anywhere, track sales in real-time, and manage inventory effortlessly—all from your smartphone or tablet.",
+      subheadline: "Use a mobile device for supported retail, restaurant and service workflows. Payment options, live reporting and inventory access depend on your configuration.",
       primaryCtaText: "Start 14-Day Free Trial",
       primaryCtaLink: "https://app.hulmsolutions.com/Register",
-      secondaryCtaText: "Request Free Demo",
-      secondaryCtaLink: "/contact/"
+      secondaryCtaText: "Book a Free Demo",
+      secondaryCtaLink: "/book-a-demo/"
     },
     whatIs: {
       headline: "What is a Mobile POS System?",
       description: "A mobile POS system (mPOS) turns smartphones or tablets into powerful payment terminals, replacing traditional fixed registers with flexible, cloud-based technology. With mobile POS software, businesses can accept payments, manage sales, and track inventory anywhere using a secure POS mobile solution without investing in costly bulky hardware.",
       points: [
-        "Runs on any standard Android smartphone, tablet, or handheld POS terminal.",
-        "Full offline mode ensures you keep processing sales even during internet outages.",
+        "Runs in the web browser on smartphones, tablets and handheld POS terminals, with no app to download.",
+        "Works on Wi-Fi or mobile data; keep a backup connection such as a mobile hotspot for busy hours.",
         "Print receipts via portable Bluetooth printers or send digital SMS/WhatsApp invoices."
       ]
     },
     features: {
-      headline: "All-in-One Mobile POS Solution",
-      description: "Get started in under 30 minutes with our simple, lightning-fast mobile application.",
+      headline: "Mobile POS System Features for Phones and Tablets",
+      description: "Configure the mobile experience around your products, users, devices and accepted payment methods.",
       items: [
         {
           title: "01 Sign Up & Sign In",
-          description: "Create your account and sign in to the mobile POS system dashboard to start setting up your business in minutes.",
+          description: "Create your account and sign in to the Hulm dashboard to start setting up your business in minutes.",
           icon: Laptop
         },
         {
@@ -1340,18 +1344,18 @@ export const appsData: Record<string, AppDetailData> = {
           icon: CreditCard
         },
         {
-          title: "03 Instant Product Catalog",
+          title: "03 Product Catalogue",
           description: "Add products by importing inventory, scanning barcodes with your phone's camera, or manually entering items.",
           icon: Package
         },
         {
           title: "04 Process Sales in Seconds",
-          description: "Use your POS mobile app to process sales in under 10 seconds, accept payments, and send instant digital receipts.",
+          description: "Use the on-the-go checkout to process sales, record supported payment methods and provide digital receipts where configured.",
           icon: ShoppingCart
         },
         {
-          title: "Offline Transaction Mode",
-          description: "Keep selling even when your internet connection drops. All transactions automatically sync when reconnected.",
+          title: "Live Cloud Sync",
+          description: "Every sale is saved to your Hulm cloud workspace as it happens, so stock and reports stay up to date across devices.",
           icon: ShieldCheck
         },
         {
@@ -1362,14 +1366,14 @@ export const appsData: Record<string, AppDetailData> = {
       ]
     },
     benefits: {
-      headline: "Why Pakistani Businesses Choose Mobile POS",
+      headline: "Why Pakistani Businesses Sell on Phones and Tablets with Hulm",
       description: "Eliminate high hardware costs and gain the freedom to sell at exhibitions, pop-ups, and curbside delivery:",
       points: [
         "Zero Expensive Hardware - No need to spend PKR 100,000+ on imported POS terminals.",
-        "Works Everywhere - Designed to operate smoothly on 3G, 4G, or offline in patchy signal zones.",
+        "Works on mobile data - Designed to run on 3G and 4G connections as well as Wi-Fi.",
         "Fast Checkout - Complete a customer sale in under 10 seconds with quick-touch product categories.",
         "FBR Invoicing on the Go - Generate compliant receipts with required tax identifiers wherever you are.",
-        "Instant Sync - Sales made on mobile reflect on central headquarters analytics immediately."
+        "Connected reporting - Mobile sales can feed central reporting based on network availability and system configuration."
       ]
     },
     whyChoose: {
@@ -1377,7 +1381,7 @@ export const appsData: Record<string, AppDetailData> = {
       items: [
         {
           title: "Hardware Cost",
-          description: "Traditional terminals cost $1,000-$2,500+. Hulm Mobile POS runs on devices you already own with $0 hardware investment."
+          description: "Dedicated POS terminals are expensive. Hulm runs on compatible phones and tablets you may already own, so you can set up a tablet POS with little or no new hardware."
         },
         {
           title: "Mobility & Portability",
@@ -1385,27 +1389,27 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           title: "Setup & Training Time",
-          description: "Complex legacy software takes days to learn. Hulm's intuitive mobile app has cashiers making sales in under 5 minutes."
+          description: "Complex legacy software takes days to learn. Hulm's mobile screens are designed so cashiers pick up the sales flow quickly."
         },
         {
-          title: "Offline Reliability",
-          description: "Hulm's offline mode safeguards transactions during sudden power cuts or broadband outages."
+          title: "Backup Connectivity",
+          description: "Because Hulm runs in the cloud, a phone hotspot is an easy backup when broadband drops, so the counter keeps selling."
         }
       ]
     },
     whoCanUse: {
-      headline: "Real-World Mobile POS Use Cases",
+      headline: "Real-World Mobile POS System Use Cases",
       description: "Trusted across Pakistan for versatile operational setups:",
       points: [
         "Pop-Up Shops & Exhibitions - Sell at trade fairs, expos, and seasonal markets without electrical wiring.",
-        "Food Trucks & Cafes - Take orders at tables, drive-thrus, or outdoor seating effortlessly.",
+        "Food trucks and cafes - Support orders at tables, drive-throughs or outdoor service points.",
         "Line Busting in Busy Retail - Speed up peak holiday queues by adding mobile checkout stations.",
         "Delivery & Field Agents - Collect cash or digital payments at the customer's doorstep upon delivery."
       ]
     },
     faq: {
-      headline: "Frequently Asked Questions",
-      description: "Everything you need to know about setting up and running Hulm Mobile POS.",
+      headline: "Mobile POS FAQs",
+      description: "Everything you need to know about setting up and running Hulm on phones and tablets.",
       items: [
         {
           question: "What is a mobile point of sale system?",
@@ -1413,27 +1417,27 @@ export const appsData: Record<string, AppDetailData> = {
         },
         {
           question: "How does a mobile POS system work?",
-          answer: "Download the HULM app, connect your payment processor or Bluetooth printer, add your products, and start accepting payments. Transactions are processed securely and data syncs in real time with the cloud."
+          answer: "Sign in to Hulm on a compatible phone or tablet, connect a Bluetooth or USB receipt printer if you need receipts, add your products and start selling. Sales sync with your Hulm cloud workspace."
         },
         {
           question: "What is the best mobile POS system for small business?",
-          answer: "HULM is designed specifically for small businesses with affordable pricing (PKR 2,500/month), zero hardware costs, 5-minute setup, offline mode, and automatic FBR compliance."
+          answer: "Hulm is built for small businesses in Pakistan: plans start at PKR 2,500 per month, it runs on compatible devices you may already own, setup guidance is included, and FBR integration is available."
         },
         {
           question: "Are mobile POS systems secure?",
-          answer: "Yes. HULM uses bank-level encryption (256-bit SSL/TLS), PCI DSS compliance, tokenized payments, and secure cloud storage. Your customer data is never stored unencrypted."
+          answer: "Hulm runs over encrypted HTTPS connections, with user roles and permissions controlling what each staff member can see and do. Card payments are processed by your payment provider. Ask the team for current security details for your deployment."
         },
         {
-          question: "Can I use HULM POS on Android and iOS?",
-          answer: "Absolutely! HULM works on both Android and iOS devices, as well as tablets and web browsers. Use any smartphone you already own."
+          question: "Is there a Hulm mobile app on the App Store or Google Play?",
+          answer: "Not at the moment. Hulm runs in the web browser on phones, tablets and computers, so there is nothing to download: sign in and start selling."
         },
         {
           question: "Do I need internet to use mobile POS?",
-          answer: "HULM works both online and offline. You can process sales without internet, and data automatically syncs when you reconnect. Perfect for outdoor markets or areas with patchy connectivity."
+          answer: "Yes. Hulm is a cloud POS and needs an internet connection (Wi-Fi or mobile data) to record sales. It does not have an offline mode, so we recommend a backup connection such as a mobile hotspot."
         },
         {
           question: "What payment methods can I accept?",
-          answer: "Accept all major credit/debit cards, mobile wallets (JazzCash, EasyPaisa), cash, and bank transfers, with full support for split payments."
+          answer: "Record cash, card, mobile-wallet (such as JazzCash and EasyPaisa) and bank-transfer payments. Integrated payment gateways are not available yet and are planned for a future update."
         },
         {
           question: "Is there a free trial?",

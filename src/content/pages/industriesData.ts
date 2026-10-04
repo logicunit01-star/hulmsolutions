@@ -115,14 +115,14 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "problems": {
       "heading": "Are These Problems Holding Your Store Back?",
       "items": [
         {
           "problem": "Your sales agent runs to the back room searching for a specific shirt size while the customer gets impatient and walks out without buying.",
-          "solution": "Know exactly what sizes, colors, and styles are in stock instantly at the front-desk POS without ever leaving your customer.",
+          "solution": "Let authorised staff review recorded sizes, colours and styles from the front-desk POS while serving the customer.",
           "solutionTitle": "The Hulm Fix: Deep Variant Management"
         },
         {
@@ -141,12 +141,12 @@ export const industriesData: Record<string, IndustryData> = {
       "heading": "Retail Features That Actually Drive Sales",
       "items": [
         {
-          "title": "Sub-Second Checkout",
-          "description": "In a supermarket, every second counts. Hulm’s POS is optimized for instant barcode entry and lightning-fast receipt printing, eliminating long queues."
+          "title": "Barcode-Led Checkout",
+          "description": "Use barcode entry and configured receipt printing to support an efficient supermarket checkout workflow."
         },
         {
           "title": "Expand Without Breaking",
-          "description": "Opening your fifth clothing outlet? Add a new branch to your dashboard in minutes. Transfer inventory seamlessly and check centralized sales data."
+          "description": "Add branches based on your plan, record inventory transfers and review consolidated sales information with appropriate permissions."
         },
         {
           "title": "Fluid Exchanges",
@@ -160,7 +160,7 @@ export const industriesData: Record<string, IndustryData> = {
       "points": [
         {
           "title": "Correct tax applied across every product bracket",
-          "description": "Automated tax calculation across different retail product brackets with 100% compliance."
+          "description": "Configure relevant tax calculations and invoice fields according to requirements confirmed during implementation."
         },
         {
           "title": "QR-coded FBR receipts printed at checkout",
@@ -193,7 +193,7 @@ export const industriesData: Record<string, IndustryData> = {
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Upgrade to the Best POS System for Your Retail Store Today!",
-      "description": "Choose the best retail point of sale system trusted by stores worldwide. HULM Solutions helps you increase efficiency with faster billing, smarter inventory, and seamless operations that power your retail business.",
+      "description": "Choose the best retail point of sale system trusted by stores worldwide. Hulm Solutions helps you increase efficiency with faster billing, smarter inventory, and seamless operations that power your retail business.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -216,15 +216,15 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "problems": {
       "heading": "Why Generic Billing Software Puts Your Restaurant Behind",
       "items": [
         {
           "problem": "Handwritten orders get lost between servers and kitchen staff, leading to wrong meals, cold food, and furious diners.",
-          "solution": "Orders sent instantly to kitchen display systems (KDS) or thermal KOT printers by station — drinks to bar, mains to grill.",
-          "solutionTitle": "The Hulm Fix: Instant KOT Routing"
+          "solution": "Route orders to configured kitchen displays or KOT printers by station, such as drinks to the bar and mains to the grill.",
+          "solutionTitle": "The Hulm Fix: Configured KOT Routing"
         },
         {
           "problem": "A table of eight wants to split the bill four ways, pay partly in cash and partly by card. Your old system crashes or locks up your counter.",
@@ -296,7 +296,7 @@ export const industriesData: Record<string, IndustryData> = {
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Upgrade your business with Restaurant Point of Sale Software Today!",
-      "description": "Choose the best restaurant POS software trusted by dining establishments across Pakistan. HULM Solutions helps you speed up table turnover, streamline kitchen workflows, and control ingredient costs.",
+      "description": "Choose the best restaurant POS software trusted by dining establishments across Pakistan. Hulm Solutions helps you speed up table turnover, streamline kitchen workflows, and control ingredient costs.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -319,7 +319,7 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "problems": {
       "heading": "Are These Problems Holding Your Pharmacy Back?",
@@ -331,7 +331,7 @@ export const industriesData: Record<string, IndustryData> = {
         },
         {
           "problem": "When a prescribed brand is out of stock, sales staff struggle to quickly identify available generic substitutes with identical active ingredients.",
-          "solution": "Search by formula and generic salt to instantly view all in-stock alternatives with exact dosages and pricing.",
+          "solution": "Search configured medicine records by formula or generic salt and review recorded stock, dosage and pricing information.",
           "solutionTitle": "The Hulm Fix: Generic Salt Search"
         },
         {
@@ -346,10 +346,10 @@ export const industriesData: Record<string, IndustryData> = {
       "items": [
         {
           "title": "Scan, Sell, Repeat",
-          "description": "Lightning-fast barcode lookup with batch selection. Keep checkout lines moving during busy evening pharmacy hours."
+          "description": "Use barcode lookup with batch selection to support checkout during busy pharmacy hours."
         },
         {
-          "title": "Shift Medicines Between Stores Instantly",
+          "title": "Transfer Medicines Between Stores",
           "description": "Multi-branch medicine transfers with dispatch notes and receiving confirmation to balance stock across your pharmacy chain."
         },
         {
@@ -368,7 +368,7 @@ export const industriesData: Record<string, IndustryData> = {
         },
         {
           "title": "Every sale syncs with FBR automatically",
-          "description": "Generate official fiscal invoices with QR codes instantly at receipt print."
+          "description": "Generate configured fiscal invoice fields and QR codes as part of the receipt workflow."
         },
         {
           "title": "Complete audit trail, zero manual invoicing",
@@ -400,7 +400,7 @@ export const industriesData: Record<string, IndustryData> = {
     "cardTitle": "POS For Manufacturing Industry",
     "cardDesc": "Discover how POS systems can help the manufacturing industry streamline operations and optimize workflows.",
     "metaTitle": "Manufacturing Industry POS System | Hulm Solutions",
-    "metaDescription": "HULM POS has developed a dedicated Manufacturing POS System. Efficiency and accuracy are important attributes in manufacturing.",
+    "metaDescription": "Hulm POS has developed a dedicated Manufacturing POS System. Efficiency and accuracy are important attributes in manufacturing.",
     "hero": {
       "badge": "Manufacturing & Industrial POS",
       "headline": "Manufacturing Industry POS System",
@@ -408,11 +408,11 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
-      "heading": "HULM POS: The Ultimate Manufacturing Industry",
-      "description": "HULM POS has developed a dedicated Manufacturing POS System. Efficiency and accuracy are important attributes in manufacturing that run an effective business. Our software gives manufacturing companies everything they need to manage complex production lines, track work orders, and control raw inventory in one unified platform.",
+      "heading": "Hulm POS: The Ultimate Manufacturing Industry",
+      "description": "Hulm POS has developed a dedicated Manufacturing POS System. Efficiency and accuracy are important attributes in manufacturing that run an effective business. Our software gives manufacturing companies everything they need to manage complex production lines, track work orders, and control raw inventory in one unified platform.",
       "points": [
         "Designed for Manufacturing: Purpose-built features tailored to production units, warehouses, and supply chain management.",
         "Real-Time Inventory: Track raw materials, work-in-progress, and finished goods accurately across multiple plants.",
@@ -421,7 +421,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "features": {
-      "heading": "Why Choose HULM POS for Manufacturing Industry?",
+      "heading": "Why Choose Hulm POS for Manufacturing Industry?",
       "items": [
         {
           "title": "Designed for Manufacturing",
@@ -450,8 +450,8 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "whoCanBenefit": {
-      "heading": "Who Can Benefit from HULM POS?",
-      "description": "HULM POS is ideal for manufacturing enterprises of all scales:",
+      "heading": "Who Can Benefit from Hulm POS?",
+      "description": "Hulm POS is ideal for manufacturing enterprises of all scales:",
       "items": [
         "Manufacturing Plants",
         "Warehouses & Distribution Hubs",
@@ -480,22 +480,22 @@ export const industriesData: Record<string, IndustryData> = {
     },
     "faqs": [
       {
-        "question": "Is HULM POS suitable for both small and large manufacturing businesses?",
-        "answer": "Absolutely. HULM POS is scalable and can be tailored to meet the needs of both small manufacturers and large enterprises with complex supply chains."
+        "question": "Is Hulm POS suitable for both small and large manufacturing businesses?",
+        "answer": "Absolutely. Hulm POS is scalable and can be tailored to meet the needs of both small manufacturers and large enterprises with complex supply chains."
       },
       {
-        "question": "Does HULM POS integrate with existing manufacturing systems?",
-        "answer": "Yes, HULM POS can seamlessly integrate with ERP, accounting software, and other manufacturing tools to ensure smooth operations and data synchronization."
+        "question": "Does Hulm POS integrate with existing manufacturing systems?",
+        "answer": "Yes, Hulm POS can seamlessly integrate with ERP, accounting software, and other manufacturing tools to ensure smooth operations and data synchronization."
       },
       {
-        "question": "How secure is HULM POS for sensitive manufacturing data?",
-        "answer": "HULM POS follows industry-standard security protocols to protect sensitive business and operational data, ensuring compliance and peace of mind."
+        "question": "How secure is Hulm POS for sensitive manufacturing data?",
+        "answer": "Hulm POS follows industry-standard security protocols to protect sensitive business and operational data, ensuring compliance and peace of mind."
       }
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Streamline Production with Smart POS for Manufacturers!",
-      "description": "Drive efficiency with HULM Solutions—faster billing, smarter inventory, and seamless operations that power your manufacturing business.",
+      "description": "Drive efficiency with Hulm Solutions—faster billing, smarter inventory, and seamless operations that power your manufacturing business.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -518,11 +518,11 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
-      "heading": "HULM POS: Best POS System For Furniture Store",
-      "description": "Furniture stores are types of businesses for which excellent efficiency and accuracy are necessary. From tracking showroom floor display pieces and custom fabric orders to warehouse stock and scheduled home deliveries, HULM Furniture POS keeps every aspect of your furniture showroom running smoothly.",
+      "heading": "Hulm POS: Best POS System For Furniture Store",
+      "description": "Furniture stores are types of businesses for which excellent efficiency and accuracy are necessary. From tracking showroom floor display pieces and custom fabric orders to warehouse stock and scheduled home deliveries, Hulm Furniture POS keeps every aspect of your furniture showroom running smoothly.",
       "points": [
         "Multi-piece furniture set tracking and showroom-to-warehouse stock sync",
         "Custom woodwork orders, advance customer deposits, and milestone billing",
@@ -531,7 +531,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "features": {
-      "heading": "Why Choose HULM POS for Furniture Store?",
+      "heading": "Why Choose Hulm POS for Furniture Store?",
       "items": [
         {
           "title": "Showroom & Warehouse Sync",
@@ -552,8 +552,8 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "whoCanBenefit": {
-      "heading": "Who Can Benefit from HULM POS?",
-      "description": "HULM POS is perfect for all furniture and decor retailers:",
+      "heading": "Who Can Benefit from Hulm POS?",
+      "description": "Hulm POS is perfect for all furniture and decor retailers:",
       "items": [
         "Furniture Showrooms & Galleries",
         "Home Decor & Interior Boutiques",
@@ -582,22 +582,22 @@ export const industriesData: Record<string, IndustryData> = {
     },
     "faqs": [
       {
-        "question": "What features does HULM POS offer for furniture stores?",
-        "answer": "HULM POS provides inventory management, sales tracking, customer management, secure payment processing, and reporting tools tailored for furniture retailers."
+        "question": "What features does Hulm POS offer for furniture stores?",
+        "answer": "Hulm furniture POS software provides inventory management, sales tracking, customer management, secure payment processing, and reporting tools tailored for furniture retailers."
       },
       {
-        "question": "Can HULM POS handle custom orders and special requests?",
-        "answer": "Yes, HULM POS allows you to track custom furniture orders, manage special requests, and keep customers updated throughout the process."
+        "question": "Can Hulm POS handle custom orders and special requests?",
+        "answer": "Yes, Hulm POS allows you to track custom furniture orders, manage special requests, and keep customers updated throughout the process."
       },
       {
-        "question": "Is HULM POS suitable for both online and offline furniture stores?",
-        "answer": "Absolutely! HULM POS supports seamless integration with e-commerce platforms and in-store operations."
+        "question": "Is Hulm POS suitable for both online and offline furniture stores?",
+        "answer": "Absolutely! Hulm POS supports seamless integration with e-commerce platforms and in-store operations."
       }
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Upgrade your furniture business with smart POS software today!",
-      "description": "Furnish your success with HULM Solutions—faster billing, smart inventory control, and seamless operations for your furniture showroom.",
+      "description": "Furnish your success with Hulm Solutions—faster billing, smart inventory control, and seamless operations for your furniture showroom.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -620,24 +620,24 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
-      "heading": "HULM POS: The Ultimate Electric Store POS System",
-      "description": "Positive customer service and precision topped with efficiency embolden an electric store to run an effective business. HULM Electric Store POS handles serialized inventory, cable roll measurements, contractor credit ledgers, and manufacturer warranty records with sub-second accuracy.",
+      "heading": "Hulm POS: The Ultimate Electric Store POS System",
+      "description": "Hulm Electric Store POS supports serialised inventory, cable-roll measurements, contractor credit records and manufacturer warranty information in one operating workflow.",
       "points": [
         "Serialized inventory tracking for high-value electrical appliances and machinery",
         "Cut-to-length fractional measurements for cables, wires, and conduit pipes",
-        "Contractor wholesale credit lines and ledger accounting with instant balances",
+        "Contractor wholesale credit lines and recorded ledger balances",
         "Manufacturer warranty management with searchable serial numbers on receipts"
       ]
     },
     "features": {
-      "heading": "Why Choose HULM POS for Electric Store Facility?",
+      "heading": "Why Choose Hulm POS for Electric Store Facility?",
       "items": [
         {
           "title": "Serialized Inventory Tracking",
-          "description": "Track serial numbers for every electrical appliance from supplier receipt to customer checkout for flawless warranty verification."
+          "description": "Track configured serial numbers from supplier receipt to customer checkout to support warranty review."
         },
         {
           "title": "Fractional Cable & Wire Units",
@@ -654,8 +654,8 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "whoCanBenefit": {
-      "heading": "Who Can Benefit from HULM POS?",
-      "description": "HULM POS is ideal for electrical and hardware businesses:",
+      "heading": "Who Can Benefit from Hulm POS?",
+      "description": "Hulm POS is ideal for electrical and hardware businesses:",
       "items": [
         "Electrical Supply Stores",
         "Consumer Electronics & Home Appliance Shops",
@@ -684,22 +684,22 @@ export const industriesData: Record<string, IndustryData> = {
     },
     "faqs": [
       {
-        "question": "How does HULM POS handle warranties or service tracking for electric items?",
-        "answer": "HULM POS allows you to store warranty details and track service records for products. You can link customer purchases to warranties, making after-sales service seamless and organized."
+        "question": "How does Hulm POS handle warranties or service tracking for electric items?",
+        "answer": "Hulm POS allows you to store warranty details and track service records for products. You can link customer purchases to warranties, making after-sales service seamless and organized."
       },
       {
-        "question": "Can HULM POS run promotions and discounts in my electric store?",
-        "answer": "Yes! HULM POS makes it easy to create and manage promotional campaigns, seasonal discounts, and bundled offers. The system also generates insights to help you analyze the success of your campaigns and plan future sales strategies."
+        "question": "Can Hulm POS run promotions and discounts in my electric store?",
+        "answer": "Yes! Hulm POS makes it easy to create and manage promotional campaigns, seasonal discounts, and bundled offers. The system also generates insights to help you analyze the success of your campaigns and plan future sales strategies."
       },
       {
-        "question": "How does HULM POS help with inventory management in electric stores?",
-        "answer": "HULM POS tracks inventory in real time, ensuring that you always know stock levels of products like appliances, light fixtures, and tools. It alerts you when items are running low and generates detailed inventory reports to help you make informed purchasing decisions."
+        "question": "How does Hulm POS help with inventory management in electric stores?",
+        "answer": "Hulm POS tracks inventory in real time, ensuring that you always know stock levels of products like appliances, light fixtures, and tools. It alerts you when items are running low and generates detailed inventory reports to help you make informed purchasing decisions."
       }
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Upgrade your electrical business with smart POS software today!",
-      "description": "Power up your electrical business with HULM Solutions—faster billing, smart inventory control, and seamless operations that drive sales.",
+      "description": "Power up your electrical business with Hulm Solutions—faster billing, smart inventory control, and seamless operations that drive sales.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -722,11 +722,11 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
-      "heading": "HULM POS: The Ultimate Clothing Stores POS System",
-      "description": "In the clothing retail industry, providing a seamless shopping experience and managing inventory efficiently are key to success. HULM Clothing POS simplifies variant management across complex size, color, and fit combinations so you never miss a sale.",
+      "heading": "Hulm POS: The Ultimate Clothing Stores POS System",
+      "description": "In the clothing retail industry, providing a seamless shopping experience and managing inventory efficiently are key to success. Hulm Clothing POS simplifies variant management across complex size, color, and fit combinations so you never miss a sale.",
       "points": [
         "Deep matrix inventory for size, color, fabric, and style variants",
         "Custom apparel barcode label and hangtag printing straight from POS",
@@ -735,7 +735,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "features": {
-      "heading": "Why Choose HULM POS for Clothing Stores Facility?",
+      "heading": "Why Choose Hulm POS for Clothing Stores Facility?",
       "items": [
         {
           "title": "Size & Color Matrix Inventory",
@@ -756,8 +756,8 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "whoCanBenefit": {
-      "heading": "Who Can Benefit from HULM POS?",
-      "description": "HULM POS is ideal for fashion retailers across Pakistan:",
+      "heading": "Who Can Benefit from Hulm POS?",
+      "description": "Hulm POS is ideal for fashion retailers across Pakistan:",
       "items": [
         "Fashion Boutiques & Designer Studios",
         "Ready-to-Wear Apparel Chains",
@@ -786,22 +786,22 @@ export const industriesData: Record<string, IndustryData> = {
     },
     "faqs": [
       {
-        "question": "Can HULM POS handle returns and exchanges in my clothing store?",
-        "answer": "Yes! HULM POS supports easy returns and exchanges, allowing your staff to quickly process transactions and update inventory levels. You can track return reasons, manage refund policies, and offer store credit when needed."
+        "question": "Can Hulm POS handle returns and exchanges in my clothing store?",
+        "answer": "Yes! Hulm POS supports easy returns and exchanges, allowing your staff to quickly process transactions and update inventory levels. You can track return reasons, manage refund policies, and offer store credit when needed."
       },
       {
-        "question": "Can HULM POS run promotions and discounts in my clothing store?",
-        "answer": "Yes! HULM POS makes it easy to run promotions, discounts, and seasonal sales in your clothing store. You can set up discount codes, loyalty programs, and bundle offers, as well as track the effectiveness of your campaigns with detailed reports."
+        "question": "Can Hulm POS run promotions and discounts in my clothing store?",
+        "answer": "Yes! Hulm POS makes it easy to run promotions, discounts, and seasonal sales in your clothing store. You can set up discount codes, loyalty programs, and bundle offers, as well as track the effectiveness of your campaigns with detailed reports."
       },
       {
-        "question": "How does HULM POS help with managing clothing inventory?",
-        "answer": "HULM POS allows you to track your clothing inventory in real time, including details like size, color, and style. It provides automated low-stock alerts and generates reports to help you optimize stock levels, ensuring you never run out of popular items."
+        "question": "How does Hulm POS help with managing clothing inventory?",
+        "answer": "Hulm POS allows you to track your clothing inventory in real time, including details like size, color, and style. It provides automated low-stock alerts and generates reports to help you optimize stock levels, ensuring you never run out of popular items."
       }
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Style your success with powerful POS software today!",
-      "description": "Stay on trend with HULM Solutions—fast checkout, smart stock control, and seamless operations for your clothing brand.",
+      "description": "Stay on trend with Hulm Solutions—fast checkout, smart stock control, and seamless operations for your clothing brand.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -824,13 +824,13 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
       "heading": "What is a Cafe Point of Sale System?",
-      "description": "A cafe point of sale (POS) system is software and hardware designed specifically for cafés and coffee shops to handle order processing (dine-in, takeaway, delivery), menu customization (sizes, milk, syrups, add-ons), payment handling, and real-time recipe ingredient depletion. Unlike generic POS systems, a cafe POS system understands the unique needs of cafés—fast service, high order volume during peak hours, and complex beverage customization.",
+      "description": "A cafe point of sale (POS) system is software and hardware designed specifically for cafés and coffee shops to handle order processing (dine-in, takeaway, delivery), menu customization (sizes, milk, syrups, add-ons), payment handling, and real-time recipe ingredient depletion. Unlike generic POS systems, this kind of system understands the unique needs of cafés—fast service, high order volume during peak hours, and complex beverage customization.",
       "points": [
-        "Order processing for dine-in, quick takeaway, and online delivery platforms",
+        "Order processing for dine-in, quick takeaway and delivery orders",
         "Rapid drink modifiers for milk types, syrups, espresso shots, and sugar levels",
         "Direct ticket routing to barista station screens and thermal printers",
         "Automatic ingredient tracking for coffee beans, dairy, syrups, and packaging"
@@ -866,7 +866,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "benefits": {
-      "heading": "Benefits of Choosing Hulm Cafe POS",
+      "heading": "Benefits of Choosing Hulm for Your Cafe",
       "items": [
         "Speed up service during high-traffic morning and evening rush hours",
         "Eliminate order misunderstandings with clear barista station routing",
@@ -899,7 +899,7 @@ export const industriesData: Record<string, IndustryData> = {
       },
       {
         "question": "Can I use a free cafe POS system?",
-        "answer": "Yes, Hulm offers cafe POS software free trials and affordable plans for startups and small cafés to get started without heavy upfront investment."
+        "answer": "Yes, Hulm offers free trials of its coffee shop software and affordable plans for startups and small cafés to get started without heavy upfront investment."
       },
       {
         "question": "How is a cafe POS different from a regular POS?",
@@ -917,7 +917,7 @@ export const industriesData: Record<string, IndustryData> = {
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Get Started with the Best Cafe POS Software",
-      "description": "Elevate your coffee experience with HULM Solutions—faster orders, precise ingredient control, and happy regular customers.",
+      "description": "Elevate your coffee experience with Hulm Solutions—faster orders, precise ingredient control, and happy regular customers.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -940,11 +940,11 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
-      "heading": "Simplify your Toy Store with Toy Store POS",
-      "description": "Running a toy store is no child’s play—it needs efficient inventory management, good sales, and adaptability to seasonal demands. HULM Solutions provides the most appropriate Toys Store POS System, which is specifically tailored for toy stores. Whether you are operating a small store or a chain of stores, our toy store POS software automates business, boosts sales, and enhances customer satisfaction.",
+      "heading": "Simplify Your Toy Store with Hulm POS",
+      "description": "Running a toy store is no child’s play—it needs efficient inventory management, good sales, and adaptability to seasonal demands. Hulm Solutions provides the most appropriate Toys Store POS System, which is specifically tailored for toy stores. Whether you are operating a small store or a chain of stores, our POS for toy store owners automates billing, boosts sales, and enhances customer satisfaction.",
       "points": [
         "Organize thousands of toy SKUs by age group, category, and brand",
         "1-click barcode generation and label printing for unbarcoded toys",
@@ -953,7 +953,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "features": {
-      "heading": "Key Features of Our Toy Store POS",
+      "heading": "Key Features for Toy Retailers",
       "items": [
         {
           "title": "Real-Time Inventory Tracking",
@@ -977,12 +977,12 @@ export const industriesData: Record<string, IndustryData> = {
         },
         {
           "title": "Fast and Secure Checkout",
-          "description": "Sub-second barcode scanning and instant thermal printing ensure an enjoyable shopping experience for parents and kids."
+          "description": "Barcode scanning and configured thermal printing support a clear toy-store checkout workflow."
         }
       ]
     },
     "whoCanBenefit": {
-      "heading": "Who Can Use Our Toy Store POS Systems?",
+      "heading": "Who Can Use Hulm in a Toy Business?",
       "description": "Our Toys Store POS System is perfect for:",
       "items": [
         "Local toy shops in markets and commercial malls",
@@ -1020,20 +1020,20 @@ export const industriesData: Record<string, IndustryData> = {
     },
     "faqs": [
       {
-        "question": "Can I use the Toy Store POS System for multiple locations?",
-        "answer": "Yes, our toy store POS systems support multiple branches under one account."
+        "question": "Can I use Hulm POS for multiple toy store locations?",
+        "answer": "Yes, multiple branches can run under one account."
       },
       {
         "question": "Does the software work for online and offline sales?",
-        "answer": "Absolutely. The toy store POS software integrates your physical shop and online store seamlessly."
+        "answer": "Absolutely. It connects your physical shop and online store seamlessly."
       },
       {
         "question": "Is it easy to set up promotions during holidays?",
         "answer": "Yes, our toy shop POS lets you create festive offers and discounts instantly."
       },
       {
-        "question": "Can HULM POS integrate with my eCommerce store?",
-        "answer": "Absolutely! HULM POS integrates seamlessly with online platforms, allowing you to manage in-store and online sales, track inventory, and streamline operations from one system, ensuring consistency across all channels."
+        "question": "Can Hulm POS integrate with my eCommerce store?",
+        "answer": "Absolutely! Hulm POS integrates seamlessly with online platforms, allowing you to manage in-store and online sales, track inventory, and streamline operations from one system, ensuring consistency across all channels."
       },
       {
         "question": "What payment options are supported?",
@@ -1042,8 +1042,8 @@ export const industriesData: Record<string, IndustryData> = {
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
-      "subheading": "Grow Your Toy Store with HULM POS",
-      "description": "With HULM’s Toy Store POS System, you can take control of your inventory, improve customer loyalty, and grow your sales without stress. Whether you’re running a small shop or a franchise, our toy store POS software is built to make your business run smoothly.",
+      "subheading": "Grow Your Toy Store with Hulm POS",
+      "description": "With Hulm’s Toy Store POS System, you can take control of your inventory, improve customer loyalty, and grow your sales without stress. Whether you’re running a small shop or a franchise, our toy store POS software is built to make your business run smoothly.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -1057,19 +1057,19 @@ export const industriesData: Record<string, IndustryData> = {
     "image": "/images/industries/bakery.jpg",
     "cardTitle": "POS For Bakery",
     "cardDesc": "Discover how POS systems can help the bakery streamline operations and optimize workflows.",
-    "metaTitle": "HULM Bakery POS System The Secret Ingredient to Your Bakery’s Success | Hulm",
-    "metaDescription": "Deliver speed, precision, and delightful experiences—from custom cake requests to morning rush-hour service with HULM Bakery POS.",
+    "metaTitle": "Hulm Bakery POS System The Secret Ingredient to Your Bakery’s Success | Hulm",
+    "metaDescription": "Deliver speed, precision, and delightful experiences—from custom cake requests to morning rush-hour service with Hulm Bakery POS.",
     "hero": {
       "badge": "Bakery & Patisserie POS",
-      "headline": "HULM Bakery POS System The Secret Ingredient to Your Bakery’s Success",
+      "headline": "Hulm Bakery POS System The Secret Ingredient to Your Bakery’s Success",
       "description": "Deliver speed, precision, and delightful experiences—from custom cake requests to morning rush-hour service with our specialized bakery point-of-sale software.",
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
-      "heading": "HULM Bakery POS Makes Your Business Sweeter",
+      "heading": "Hulm Bakery POS Makes Your Business Sweeter",
       "description": "In a bakery, speed, accuracy, and customer satisfaction are essential to creating a smooth, enjoyable experience. A bakery POS system gives cake shops, patisseries, and sweet marts all the tools they need to track fresh daily batches, handle custom cake bookings, and calculate recipe ingredient costs.",
       "points": [
         "Custom birthday and wedding cake advance orders with photo attachments and pickup dates",
@@ -1079,7 +1079,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "features": {
-      "heading": "Key Benefits of HULM Bakery POS System",
+      "heading": "Key Benefits of Hulm Bakery POS System",
       "items": [
         {
           "title": "Fast Checkout with Scale Support",
@@ -1108,8 +1108,8 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "whoCanBenefit": {
-      "heading": "Who Can Benefit from HULM POS?",
-      "description": "HULM’s POS system for bakery is ideal for:",
+      "heading": "Who Can Benefit from Hulm POS?",
+      "description": "Hulm’s POS system for bakery is ideal for:",
       "items": [
         "Artisan Bakeries & Cake Boutiques",
         "Commercial Bread & Pastry Bakeries",
@@ -1142,7 +1142,7 @@ export const industriesData: Record<string, IndustryData> = {
         "answer": "A system designed specifically for baked goods businesses. It handles recipe costing, production batches, shelf life, and sales, all in one place."
       },
       {
-        "question": "Is HULM Bakery POS FBR compliant?",
+        "question": "Is Hulm Bakery POS FBR compliant?",
         "answer": "Yes, every invoice it generates meets FBR standards, and all sales and ingredient batches can be tracked for audit."
       },
       {
@@ -1155,11 +1155,11 @@ export const industriesData: Record<string, IndustryData> = {
       },
       {
         "question": "Does it work if internet goes out?",
-        "answer": "Yes. Your billing and production keep running offline; data is synced once connectivity returns."
+        "answer": "Hulm is a cloud POS and needs an internet connection to record billing and production; there is no offline mode. A mobile hotspot makes a simple backup connection."
       },
       {
         "question": "Can I run multiple bakery branches from one account?",
-        "answer": "Yes. HULM supports multi-branch fulfillment with centralized stock, recipe libraries, and unified reporting."
+        "answer": "Yes. Hulm supports multi-branch fulfillment with centralized stock, recipe libraries, and unified reporting."
       },
       {
         "question": "How long is the setup process?",
@@ -1169,7 +1169,7 @@ export const industriesData: Record<string, IndustryData> = {
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Bake better, faster, and smarter with HulmPOS. Serving bakeries all over Pakistan.",
-      "description": "HULM Solutions helps you increase efficiency with faster checkout and seamless order management, boost profits by reducing ingredient waste, and build loyal repeat customers.",
+      "description": "Hulm Solutions helps you increase efficiency with faster checkout and seamless order management, boost profits by reducing ingredient waste, and build loyal repeat customers.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -1192,7 +1192,7 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
       "heading": "Why Jewelry Stores Need a Hulm POS System?",
@@ -1205,7 +1205,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "features": {
-      "heading": "Benefits of Jewelry POS Systems",
+      "heading": "Benefits of Hulm for Jewelry Stores",
       "items": [
         {
           "title": "Advanced Inventory Management",
@@ -1234,7 +1234,7 @@ export const industriesData: Record<string, IndustryData> = {
       ]
     },
     "useCases": {
-      "heading": "Use Cases: Jewelry POS in Action",
+      "heading": "Use Cases: The POS System for Jewelry Store Teams in Action",
       "cases": [
         {
           "title": "Custom Orders and Layaways",
@@ -1270,10 +1270,10 @@ export const industriesData: Record<string, IndustryData> = {
     "faqs": [
       {
         "question": "What is the best POS system for jewelry stores?",
-        "answer": "Look for systems that offer inventory management, CRM, reporting, and secure payments"
+        "answer": "A good POS system for jewelry store owners should offer inventory management, CRM, reporting, and secure payments."
       },
       {
-        "question": "Can jewelry POS software handle custom orders?",
+        "question": "Can the software handle custom jewelry orders?",
         "answer": "Yes. It tracks unique items, gemstones, and personalization details."
       },
       {
@@ -1281,18 +1281,18 @@ export const industriesData: Record<string, IndustryData> = {
         "answer": "By managing customer profiles, loyalty programs, and smooth checkout processes."
       },
       {
-        "question": "Are jewelry POS systems secure for high-value transactions?",
+        "question": "Is jewelry store software secure for high-value transactions?",
         "answer": "Reputable systems encrypt payments and protect sensitive data."
       },
       {
-        "question": "Can I manage multiple stores with jewelry POS software?",
+        "question": "Can one jewellery POS manage multiple stores?",
         "answer": "Yes, multi-store support allows centralized management and real-time synchronization."
       }
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Shine Brighter with Smart POS for Your Jewellery Store!",
-      "description": "Take control of your precious inventory, build loyal client relationships, and accelerate sales with HULM Jewelry POS Software.",
+      "description": "Take control of your precious inventory, build loyal client relationships, and accelerate sales with Hulm Jewelry POS Software.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",
@@ -1315,11 +1315,11 @@ export const industriesData: Record<string, IndustryData> = {
       "primaryCtaText": "Start Free 14-Day Trial",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Book a Live Demo",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/book-a-demo/"
     },
     "overview": {
       "heading": "Hulm Salon POS That Understands Your Business",
-      "description": "Operating a salon includes not only the best styling but also managing appointments, tracking product stock, paying staff commissions, and keeping clients happy. HULM Salon & Spa POS combines scheduling, billing, and inventory into one modern interface.",
+      "description": "Operating a salon includes not only the best styling but also managing appointments, tracking product stock, paying staff commissions, and keeping clients happy. Hulm Salon & Spa POS combines scheduling, billing, and inventory into one modern interface.",
       "points": [
         "Visual appointment calendar with online booking and walk-in queue management",
         "Automated stylist commission calculations based on tiered service rates or retail sales",
@@ -1401,25 +1401,25 @@ export const industriesData: Record<string, IndustryData> = {
       },
       {
         "question": "What is the best POS system for nail salons?",
-        "answer": "The best nail salon POS system offers easy scheduling, fast checkout, product tracking, and loyalty programs, exactly what HULM POS provides."
+        "answer": "The best nail salon POS system offers easy scheduling, fast checkout, product tracking, and loyalty programs, exactly what Hulm POS provides."
       },
       {
-        "question": "Can HULM POS be used in hair salons?",
+        "question": "Can Hulm POS be used in hair salons?",
         "answer": "Yes. Our hair salon POS software supports stylist scheduling, retail sales, and commission tracking."
       },
       {
-        "question": "Does HULM POS work for spas?",
+        "question": "Does Hulm POS work for spas?",
         "answer": "Absolutely. Our spa POS system handles therapy bookings, staff scheduling, inventory tracking, and package billing."
       },
       {
-        "question": "What makes HULM the best salon POS system?",
-        "answer": "HULM POS combines scheduling, billing, and inventory in one system, reducing manual work and improving customer satisfaction."
+        "question": "What makes Hulm the best salon POS system?",
+        "answer": "Hulm POS combines scheduling, billing, and inventory in one system, reducing manual work and improving customer satisfaction."
       }
     ],
     "finalCta": {
       "heading": "We’re Here to Help Your Business Thrive",
       "subheading": "Take Your Salon or Spa Further",
-      "description": "HULM POS helps you run your salon or spa with confidence. From nail and hair services to beauty treatments and spa therapies, our software keeps your operations simple and your clients happy.",
+      "description": "Hulm POS helps you run your salon or spa with confidence. From nail and hair services to beauty treatments and spa therapies, our software keeps your operations simple and your clients happy.",
       "primaryCtaText": "Start for free",
       "primaryCtaLink": "https://app.hulmsolutions.com/Register",
       "secondaryCtaText": "Talk to sales",

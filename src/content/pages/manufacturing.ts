@@ -15,7 +15,7 @@ export const manufacturingContent = {
       text: "Talk to sales",
       href: "/contact"
     },
-    bgImage: "https://hulmsolutions.com/wp-content/uploads/2025/11/manufacturing-pos-hulm.jpg"
+    bgImage: "/images/uploads/2025/11/manufacturing-pos-hulm.jpg"
   },
   overview: {
     heading: "HULM POS: The Ultimate Manufacturing Industry",
@@ -24,7 +24,7 @@ export const manufacturingContent = {
       text: "Start for free",
       href: "https://app.hulmsolutions.com/Register"
     },
-    image: "https://hulmsolutions.com/wp-content/uploads/2024/12/manufacturing-industry-pos-1024x681.jpg",
+    image: "/images/uploads/2024/12/manufacturing-industry-pos-1024x681.jpg",
     imageAlt: "manufacturing industry pos"
   },
   whyChoose: {
@@ -63,7 +63,7 @@ export const manufacturingContent = {
       "Assembly Lines",
       "Quality Control Facilities"
     ],
-    image: "https://hulmsolutions.com/wp-content/uploads/2024/12/Pos-for-Manufacturing-Industry-1024x683.jpg",
+    image: "/images/uploads/2024/12/Pos-for-Manufacturing-Industry-1024x683.jpg",
     imageAlt: "Pos for Manufacturing Industry"
   },
   stats: {
@@ -109,7 +109,7 @@ export const manufacturingContent = {
   },
   form: {
     heading: "We’re Here to Help Your Business Thrive",
-    image: "https://hulmsolutions.com/wp-content/uploads/2024/12/contact-hulm-e1733839029157.png",
+    image: "/images/uploads/2024/12/contact-hulm-e1733839029157.png",
     imageAlt: "contact hulm"
   },
   cta: {

@@ -78,7 +78,7 @@ export function IndustriesTestimonials() {
 
           <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
             <div>
-              <h4 className="font-bold text-[#152825] text-sm sm:text-base">
+              <h4 className="font-bold text-[#0F2A26] text-sm sm:text-base">
                 {t.name}
               </h4>
               <p className="text-xs text-zinc-500 font-medium">

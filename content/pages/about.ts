@@ -3,11 +3,11 @@ import { StandardPageContent } from '../types';
 export const aboutContent: StandardPageContent = {
   seo: {
     title: "About Us | Our Mission | Our Vision - Hulm Solutions",
-    description: "Learn about HULM Solutions' mission to deliver innovative POS software and our vision to revolutionize business operations with efficient, scalable solutions",
+    description: "Learn about Hulm Solutions' mission to deliver innovative POS software and our vision to revolutionize business operations with efficient, scalable solutions",
     keywords: ["About Hulm Solutions", "POS Software Pakistan", "SME Operations Platform", "Cloud POS"]
   },
   hero: {
-    headline: "About Us",
+    headline: "About Hulm Solutions",
     primaryCTA: {
       label: "",
       href: ""
@@ -17,34 +17,34 @@ export const aboutContent: StandardPageContent = {
     {
       type: "split-who-we-are",
       heading: "Who We Are",
-      content: "Our all-in-one Point of Sale (POS) System is crafted to streamline business operations, boost profitability, and enhance customer satisfaction. It can manage inventory, track sales, generate bills, handle vendors, oversee employee activities, manage expenses, create e-invoices, and organize products efficiently. Hulm pos system simplifies operations and saves time.\n\nHulm POS software is a comprehensive tool that empowers businesses to succeed in today’s competitive market. With Hulm Solutions, you’re not just investing in technology you’re partnering with a team committed to your growth and success.\n\nAt Hulm Solutions, we bring years of expertise in software system development to help businesses overcome operational challenges and meet customer demands efficiently. As experts in understanding your problems, we offer tailored solutions designed to drive success.",
-      image: "https://hulmsolutions.com/wp-content/uploads/2024/03/Hulm-Products.png"
+      content: "Hulm Solutions builds POS software for businesses that need a clearer way to manage sales, stock and day-to-day operations. A business can start with Hulm POS and add connected tools for purchasing, vendors, customers, orders, expenses, reporting and other workflows as its needs grow.\n\nOur focus is practical: make checkout simple, keep operational records connected and give owners a reliable view of what is happening across their business. Hulm is designed around the needs of Pakistani retailers and service businesses, including local support and optional FBR integration.\n\nWe combine software development experience with direct feedback from businesses using the platform. That helps us improve the product around real operating problems instead of adding complexity for its own sake.",
+      image: "/images/uploads/2024/12/hulm-solutions-pos-hoem-page-who-we-are-section-image-e1733227868253.png"
     },
     {
       type: "split-mission",
       heading: "Our Mission",
-      content: "Our mission at Hulm Solutions is to provide trusted and innovative POS software to businesses in Pakistan. Through years of experience in understanding the changing faces of businesses, we carefully create solutions tailored to unique needs. Our goal is to educate about the transformational capacity of POS systems-how they can streamline operations, improve efficiencies, and propel sales into new dimensions. By simply utilizing user-friendly tools for online marketing and all that goes with it, we help an organization realize its full potential. We are here to assist you on the road to success with cutting-edge technology and expertise, whether you are a newbie or already established.",
-      image: "https://hulmsolutions.com/wp-content/uploads/2024/12/hulm-solutions-pos-hoem-page-who-we-are-section-image-e1733227868253.png"
+      content: "Our mission is to help Pakistani businesses replace disconnected spreadsheets, paper records and manual follow-ups with one dependable operating system. We want each sale, stock movement and business decision to be easier to record, understand and act on.\n\nThat starts with a POS system that staff can learn quickly and extends to the connected modules a business genuinely needs. We support customers through setup and daily use so the software becomes part of a better process, not another burden for the team.",
+      image: "/images/product/hulm-apps-workspace.webp"
     },
     {
       type: "four-grid",
       items: [
         { title: "User-Friendly Technology", description: "Designed to be intuitive and easy to use, even for beginners." },
         { title: "Customizable Solutions", description: "Tailored to the specific needs of your business, whether small or large." },
-        { title: "24/7 Support", description: "Dedicated customer service available round the clock." },
-        { title: "Proven Results", description: "A track record of helping businesses achieve operational excellence and grow revenue." }
+        { title: "Dedicated Support", description: "Local customer support on WhatsApp, phone and email." },
+        { title: "Customer Evidence", description: "Real customer reviews and case studies show how businesses use Hulm in daily operations." }
       ]
     },
     {
       type: "split-vision",
       heading: "Our Vision",
-      content: "Our vision is to become the leading provider of POS systems technology in Pakistan, establishing standards for innovation, reliability and customer satisfaction. We strive to deliver state-of-the-art solutions tailored to the needs of Pakistani businesses and the unique operations of their businesses to streamlining operations, improve operational efficiencies, and driving sustainable growth. Our reliable systems and customized support empower businesses to thrive in a competitive market. Little or large we have scalability tools to grow with your business. We have set out to inspire trust across the country by driving digital transformation and setting a new benchmark for POS excellence in the region.",
-      image: "https://hulmsolutions.com/wp-content/uploads/2024/03/Pakistan-Map.png"
+      content: "Our vision is to become Pakistan’s most trusted POS platform for growing businesses. We aim to earn that trust through reliable software, clear pricing, responsive support and steady product improvement.\n\nAs customers grow from one counter to multiple locations, Hulm should grow with them without forcing a disruptive change of POS system. Over time, the same foundation can connect more of the business while keeping sales and operations at the centre.",
+      image: "/images/uploads/2024/12/hulm-our-vission-e1733836535286.png"
     },
     {
       type: "testimonials-header",
       heading: "Customer Success Stories",
-      content: "Discover how our solutions have empowered businesses to reach their goals through real-life customer success stories. See the impact and growth achieved with us by their side."
+      content: "See how customers use Hulm POS to manage sales, stock and daily operations, in their own words and through documented case studies."
     },
     {
       type: "contact-form",

@@ -15,12 +15,12 @@ export default function NotFound() {
       <Container>
         <div className="max-w-[600px] mx-auto text-center flex flex-col items-center space-y-6">
           
-          <div className="text-8xl font-semibold text-[#209f8f]/20 leading-none">
+          <div className="text-8xl font-semibold text-[#167c70]/20 leading-none">
             404
           </div>
           
           <div className="flex flex-col space-y-2">
-            <h1 className="text-3xl md:text-4xl font-semibold text-[#152825]">
+            <h1 className="text-3xl md:text-4xl font-semibold text-[#0F2A26]">
               Page not found.
             </h1>
             <p className="text-lg text-text-muted">

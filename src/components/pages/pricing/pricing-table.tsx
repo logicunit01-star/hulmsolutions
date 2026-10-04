@@ -23,7 +23,7 @@ export function PricingTable({ sections }: PricingTableProps) {
   if (!pricingSection) return null;
 
   return (
-    <Section className="py-20 md:py-32 bg-white relative">
+    <Section data-reveal className="py-20 md:py-32 bg-white relative">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none"></div>
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -36,10 +36,10 @@ export function PricingTable({ sections }: PricingTableProps) {
           {pricingSection.items.map((tier, index) => (
             <div 
               key={index} 
-              className={`glass-card p-8 md:p-12 rounded-3xl relative hover-lift flex flex-col ${tier.popular ? 'border-primary/50 shadow-elevation-4 ring-1 ring-primary/20' : 'border-border/50'}`}
+              className={`glass-card p-8 md:p-12 rounded-2xl relative hover-lift flex flex-col ${tier.popular ? 'border-primary/50 shadow-elevation-4 ring-1 ring-primary/20' : 'border-border/50'}`}
             >
               {tier.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-sm">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-secondary text-white text-[13px] font-bold py-1.5 px-4 rounded-full shadow-sm">
                   Most Popular
                 </div>
               )}

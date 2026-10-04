@@ -4,39 +4,17 @@ export interface NavItem {
   children?: NavItem[];
 }
 
+/**
+ * Flat primary navigation (no dropdowns). Every product, industry, city and resource page stays
+ * linked from the hub pages, the footer and in-page link chips, so nothing loses internal links.
+ */
 export const mainNav: NavItem[] = [
-  {
-    title: "Product",
-    href: "/apps",
-    children: [
-      { title: "POS & Billing", href: "/features" },
-      { title: "Inventory Management", href: "/inventory-management" },
-      { title: "Purchasing & Vendors", href: "/purchase-orders" },
-      { title: "Customer Management", href: "/customer-management" },
-      { title: "Order Management", href: "/order-management" },
-      { title: "Reporting & Insights", href: "/reporting-module" },
-    ],
-  },
-  {
-    title: "Industries",
-    href: "/industries",
-  },
-  {
-    title: "FBR Compliance",
-    href: "/fbr-integrated-pos-pakistan",
-  },
-  {
-    title: "Pricing",
-    href: "/pricing",
-  },
-  {
-    title: "Customers",
-    href: "/pos-case-studies/",
-  },
-  {
-    title: "Resources",
-    href: "/blogs",
-  },
+  { title: "Product", href: "/apps/" },
+  { title: "Industries", href: "/industries/" },
+  { title: "FBR", href: "/fbr-integrated-pos-pakistan/" },
+  { title: "Pricing", href: "/pricing/" },
+  { title: "Customers", href: "/pos-case-studies/" },
+  { title: "Blog", href: "/blogs/" },
 ];
 
 export const footerNav = [
@@ -74,6 +52,6 @@ export const footerNav = [
 
 export const socialLinks = [
   { title: "Facebook", href: "https://www.facebook.com/Hulmsolutions" },
-  { title: "LinkedIn", href: "https://www.linkedin.com/company/hulmsolutions/" },
-  { title: "Instagram", href: "https://www.instagram.com/hulmsolutions/" },
+  { title: "LinkedIn", href: "https://www.linkedin.com/company/hulm-solutions/" },
+  { title: "Instagram", href: "https://www.instagram.com/hulmsolutions1101/" },
 ];

@@ -1,10 +1,9 @@
-import { ProductionParityPage } from "@/components/seo/production-parity-page";
-import { productionMetadata } from "@/lib/production-parity";
+import { CountryTemplate } from "@/components/country/country-template";
+import { seoMetadata } from "@/lib/seo/page-seo";
 
-const route = "/pos-software-usa/";
-
-export const metadata = productionMetadata(route);
+// Live WordPress title + meta description (they carry the current rankings).
+export const metadata = seoMetadata("/pos-software-usa/");
 
 export default function Page() {
-  return <ProductionParityPage path={route} />;
+  return <CountryTemplate countryKey="pos-software-usa" />;
 }

@@ -8,7 +8,7 @@ export function TrustedBy() {
   return (
     <section className="py-12 bg-white border-b border-border/40">
       <Container>
-        <p className="text-center text-sm font-medium text-text-muted mb-8 tracking-widest uppercase">
+        <p className="text-center text-sm font-medium text-text-muted mb-8">
           Trusted By
         </p>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale">

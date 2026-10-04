@@ -11,7 +11,7 @@ interface IndustriesFormProps {
 
 export function IndustriesForm({
   heading = "We’re Here to Help Your Business Thrive",
-  image = "https://hulmsolutions.com/wp-content/uploads/2024/12/contact-hulm-e1733839029157.png",
+  image = "/images/uploads/2024/12/contact-hulm-e1733839029157.png",
   imageAlt = "Contact Hulm"
 }: IndustriesFormProps) {
   const [submitted, setSubmitted] = useState(false);
@@ -34,7 +34,7 @@ export function IndustriesForm({
       </div>
 
       {/* Right Column: Form */}
-      <div className="bg-white p-8 md:p-10 rounded-3xl border border-border shadow-elevation-2 relative order-1 lg:order-2">
+      <div className="bg-white p-8 md:p-10 rounded-2xl border border-border shadow-elevation-2 relative order-1 lg:order-2">
         <h3 className="text-2xl md:text-3xl font-bold text-text mb-6">
           {heading}
         </h3>

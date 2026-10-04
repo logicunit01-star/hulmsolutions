@@ -7,8 +7,8 @@ export const contactContent: StandardPageContent = {
     keywords: ["Contact Hulm", "POS Support Pakistan", "Hulm Solutions Phone"]
   },
   hero: {
-    headline: "Run your business smarter, faster, better.",
-    subheadline: "Personalized Development",
+    headline: "Contact Hulm POS Support and Sales",
+    subheadline: "Get help with product questions, setup, demos and day-to-day support.",
     primaryCTA: {
       label: "Get Started",
       href: "https://app.hulmsolutions.com/Register"
@@ -20,7 +20,8 @@ export const contactContent: StandardPageContent = {
       heading: "Need Assistance?",
       items: [
         { label: "Phone", value: "+92 339 111 9259" },
-        { label: "Email", value: "info@hulmsolutions.com" }
+        { label: "Email", value: "info@hulmsolutions.com" },
+        { label: "Address", value: "C-27, Block 14, Gulistan-e-Johar, Karachi, Pakistan" }
       ]
     },
     {
@@ -29,7 +30,7 @@ export const contactContent: StandardPageContent = {
       items: [
         { label: "First Name", type: "text" },
         { label: "Last Name", type: "text" },
-        { label: "Numeric Field", type: "tel" },
+        { label: "Phone Number", type: "tel" },
         { label: "Your Message", type: "textarea" }
       ]
     }

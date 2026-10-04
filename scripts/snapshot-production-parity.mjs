@@ -69,7 +69,7 @@ function extractPage(sourceUrl, finalUrl, html) {
   const main = $("main, #content, .site-content, article").first();
   if (!main.length) throw new Error(`No content root found for ${sourceUrl}`);
 
-  main.find("script,style,noscript,template").remove();
+  main.find("script,noscript,template").remove();
   main.find("*").each((_, element) => {
     const node = $(element);
     for (const attribute of Object.keys(element.attribs || {})) {
@@ -80,6 +80,23 @@ function extractPage(sourceUrl, finalUrl, html) {
     const node = $(element);
     node.attr("href", rewriteInternalUrl(node.attr("href")));
   });
+  if (normalizedPath(sourceUrl) === "/") {
+    main.find("a").each((_, element) => {
+      const node = $(element);
+      const label = node.text().replace(/\s+/g, " ").trim();
+      if (label.includes("Start 14 Days Free Trail")) {
+        node.attr("href", "https://app.hulmsolutions.com/Register");
+      }
+      if (label.includes("Watch Demo Video")) {
+        node.attr("href", "https://www.youtube.com/watch?v=Fd6X_TPX9EA");
+      }
+    });
+    main.find(":contains('Start 14 Days Free Trail')").contents().each((_, node) => {
+      if (node.type === "text" && node.data?.includes("Start 14 Days Free Trail")) {
+        node.data = node.data.replaceAll("Start 14 Days Free Trail", "Start 14 Days Free Trial");
+      }
+    });
+  }
   main.find("form[action]").each((_, element) => {
     const node = $(element);
     node.attr("action", rewriteInternalUrl(node.attr("action")));
@@ -121,7 +138,7 @@ function extractPage(sourceUrl, finalUrl, html) {
     modifiedTime: $("meta[property='article:modified_time']").attr("content") || "",
     bodyClass: $("body").attr("class") || "",
     stylesheets: [...new Set(stylesheets)],
-    mainHtml: main.html() || "",
+    mainHtml: (main.html() || "").trim(),
     schemas,
   };
 }

@@ -1,3 +1,4 @@
+import { SITE_FEEDS } from "@/lib/seo/page-seo";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
@@ -10,7 +11,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Insights & Blog - Hulm Solutions",
   description: "Read the latest news, guides, and insights from the Hulm POS team.",
-  alternates: { canonical: "/blogs" },
+  alternates: { canonical: "/blogs/", types: SITE_FEEDS },
 };
 
 export default function InsightsPage() {
@@ -72,13 +73,13 @@ export default function InsightsPage() {
                           className="w-full h-full object-contain p-0.5" 
                         />
                       </div>
-                      <Link href={`/author/${featuredInsight.authorSlug}`} className="hover:text-[#209f8f] transition-colors font-medium">
+                      <Link href="/author/" className="hover:text-[#209f8f] transition-colors font-medium">
                         {featuredInsight.author}
                       </Link>
                     </div>
                     <div className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {featuredInsight.readTime}</div>
                   </div>
-                  <Link href={`/blog/${featuredInsight.slug}`} className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#F8FAF9] group-hover:bg-[#209f8f] group-hover:text-white transition-colors">
+                  <Link href={`/blog/${featuredInsight.slug}/`} className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#F8FAF9] group-hover:bg-[#209f8f] group-hover:text-white transition-colors">
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -105,7 +106,7 @@ export default function InsightsPage() {
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 mb-3 text-xs text-zinc-400">
+                  <div className="flex items-center gap-4 mb-3 text-xs text-zinc-500">
                     <div className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {insight.date}</div>
                     <div className="flex items-center gap-1"><Clock className="w-3 h-3" /> {insight.readTime}</div>
                   </div>
@@ -126,7 +127,7 @@ export default function InsightsPage() {
                       </div>
                       <span>{insight.author}</span>
                     </div>
-                    <Link href={`/blog/${insight.slug}`} className="inline-flex items-center text-[#209f8f] font-semibold hover:text-[#1a8578] transition-colors">
+                    <Link href={`/blog/${insight.slug}/`} className="inline-flex items-center text-[#209f8f] font-semibold hover:text-[#1a8578] transition-colors">
                       Read Article <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>

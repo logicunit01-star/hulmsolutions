@@ -118,13 +118,40 @@ export const googleReviews: GoogleReviewItem[] = [
   }
 ];
 
+/** Page topic → which reviews to lead with, so each page opens on the most relevant real reviews. */
+const FOCUS_RULES: [RegExp, RegExp[]][] = [
+  [/bakery|sweet|confection/i, [/bakery|sweets|confection/i]],
+  [/restaurant|cafe|food|qsr|cloud-kitchen|caterer/i, [/restaurant|cafe/i, /bakery/i]],
+  [/grocery|supermarket|mart|pharmacy/i, [/grocery|mart/i, /retail/i]],
+  [/retail|clothing|garment|shoe|electronic|mobile|jewel|toy|book|cosmetic|hardware|wholesale|distribution|laptop|tech/i, [/retail|wholesale|shop|store/i]],
+  [/inventory|purchase|vendor|order|reporting/i, [/inventory/i, /wholesale|retail/i]],
+  [/small-business|free|starter/i, [/small business/i, /retail shop/i]],
+];
+
+function orderReviews(focus?: string): GoogleReviewItem[] {
+  const rule = focus ? FOCUS_RULES.find(([topic]) => topic.test(focus)) : undefined;
+  if (!rule) return googleReviews;
+  const tier = (r: GoogleReviewItem) => {
+    const i = rule[1].findIndex((re) => re.test(`${r.business} ${r.text}`));
+    return i === -1 ? rule[1].length : i;
+  };
+  return [...googleReviews].sort((a, b) => tier(a) - tier(b));
+}
+
 export function GoogleReviewsSection({
-  heading = "Pakistani Businesses Run on Hulm Here is What They Say",
-  subheading = "From a single-branch bakery in Lahore to a multi-location retail chain in Karachi, businesses across Pakistan trust Hulm to run their daily operations. These are real reviews from real owners."
+  heading = "Pakistani businesses run on Hulm. Here is what they say",
+  subheading = "Real reviews from business owners who use Hulm POS, published on Google.",
+  focus,
 }: {
   heading?: string;
   subheading?: string;
+  /** Page topic (slug or keyword); matching reviews are shown first. */
+  focus?: string;
 }) {
+  const reviews = orderReviews(focus);
+  // Rating and count are computed from the reviews shown, so the badge never overstates them.
+  const reviewCount = reviews.length;
+  const averageRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / Math.max(reviewCount, 1)).toFixed(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(2);
   const [isPaused, setIsPaused] = useState(false);
@@ -146,7 +173,7 @@ export function GoogleReviewsSection({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const totalSlides = Math.max(1, googleReviews.length - cardsPerPage + 1);
+  const totalSlides = Math.max(1, reviews.length - cardsPerPage + 1);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev >= totalSlides - 1 ? 0 : prev + 1));
@@ -186,7 +213,7 @@ export function GoogleReviewsSection({
   };
 
   return (
-    <Section className="py-14 sm:py-16 lg:py-20 bg-[#f8faf9] border-t border-zinc-100 overflow-hidden relative">
+    <Section data-reveal className="py-14 sm:py-16 lg:py-20 bg-[#F7F6F2] border-t border-zinc-100 overflow-hidden relative">
       <Container>
         {/* Split Modern Layout: Left Summary / Right Compact Slider */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -195,15 +222,15 @@ export function GoogleReviewsSection({
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
               {/* Google Trust Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200/80 shadow-xs text-xs font-semibold text-[#152825] mb-3.5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200/80 shadow-xs text-xs font-semibold text-[#0F2A26] mb-3.5">
                 <GoogleGIcon className="w-3.5 h-3.5 shrink-0" />
                 <span>Google Customer Reviews</span>
                 <span className="text-zinc-300">•</span>
-                <span className="text-amber-500 font-bold">5.0 ★</span>
+                <span className="text-amber-700 font-bold">{averageRating} ★</span>
               </div>
 
               {/* Heading */}
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#152825] tracking-tight leading-[1.25] mb-3">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F2A26] tracking-tight leading-[1.25] mb-3">
                 {heading}
               </h2>
 
@@ -216,7 +243,7 @@ export function GoogleReviewsSection({
               <div className="bg-white rounded-2xl p-4 border border-gray-200/70 shadow-sm mb-6 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold text-[#152825] leading-none">5.0</span>
+                    <span className="text-2xl font-bold text-[#0F2A26] leading-none">{averageRating}</span>
                     <div className="flex text-amber-400">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
@@ -225,7 +252,7 @@ export function GoogleReviewsSection({
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-zinc-500 mt-1 font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-500/10" />
-                    <span>10+ Verified Customer Reviews</span>
+                    <span>From {reviewCount} Google reviews</span>
                   </div>
                 </div>
 
@@ -233,7 +260,7 @@ export function GoogleReviewsSection({
                   href="https://www.google.com/search?q=hulm+solutions"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-[#25a18e]/10 text-[#209f8f] hover:bg-[#209f8f] hover:text-white transition-all flex items-center justify-center shrink-0"
+                  className="w-9 h-9 rounded-xl bg-[#25a18e]/10 text-[#146b60] hover:bg-[#209f8f] hover:text-white transition-all flex items-center justify-center shrink-0"
                   aria-label="View Google Reviews"
                   title="View on Google"
                 >
@@ -266,21 +293,27 @@ export function GoogleReviewsSection({
                 {Array.from({ length: totalSlides }).map((_, idx) => (
                   <button
                     key={idx}
+                    type="button"
                     onClick={() => setCurrentIndex(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      currentIndex === idx
-                        ? "w-6 bg-[#209f8f]"
-                        : "w-1.5 bg-gray-300 hover:bg-gray-400"
-                    }`}
+                    className="flex h-6 min-w-6 cursor-pointer items-center justify-center"
                     aria-label={`Go to slide ${idx + 1}`}
-                  />
+                    aria-current={currentIndex === idx ? "true" : undefined}
+                  >
+                    <span
+                      className={`block h-1.5 rounded-full transition-all duration-300 ${
+                        currentIndex === idx ? "w-6 bg-[#167c70]" : "w-1.5 bg-gray-400 hover:bg-gray-500"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
             </div>
           </div>
 
           {/* Right Column: Compact Cards Track (8 Cols) */}
+          {/* data-nosnippet: the same reviews appear on ~26 pages; keep them out of search snippets */}
           <div
+            data-nosnippet=""
             className="lg:col-span-8 overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -294,7 +327,7 @@ export function GoogleReviewsSection({
                 transform: `translateX(-${currentIndex * (100 / cardsPerPage)}%)`,
               }}
             >
-              {googleReviews.map((rev) => (
+              {reviews.map((rev) => (
                 <div
                   key={rev.id}
                   className="shrink-0 px-2 sm:px-2.5"
@@ -323,18 +356,18 @@ export function GoogleReviewsSection({
 
                           <div className="min-w-0">
                             <div className="flex items-center gap-1">
-                              <h3 className="font-semibold text-sm text-[#152825] truncate">
+                              <h3 className="font-semibold text-sm text-[#0F2A26] truncate">
                                 {rev.name}
                               </h3>
                               <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 fill-blue-500/10 shrink-0" />
                             </div>
-                            <span className="text-[11px] text-zinc-400 font-normal">
+                            <span className="text-[11px] text-zinc-500 font-normal">
                               {rev.date}
                             </span>
                           </div>
                         </div>
 
-                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#25a18e]/10 text-[#209f8f] border border-[#25a18e]/20 shrink-0">
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#25a18e]/10 text-[#146b60] border border-[#25a18e]/20 shrink-0">
                           {rev.business}
                         </span>
                       </div>
@@ -353,12 +386,12 @@ export function GoogleReviewsSection({
                     </div>
 
                     {/* Card Footer */}
-                    <div className="pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between text-[11px] text-zinc-400">
+                    <div className="pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between text-[11px] text-zinc-500">
                       <span className="inline-flex items-center gap-1 font-medium text-zinc-500">
                         <GoogleGIcon className="w-3 h-3" />
                         <span>Google Review</span>
                       </span>
-                      <span className="text-[#209f8f] font-medium">
+                      <span className="text-[#167c70] font-medium">
                         Verified Customer
                       </span>
                     </div>

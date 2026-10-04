@@ -79,7 +79,7 @@ export function SiteFaqAccordion({
               type="button"
               data-site-faq-button
               onClick={() => toggle(idx)}
-              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#152825] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
+              className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#0F2A26] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
               aria-expanded={isOpen}
             >
               <span className="flex items-center gap-3">
@@ -98,7 +98,7 @@ export function SiteFaqAccordion({
             {isOpen && (
               <div className="px-6 pb-6 pt-4 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100">
                 <p>
-                  <strong className="text-[#152825] font-bold mr-2">Ans:</strong>
+                  <strong className="text-[#0F2A26] font-bold mr-2">Ans:</strong>
                   {answer}
                 </p>
               </div>

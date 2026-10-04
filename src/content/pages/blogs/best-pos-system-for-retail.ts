@@ -5,13 +5,13 @@ export const bestPosRetailBlog = {
   },
   title: "Best POS System for Retail Stores in 2026 – Complete Guide",
   slug: "best-pos-system-for-retail",
-  author: "Hulm Editorial Team",
+  author: "Aamir Khan",
   authorSlug: "hulm-solutions-editorial-team",
   updatedDate: "09/08/2026",
   publishedDate: "April 16, 2025",
   category: "Retail Strategy",
   readTime: "8 min read",
-  imageUrl: "https://hulmsolutions.com/wp-content/uploads/2025/04/best-pos-system-for-retail-store-1024x579.webp",
+  imageUrl: "/images/uploads/2025/04/best-pos-system-for-retail-store-1024x579.webp",
   
   promo: {
     title: "Manage Your Business Smarter",
@@ -25,7 +25,7 @@ export const bestPosRetailBlog = {
 
   intro: [
     "Manual cash registers are gone. In 2026, a retail POS system is the operational core of any store. It processes sales, tracks inventory in real time, manages staff, and feeds the data you need to grow. Retailers searching for POS for multi-location retail or an all-in-one POS system for retail are really asking one question: which system reduces daily friction and scales without breaking the bank?",
-    "This guide compares the top 10 retail POS systems for 2026, breaks down must-have features, and shows exactly how to choose, with an honest look at why HULM POS is built specifically for Pakistani, Gulf, and growing retail businesses."
+    "This guide compares the top 10 retail POS systems for 2026, breaks down must-have features, and shows exactly how to choose the best POS system for retail, with an honest look at why HULM POS is built specifically for Pakistani, Gulf, and growing retail businesses."
   ],
 
   freeTrialCta: {

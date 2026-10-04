@@ -81,7 +81,7 @@ export function DashboardCarousel({ slides }: DashboardCarouselProps) {
       aria-label="POS Dashboard Preview Carousel"
     >
       {/* Main Image Frame */}
-      <div className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-[#EBECEF] bg-white p-2 sm:p-3 shadow-[0_12px_40px_rgba(0,0,0,0.06)]">
+      <div className="relative overflow-hidden rounded-2xl md:rounded-2xl border border-[#EBECEF] bg-white p-2 sm:p-3 shadow-[0_12px_40px_rgba(0,0,0,0.06)]">
         <div
           className="overflow-hidden rounded-xl md:rounded-2xl"
           onTouchStart={handleTouchStart}
@@ -115,7 +115,7 @@ export function DashboardCarousel({ slides }: DashboardCarouselProps) {
         type="button"
         onClick={prevSlide}
         aria-label="Previous dashboard slide"
-        className="absolute left-0 sm:left-1 md:-left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-gray-700 hover:text-[#209f8f] border border-gray-200/90 shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#209f8f]/40 cursor-pointer"
+        className="absolute left-0 sm:left-1 md:-left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-gray-700 hover:text-[#167c70] border border-gray-200/90 shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#209f8f]/40 cursor-pointer"
       >
         <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
       </button>
@@ -125,7 +125,7 @@ export function DashboardCarousel({ slides }: DashboardCarouselProps) {
         type="button"
         onClick={nextSlide}
         aria-label="Next dashboard slide"
-        className="absolute right-0 sm:right-1 md:-right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-gray-700 hover:text-[#209f8f] border border-gray-200/90 shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#209f8f]/40 cursor-pointer"
+        className="absolute right-0 sm:right-1 md:-right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-gray-700 hover:text-[#167c70] border border-gray-200/90 shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#209f8f]/40 cursor-pointer"
       >
         <ChevronRight className="w-5 h-5 stroke-[2.2]" />
       </button>

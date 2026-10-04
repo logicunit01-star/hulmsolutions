@@ -16,11 +16,11 @@ export function Testimonials() {
   const { headline, subheadline, items } = mockData;
 
   return (
-    <Section className="bg-white py-16 md:py-24">
+    <Section data-reveal className="bg-white py-16 md:py-24">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
           <h2 className="h2 text-text mb-4 leading-tight">{headline}</h2>
-          <p className="text-lg text-text-muted uppercase tracking-wider font-semibold text-primary">
+          <p className="text-lg text-text-muted font-semibold text-primary">
             {subheadline}
           </p>
         </div>

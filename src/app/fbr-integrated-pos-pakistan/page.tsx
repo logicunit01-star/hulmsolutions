@@ -1,10 +1,8 @@
-import { ProductionParityPage } from "@/components/seo/production-parity-page";
-import { productionMetadata } from "@/lib/production-parity";
+import { ComplianceTemplate } from "@/components/country/compliance-template";
+import { seoMetadata } from "@/lib/seo/page-seo";
 
-const route = "/fbr-integrated-pos-pakistan/";
-
-export const metadata = productionMetadata(route);
+export const metadata = seoMetadata("/fbr-integrated-pos-pakistan/");
 
 export default function Page() {
-  return <ProductionParityPage path={route} />;
+  return <ComplianceTemplate complianceKey="fbr-integrated-pos-pakistan" />;
 }

@@ -3,14 +3,28 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://hulmsolutions.com").replace(/\/$/, "");
 
+  const privatePaths = ["/api/"];
+
   return {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/wp-admin/admin-ajax.php"],
-        disallow: ["/wp-admin/", "/wp-includes/", "/wp-content/uploads/wpo/wpo-plugins-tables-list.json", "/api/", "/_next/"],
+        allow: "/",
+        disallow: privatePaths,
       },
-      { userAgent: ["GPTBot", "ChatGPT-User", "Google-Extended", "PerplexityBot", "ClaudeBot", "Claude-Web", "Applebot-Extended"], allow: "/" },
+      // AI search, assistant and training crawlers: welcome (GEO). Same private paths stay blocked.
+      {
+        userAgent: [
+          "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+          "ClaudeBot", "Claude-User", "Claude-SearchBot", "Claude-Web", "anthropic-ai",
+          "PerplexityBot", "Perplexity-User",
+          "Google-Extended",
+          "Applebot", "Applebot-Extended",
+          "CCBot", "Meta-ExternalAgent", "Amazonbot", "DuckAssistBot", "MistralAI-User",
+        ],
+        allow: ["/", "/llms.txt", "/llms-full.txt"],
+        disallow: privatePaths,
+      },
       { userAgent: "Bytespider", disallow: "/" },
     ],
     sitemap: [`${siteUrl}/sitemap_index.xml`, `${siteUrl}/sitemap.xml`],

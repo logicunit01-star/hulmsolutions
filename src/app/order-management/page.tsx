@@ -1,10 +1,9 @@
-import { ProductionParityPage } from "@/components/seo/production-parity-page";
-import { productionMetadata } from "@/lib/production-parity";
+import { AppTemplate } from "@/components/apps/app-template";
+import { seoMetadata } from "@/lib/seo/page-seo";
 
-const route = "/order-management/";
-
-export const metadata = productionMetadata(route);
+// Live WordPress title + meta description (they carry the current rankings).
+export const metadata = seoMetadata("/order-management/");
 
 export default function Page() {
-  return <ProductionParityPage path={route} />;
+  return <AppTemplate appSlug="order-management" />;
 }

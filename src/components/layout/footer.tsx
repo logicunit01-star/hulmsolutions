@@ -1,38 +1,57 @@
 import Link from "next/link"
+import { LogoLockup } from "@/components/layout/logo"
 import Image from "next/image"
 import { ArrowRight, ArrowUpRight, Mail, MessageCircle } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { REGIONAL_LOCATIONS } from "@/lib/countries/data"
 
 const productLinks = [
-  { title: "Product overview", href: "/apps" },
-  { title: "POS & Billing", href: "/features" },
-  { title: "Inventory Management", href: "/inventory-management" },
-  { title: "Purchasing & Vendors", href: "/purchase-orders" },
-  { title: "Customer Management", href: "/customer-management" },
-  { title: "Reporting & Insights", href: "/reporting-module" },
+  { title: "Product overview", href: "/apps/" },
+  { title: "POS & Billing", href: "/features/" },
+  { title: "Mobile POS", href: "/mobile-pos/" },
+  { title: "Inventory Management", href: "/inventory-management/" },
+  { title: "Purchase Orders", href: "/purchase-orders/" },
+  { title: "Vendor Management", href: "/vendors-management/" },
+  { title: "Order Management", href: "/order-management/" },
+  { title: "Customer Management", href: "/customer-management/" },
+  { title: "Reporting & Insights", href: "/reporting-module/" },
+  { title: "Logistics Management", href: "/logistics-management-software/" },
+  { title: "Cattle Management", href: "/cattle-management-software/" },
+  { title: "Ecommerce Store", href: "/website/" },
 ]
 
 const industryLinks = [
-  { title: "Retail stores", href: "/industries/retail-store" },
-  { title: "Restaurants & cafes", href: "/industries/restaurant-pos" },
-  { title: "Pharmacies", href: "/industries/pharmacy-store" },
-  { title: "Bakeries", href: "/industries/bakery-pos-system" },
-  { title: "Salons & spas", href: "/industries/salon-pos" },
-  { title: "All industries", href: "/industries" },
+  { title: "Retail store POS", href: "/industries/retail-store/" },
+  { title: "Restaurant POS", href: "/industries/restaurant-pos/" },
+  { title: "Cafe POS", href: "/industries/cafe/" },
+  { title: "Bakery POS", href: "/industries/bakery-pos-system/" },
+  { title: "Pharmacy POS", href: "/industries/pharmacy-store/" },
+  { title: "Salon & spa POS", href: "/industries/salon-pos/" },
+  { title: "Clothing store POS", href: "/industries/clothing-store/" },
+  { title: "Jewellery shop POS", href: "/industries/jewellery-shop/" },
+  { title: "Electric store POS", href: "/industries/electric-store/" },
+  { title: "Furniture store POS", href: "/industries/furniture-store/" },
+  { title: "Toy store POS", href: "/industries/toys-store/" },
+  { title: "Manufacturing POS", href: "/industries/manufacturing-industries/" },
 ]
 
 const resourceLinks = [
-  { title: "FBR compliance", href: "/fbr-integrated-pos-pakistan" },
-  { title: "Pricing", href: "/pricing" },
+  { title: "FBR integrated POS", href: "/fbr-integrated-pos-pakistan/" },
+  { title: "ZATCA e-invoicing", href: "/zatca/" },
+  { title: "Pricing", href: "/pricing/" },
   { title: "Customer stories", href: "/pos-case-studies/" },
-  { title: "Insights", href: "/blogs" },
-  { title: "Integrations", href: "/integration" },
+  { title: "Blog", href: "/blogs/" },
+  { title: "Integrations", href: "/integration/" },
+  { title: "Book a demo", href: "/book-a-demo/" },
+  { title: "POS hardware", href: "/pos-hardware/" },
+  { title: "POS software in Karachi", href: "/pos-software-karachi/" },
+  { title: "POS software in Lahore", href: "/pos-software-lahore/" },
+  { title: "POS software in Islamabad", href: "/pos-software-islamabad/" },
 ]
 
 const companyLinks = [
-  { title: "About Hulm", href: "/about" },
-  { title: "Contact", href: "/contact" },
+  { title: "About Hulm", href: "/about/" },
+  { title: "Contact", href: "/contact/" },
   { title: "Sign in", href: "https://app.hulmsolutions.com/", external: true },
 ]
 
@@ -70,51 +89,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden border-t border-emerald-950/60 bg-[#07110e] text-slate-300">
-      <div className="pointer-events-none absolute -top-28 left-1/2 h-64 w-full max-w-5xl -translate-x-1/2 bg-radial from-[#25a18e]/12 via-[#25a18e]/[0.03] to-transparent blur-3xl" aria-hidden="true" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#25a18e]/40 to-transparent" aria-hidden="true" />
+    <footer className="relative overflow-hidden border-t border-[#0B1F1C] bg-[#0B1F1C] text-slate-300">
 
       <Container className="relative py-14 sm:py-16">
-        <div className="mb-14 grid gap-8 rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/10 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#7ae582]">Hulm POS</p>
-            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              Bring sales, inventory and every branch into one connected workflow.
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
-              Start with the tools your team needs today and expand as your business grows.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-            <Link
-              href="/contact"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold text-white transition-colors hover:border-[#25a18e]/60 hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]"
-            >
-              Book a demo
-            </Link>
-            <Link
-              href="https://app.hulmsolutions.com/Register"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#25a18e] px-5 text-sm font-semibold text-white transition-all hover:bg-[#1f8f80] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7ae582]"
-            >
-              Start free trial
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-
         <div className="grid gap-10 border-b border-white/[0.08] pb-12 sm:grid-cols-2 lg:grid-cols-6">
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e]" aria-label="Hulm homepage">
-              <Image
-                src="/images/logo/logo-dark.svg"
-                alt="Hulm Solutions"
-                width={180}
-                height={56}
-                className="h-10 w-auto object-contain"
-              />
+              <LogoLockup height={50} tone="dark" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">
               Cloud POS for growing businesses that need faster sales, accurate stock and clearer control across every location.
@@ -140,7 +121,7 @@ export function Footer() {
 
         <div className="border-b border-white/[0.08] py-6">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">Regional editions</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">Regional editions</span>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {REGIONAL_LOCATIONS.map((location) => (
                 <Link key={location.code} href={location.href} className="text-xs font-medium text-slate-400 transition-colors hover:text-[#7ae582]">
@@ -152,14 +133,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 pt-7 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-5 pt-7 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>&copy; {currentYear} Hulm Solutions (Pvt) Ltd. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <Link href="/privacy-policy" className="transition-colors hover:text-[#7ae582]">
+            <Link href="/privacy-policy/" className="transition-colors hover:text-[#7ae582]">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions" className="transition-colors hover:text-[#7ae582]">
+            <Link href="/terms-and-conditions/" className="transition-colors hover:text-[#7ae582]">
               Terms &amp; Conditions
+            </Link>
+            <Link href="/editorial-policy/" className="transition-colors hover:text-[#7ae582]">
+              Editorial Policy
+            </Link>
+            <Link href="/cookie-policy/" className="transition-colors hover:text-[#7ae582]">
+              Cookie Policy
             </Link>
             {socialLinks.map((link) => (
               <a key={link.title} href={link.href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#7ae582]">

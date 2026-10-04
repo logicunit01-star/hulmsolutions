@@ -15,7 +15,7 @@ interface AboutHeroProps {
 
 export function AboutHero({ hero }: AboutHeroProps) {
   return (
-    <Section className="pt-20 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
+    <Section data-reveal className="pt-20 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent z-[-1]"></div>
       
@@ -35,8 +35,8 @@ export function AboutHero({ hero }: AboutHeroProps) {
           
           {hero.image && (
             <div className="relative w-full aspect-[4/3] lg:aspect-video flex items-center justify-center">
-              <div className="relative w-full h-full rounded-3xl glass-card hover-lift flex items-center justify-center p-2">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl pointer-events-none"></div>
+              <div className="relative w-full h-full rounded-2xl glass-card hover-lift flex items-center justify-center p-2">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-2xl pointer-events-none"></div>
                 <Image 
                   src={hero.image.src} 
                   alt={hero.image.alt} 

@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25a18e] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#167C70] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
   {
     variants: {
       variant: {
-        default: "bg-[#209f8f] text-white hover:bg-[#1a8578] shadow-sm hover:shadow active:scale-[0.98]",
-        secondary: "bg-[#25a18e]/10 text-[#209f8f] hover:bg-[#25a18e]/15 border border-[#25a18e]/25 active:scale-[0.98]",
+        default: "bg-[#0F2A26] text-white hover:bg-[#167C70] active:scale-[0.98]",
+        secondary: "bg-[#25a18e]/10 text-[#167c70] hover:bg-[#25a18e]/15 border border-[#25a18e]/25 active:scale-[0.98]",
         outline:
-          "bg-white border border-[#25a18e]/30 text-[#209f8f] hover:bg-[#25a18e]/5 hover:border-[#25a18e] shadow-xs active:scale-[0.98]",
-        ghost: "hover:bg-[#25a18e]/5 text-[#152825] hover:text-[#209f8f]",
-        link: "text-[#209f8f] underline-offset-4 hover:underline",
+          "bg-white border border-[#cfd5d2] text-[#0F2A26] hover:border-[#0F2A26] active:scale-[0.98]",
+        ghost: "hover:bg-[#F7F6F2] text-[#0F2A26] hover:text-[#167C70]",
+        link: "text-[#167c70] underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-6 py-2.5",

@@ -3,8 +3,8 @@ import type { IndustryData } from "./industriesData";
 const trialCta = {
   primaryCtaText: "Start 14-Day Free Trial",
   primaryCtaLink: "https://app.hulmsolutions.com/Register",
-  secondaryCtaText: "Talk to the Hulm Team",
-  secondaryCtaLink: "/contact",
+  secondaryCtaText: "Book a Free Demo",
+  secondaryCtaLink: "/book-a-demo/",
 };
 
 export const priorityIndustriesData: Record<string, IndustryData> = {
@@ -47,7 +47,7 @@ export const priorityIndustriesData: Record<string, IndustryData> = {
         { title: "Branch reporting", description: "Review sales and stock activity by configured location and user access." },
       ],
     },
-    useCases: { heading: "Common retail setups", cases: [
+    useCases: { heading: "Common retail store POS setups", cases: [
       { title: "Independent shop", description: "Run daily billing, purchasing and stock from one store." },
       { title: "Multi-branch retailer", description: "Review sales and inventory across configured locations." },
       { title: "Variant-heavy catalogue", description: "Manage products that differ by size, colour or other attributes." },
@@ -65,7 +65,7 @@ export const priorityIndustriesData: Record<string, IndustryData> = {
     },
     faqs: [
       { question: "Can Hulm manage product variants?", answer: "Hulm can organise products using attributes such as size and colour. Confirm the exact catalogue structure and import approach during setup." },
-      { question: "Can I use barcode scanners and receipt printers?", answer: "Hulm is designed for common POS hardware workflows. Share your intended devices with the team so compatibility can be confirmed before rollout." },
+      { question: "Can I use barcode scanners and receipt printers?", answer: "Yes. Hulm integrates easily with standard barcode scanners, receipt printers and cash drawers, so you can usually keep the hardware you already have." },
       { question: "Can multiple branches use the same system?", answer: "Multi-branch options are available. The right plan depends on the users, counters, locations and controls your operation needs." },
       { question: "Is FBR integration included?", answer: "FBR integration is available, but inclusion and implementation scope can vary by plan and business requirements. Confirm the final setup with Hulm." },
     ],
@@ -163,7 +163,7 @@ export const priorityIndustriesData: Record<string, IndustryData> = {
       { title: "Supplier purchasing", description: "Record purchases and receive stock from configured vendors." },
       { title: "Branch reporting", description: "Review sales and stock activity across configured pharmacy locations." },
     ] },
-    useCases: { heading: "Common pharmacy setups", cases: [
+    useCases: { heading: "Common pharmacy and medical store POS setups", cases: [
       { title: "Independent pharmacy", description: "Manage counter billing, purchasing and expiry-aware stock." },
       { title: "Pharmacy with general retail", description: "Keep medicine and non-medicine products in one catalogue." },
       { title: "Multi-branch pharmacy", description: "Review configured stock and sales activity by location." },
@@ -285,7 +285,7 @@ export const priorityIndustriesData: Record<string, IndustryData> = {
       { title: "Multi-branch salon", description: "Review configured appointments and sales by location." },
     ] },
     whoCanBenefit: { heading: "Service teams this workflow can support", items: ["Hair and beauty salons", "Spas and wellness studios", "Barbershops", "Multi-location service businesses"] },
-    benefits: { heading: "What a connected salon workflow should improve", items: ["Fewer separate booking and billing records", "Clearer customer visit history", "Better visibility of retail product sales", "A shared view of staff and branch activity"] },
+    benefits: { heading: "What connected salon software should improve", items: ["Fewer separate booking and billing records", "Clearer customer visit history", "Better visibility of retail product sales", "A shared view of staff and branch activity"] },
     faqs: [
       { question: "Can Hulm manage salon appointments?", answer: "Appointment workflows can be configured around services, staff and time slots. Confirm the scheduling rules your salon needs during setup." },
       { question: "Can services and retail products appear on one bill?", answer: "Hulm can combine configured services and products within the POS billing workflow." },
@@ -329,9 +329,9 @@ export const priorityIndustriesData: Record<string, IndustryData> = {
       { title: "Customer history", description: "Keep captured purchase records available for service and follow-up." },
     ] },
     useCases: { heading: "Common clothing retail setups", cases: [
-      { title: "Independent boutique", description: "Manage a focused catalogue, counter sales and exchanges." },
+      { title: "Independent boutique", description: "Use Hulm as a boutique POS for a focused catalogue, counter sales and exchanges." },
       { title: "Multi-branch fashion retailer", description: "Review variant stock and sales across configured stores." },
-      { title: "Mixed apparel catalogue", description: "Organise products with different sizing and colour structures." },
+      { title: "Mixed apparel catalogue", description: "Set up apparel POS records for products with different sizing and colour structures." },
     ] },
     whoCanBenefit: { heading: "Fashion retailers this workflow can support", items: ["Clothing boutiques", "Footwear retailers", "Uniform and workwear shops", "Multi-branch fashion stores"] },
     benefits: { heading: "What a connected clothing workflow should improve", items: ["Clearer variant availability", "More consistent exchanges and returns", "Faster access to branch stock information", "A shared view of product and customer activity"] },

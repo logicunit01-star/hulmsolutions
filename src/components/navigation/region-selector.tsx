@@ -41,16 +41,16 @@ export function RegionSelector() {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-[#152825] hover:bg-zinc-100/90 transition-all duration-200 border border-zinc-200/80 bg-white shadow-2xs"
+        className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-[#0F2A26] hover:bg-zinc-100/90 transition-all duration-200 border border-zinc-200/80 bg-white shadow-2xs"
         aria-label="Select Region"
         aria-expanded={isOpen}
         aria-haspopup="menu"
         aria-controls="regional-editions-menu"
       >
-        <span className="w-5 h-4 rounded bg-[#1b7f70]/10 border border-[#1b7f70]/20 text-[9.5px] font-bold text-[#1b7f70] flex items-center justify-center shrink-0">
+        <span className="w-5 h-4 rounded bg-[#1b7f70]/10 border border-[#1b7f70]/20 text-[9.5px] font-bold text-[#146b60] flex items-center justify-center shrink-0">
           {activeLocation.code}
         </span>
-        <span className="font-semibold text-xs text-[#152825]">{activeLocation.country}</span>
+        <span className="font-semibold text-xs text-[#0F2A26]">{activeLocation.country}</span>
         <ChevronDown className={`w-3 h-3 text-zinc-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
 

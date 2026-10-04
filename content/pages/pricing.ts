@@ -1,18 +1,15 @@
 export const pricingContent = {
-  seo: {
-    title: "Hulm POS Pricing | Plans from PKR 2,500",
-    description:
-      "Compare Hulm POS plans for single-location, growing and multi-branch businesses. Start with a 14-day trial or book a pricing walkthrough.",
-    keywords: ["Hulm POS pricing", "POS price Pakistan", "cloud POS plans", "multi branch POS pricing"],
-  },
+  // Title + meta description come from the live page via seoMetadata("/pricing/").
+  // Primary keyword: POS software price in Pakistan. Secondary: POS system price, POS pricing plans,
+  // billing and inventory software, multi-branch POS, FBR integration, free trial.
   hero: {
     eyebrow: "Straightforward POS pricing",
-    headline: "Choose the level of control your business needs",
+    headline: "POS software price in Pakistan: simple pricing plans for every business",
     description:
-      "Start with sales and inventory, then add users, branches and operational capabilities as your business grows.",
+      "Hulm POS software price in Pakistan starts at PKR 2,500 per month. Start with fast billing and inventory, then add users, branches and operational apps as your business grows.",
     primaryCta: { label: "Start 14-Day Free Trial", href: "https://app.hulmsolutions.com/Register" },
-    secondaryCta: { label: "Talk Through the Plans", href: "/contact/" },
-    proof: ["Plans from PKR 2,500/month", "14-day trial", "No credit card required for trial"],
+    secondaryCta: { label: "Book a Pricing Demo", href: "/book-a-demo/" },
+    proof: ["POS plans from PKR 2,500/month", "14-day trial", "No credit card required for trial"],
   },
   plans: [
     {
@@ -29,7 +26,7 @@ export const pricingContent = {
         "FBR integration available",
         "Email support",
       ],
-      cta: { label: "Start Free Trial", href: "https://app.hulmsolutions.com/Register" },
+      cta: { label: "Start Free Trial", href: "https://app.hulmsolutions.com/Register?plan=starter" },
       highlighted: false,
     },
     {
@@ -47,7 +44,7 @@ export const pricingContent = {
         "Advanced reporting",
         "Priority WhatsApp support",
       ],
-      cta: { label: "Start Free Trial", href: "https://app.hulmsolutions.com/Register" },
+      cta: { label: "Start Free Trial", href: "https://app.hulmsolutions.com/Register?plan=growth" },
       highlighted: true,
     },
     {
@@ -64,7 +61,7 @@ export const pricingContent = {
         "API integrations",
         "Multi-branch operational view",
       ],
-      cta: { label: "Start Free Trial", href: "https://app.hulmsolutions.com/Register" },
+      cta: { label: "Start Free Trial", href: "https://app.hulmsolutions.com/Register?plan=business" },
       highlighted: false,
     },
     {
@@ -81,13 +78,13 @@ export const pricingContent = {
         "Service-level agreement options",
         "Rollout planning with the Hulm team",
       ],
-      cta: { label: "Contact Sales", href: "/contact/" },
+      cta: { label: "Book a Demo", href: "/book-a-demo/?plan=enterprise" },
       highlighted: false,
     },
   ],
   comparison: {
     eyebrow: "Compare at a glance",
-    heading: "See what changes as the operation grows",
+    heading: "Compare POS system plans as the operation grows",
     description:
       "The biggest differences are team capacity, branch capacity and the operational workflows included with each plan.",
     rows: [
@@ -105,7 +102,7 @@ export const pricingContent = {
   },
   extras: {
     eyebrow: "Optional extras",
-    heading: "Know what may be priced separately",
+    heading: "POS add-ons and services priced separately",
     description:
       "These options apply when they are not already included in your chosen plan. Confirm the exact scope and billing schedule with Hulm before purchase.",
     items: [
@@ -123,7 +120,7 @@ export const pricingContent = {
   },
   guidance: {
     eyebrow: "Before you choose",
-    heading: "Match the plan to today’s workflow—not a distant wish list",
+    heading: "How to choose the right POS pricing plan",
     description:
       "Count the people and locations that need access, then identify whether purchasing, order management or advanced controls are required now.",
     items: [
@@ -143,32 +140,57 @@ export const pricingContent = {
   },
   faq: {
     eyebrow: "Pricing questions",
-    heading: "The details to confirm before starting",
+    heading: "POS pricing questions",
     items: [
       {
+        q: "How much does POS software cost in Pakistan?",
+        a: "Hulm POS software price in Pakistan starts at PKR 2,500 per month for the Starter plan (1 user, 1 branch). Growth is PKR 5,500 and Business is PKR 11,000 per month; Enterprise is quoted to your rollout.",
+      },
+      {
         q: "Is there a free trial?",
-        a: "Yes. Hulm currently offers a 14-day trial without requiring a credit card at signup.",
+        a: "Yes. Hulm offers a 14-day free trial of the POS system without requiring a credit card at signup.",
       },
       {
-        q: "Are standard setup fees mandatory?",
-        a: "Standard account setup does not require a mandatory installation fee. Optional services such as data migration and dedicated staff training are priced separately.",
+        q: "Are there setup or installation fees?",
+        a: "Standard account setup has no mandatory installation fee. Optional services such as data migration and dedicated staff training are priced separately.",
       },
       {
-        q: "Is FBR integration included?",
-        a: "FBR integration is available with the POS product. Because requirements vary by business, confirm the applicable setup and any related scope with the Hulm team.",
+        q: "Is FBR integration included in the price?",
+        a: "FBR integration is available with every plan. Because requirements vary by business, the Hulm team confirms the right FBR setup and any related scope with you.",
+        link: { label: "FBR integrated POS software", href: "/fbr-integrated-pos-pakistan/" },
+      },
+      {
+        q: "Which plan suits a small business?",
+        a: "Most single shops start on Starter for billing software, inventory management and customer records, then move to Growth when they add staff, a second branch or purchasing.",
+        link: { label: "POS system for small business in Pakistan", href: "/blog/best-point-of-sale-system-for-small-business-in-pakistan/" },
       },
       {
         q: "Can I add users or branches later?",
-        a: "Yes. Additional users and branches can be added, subject to the current add-on pricing or a move to a plan with more capacity.",
+        a: "Yes. Additional users and branches can be added at the current add-on price, or you can move to a plan with more capacity.",
       },
       {
         q: "Can I change plans as the business grows?",
-        a: "Plan changes are available. Speak with the Hulm team to confirm how the change affects users, branches, billing and included capabilities.",
+        a: "Yes. Speak with the Hulm team to confirm how the change affects users, branches, billing and included apps.",
       },
       {
         q: "Are taxes included in the listed prices?",
-        a: "The page shows the current listed plan prices. Confirm applicable taxes, billing schedule and the final payable amount with Hulm before purchase.",
+        a: "The page shows the current listed POS price in Pakistan for each plan. Confirm applicable taxes, billing schedule and the final payable amount with Hulm before purchase.",
       },
+    ],
+  },
+  included: {
+    heading: "Every plan runs on the same POS foundation",
+    links: [
+      { label: "POS features", href: "/features/" },
+      { label: "Inventory management", href: "/inventory-management/" },
+      { label: "Customer management", href: "/customer-management/" },
+      { label: "Purchase orders", href: "/purchase-orders/" },
+      { label: "Order management", href: "/order-management/" },
+      { label: "Vendor management", href: "/vendors-management/" },
+      { label: "Reporting", href: "/reporting-module/" },
+      { label: "FBR integration", href: "/fbr-integrated-pos-pakistan/" },
+      { label: "Mobile POS", href: "/mobile-pos/" },
+      { label: "Integrations", href: "/integration/" },
     ],
   },
   finalCta: {
@@ -177,6 +199,6 @@ export const pricingContent = {
     description:
       "Start a 14-day trial or book a pricing walkthrough focused on your team size, locations and operational requirements.",
     primaryCta: { label: "Start 14-Day Free Trial", href: "https://app.hulmsolutions.com/Register" },
-    secondaryCta: { label: "Talk Through the Plans", href: "/contact/" },
+    secondaryCta: { label: "Book a Pricing Demo", href: "/book-a-demo/" },
   },
 } as const;

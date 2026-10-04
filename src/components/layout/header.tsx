@@ -6,149 +6,79 @@ import { usePathname } from "next/navigation"
 import { Logo } from "./logo"
 import { mainNav } from "@/lib/navigation"
 import { MobileNav } from "@/components/navigation/mobile-nav"
-import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { cn } from "@/lib/utils"
-import { ArrowRight, Phone, Mail } from "lucide-react"
-import { RegionSelector } from "@/components/navigation/region-selector"
 
-const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
-);
-const Instagram = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
-);
-const Youtube = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M2.5 7.1C2.6 6 3.5 5.1 4.6 5 9.5 4.7 14.5 4.7 19.4 5c1.1.1 2 1 2.1 2.1.3 1.6.3 3.3.3 4.9 0 1.6 0 3.3-.3 4.9-.1 1.1-1 2-2.1 2.1-4.9.3-9.9.3-14.8 0-1.1-.1-2-1-2.1-2.1-.3-1.6-.3-3.3-.3-4.9 0-1.6 0-3.3.3-4.9z" /><path d="m10 15 5-3-5-3v6z" /></svg>
-);
-
+/**
+ * Single-row header: logo, six flat links, sign in and two CTAs. No utility bar and no dropdowns.
+ * Phone, email, social and regional editions live in the footer and the WhatsApp button.
+ */
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const normalizedPathname = (pathname || "/").replace(/\/$/, "") || "/";
+  const current = (pathname || "/").replace(/\/$/, "") || "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <>
-      {/* Top Utility Bar - In page flow: naturally visible at top, hides when scrolling down, shows when scrolling to top */}
-      <div className="bg-[#F9FAFB] border-b border-zinc-200/60 text-xs text-zinc-500 py-1.5 hidden md:block w-full relative z-[70]">
-        <Container className="flex items-center justify-between">
-          <div className="flex items-center gap-6 text-[11.5px]">
-            <a
-              href="tel:+923391119259"
-              className="flex items-center gap-1 hover:text-[#152825] transition-colors"
-            >
-              <Phone className="w-3 h-3 text-[#25a18e]" />
-              <span>+92 339 1119259</span>
-            </a>
-            <a
-              href="mailto:info@hulmsolutions.com"
-              className="flex items-center gap-1 hover:text-[#152825] transition-colors"
-            >
-              <Mail className="w-3 h-3 text-[#25a18e]" />
-              <span>info@hulmsolutions.com</span>
-            </a>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              <a href="https://www.instagram.com/hulmsolutions1101/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="Instagram">
-                <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a href="https://www.linkedin.com/company/hulm-solutions/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-              <a href="https://www.youtube.com/@Hulmsolutions" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-[#25a18e] transition-colors" aria-label="YouTube">
-                <Youtube className="w-3.5 h-3.5" />
-              </a>
-            </div>
-            <div className="h-3 w-px bg-zinc-200" />
-            <RegionSelector />
-          </div>
-        </Container>
-      </div>
-
-      {/* Main Navigation Bar - Sticky at top with fixed padding and zero layout shifts */}
-      <header
-        className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-200 bg-white",
-          isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-b border-zinc-200/80"
-            : "border-b border-zinc-100"
-        )}
-      >
-        <Container className="flex items-center justify-between py-3.5 sm:py-4">
-          {/* Logo & Navigation */}
-          <div className="flex items-center gap-8 xl:gap-10">
-            <Logo />
-
-            <nav className="hidden xl:flex items-center gap-0.5" aria-label="Primary navigation">
-              {mainNav.map((item) => {
-                const normalizedHref = item.href.replace(/\/$/, "") || "/";
-                const isActive = normalizedPathname === normalizedHref ||
-                  (normalizedHref !== "/" && normalizedPathname.startsWith(`${normalizedHref}/`));
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "px-3 py-2 rounded-full text-[13px] font-medium transition-all duration-200",
-                      isActive
-                        ? "text-[#152825] font-semibold bg-zinc-100 shadow-xs"
-                        : "text-[#475467] hover:text-[#152825] hover:bg-zinc-50"
-                    )}
-                  >
-                    {item.title}
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-
-          {/* Action CTAs & Mobile Nav */}
-          <div className="flex items-center gap-3">
-            <div className="hidden xl:flex items-center gap-2">
-              <Button
-                asChild
-                variant="ghost"
-                className="text-xs font-semibold text-[#475467] hover:text-[#152825] hover:bg-zinc-100/80 rounded-full h-9 px-3 transition-all duration-200"
-              >
-                <Link href="https://app.hulmsolutions.com/" target="_blank" rel="noopener noreferrer">
-                  Sign in
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full border-b bg-white transition-colors duration-200",
+        isScrolled ? "border-zinc-200" : "border-transparent"
+      )}
+    >
+      <Container className="flex h-16 items-center justify-between gap-6 lg:h-[72px]">
+        <div className="flex items-center gap-10">
+          <Logo />
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+            {mainNav.map((item) => {
+              const href = item.href.replace(/\/$/, "") || "/";
+              const active = current === href || (href !== "/" && current.startsWith(`${href}/`));
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative py-2 text-[14px] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-[1px] after:h-[2px] after:rounded-full after:transition-colors",
+                    active ? "text-[#0F2A26] after:bg-[#25a18e]" : "text-[#475467] hover:text-[#0F2A26] after:bg-transparent"
+                  )}
+                >
+                  {item.title}
                 </Link>
-              </Button>
+              );
+            })}
+          </nav>
+        </div>
 
-              <Button
-                asChild
-                variant="outline"
-                className="text-xs font-semibold rounded-full h-9 px-4"
-              >
-                <Link href="/contact">Book a demo</Link>
-              </Button>
-
-              <Button
-                asChild
-                className="bg-[#152825] hover:bg-[#25a18e] text-white text-xs font-semibold h-10 px-4 rounded-full shadow-[0_2px_12px_rgba(21,40,37,0.14)] hover:shadow-[0_4px_16px_rgba(37,161,142,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-1.5 group"
-              >
-                <Link href="https://app.hulmsolutions.com/Register" target="_blank" rel="noopener noreferrer">
-                  <span>Start free trial</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </Button>
-            </div>
-
-            <MobileNav />
+        <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-5 lg:flex">
+            <a href="https://app.hulmsolutions.com/" target="_blank" rel="noopener noreferrer" className="text-[14px] font-medium text-[#475467] transition-colors hover:text-[#0F2A26]">
+              Sign in
+            </a>
+            <Link
+              href="/book-a-demo/"
+              className="inline-flex h-10 items-center rounded-lg border border-zinc-300 px-4 text-[14px] font-semibold text-[#0F2A26] transition-colors hover:border-[#152825]"
+            >
+              Book a demo
+            </Link>
+            <a
+              href="https://app.hulmsolutions.com/Register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 items-center rounded-lg bg-[#0F2A26] px-4 text-[14px] font-semibold text-white transition-colors hover:bg-[#167c70]"
+            >
+              Start free trial
+            </a>
           </div>
-        </Container>
-      </header>
-    </>
+          <MobileNav />
+        </div>
+      </Container>
+    </header>
   )
 }

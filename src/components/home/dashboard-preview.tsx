@@ -12,7 +12,7 @@ export function DashboardPreview() {
   ];
 
   return (
-    <Section className="py-12 md:py-16 bg-white overflow-hidden relative z-0">
+    <Section data-reveal className="py-12 md:py-16 bg-white overflow-hidden relative z-0">
       <Container>
         <div className="text-center max-w-4xl mx-auto mb-8 flex flex-col items-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#0F5A4D] mb-4 text-balance leading-tight">
@@ -41,12 +41,12 @@ export function DashboardPreview() {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Outer glowing/soft border container */}
-          <div className="bg-[#F8FCFA] p-3 md:p-4 rounded-[2rem] border border-[#E6F4F1] shadow-[0_20px_50px_rgba(15,90,77,0.05)]">
+          <div className="bg-[#F8FCFA] p-3 md:p-4 rounded-2xl border border-[#E6F4F1] shadow-[0_20px_50px_rgba(15,90,77,0.05)]">
             <div className="relative z-10 bg-white rounded-2xl overflow-hidden shadow-sm border border-border/40">
               
               <div className="relative aspect-[16/10] w-full bg-white">
                 <Image 
-                  src="https://hulmsolutions.com/wp-content/uploads/2026/06/hero-image-hulm.webp" 
+                  src="/images/uploads/2026/06/hero-image-hulm.webp" 
                   alt="Hulm POS Dashboard Interface" 
                   fill
                   className="object-cover object-top"

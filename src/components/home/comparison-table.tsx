@@ -6,18 +6,18 @@ export function ComparisonTable() {
   const features = [
     { name: "FBR / Tier-1 integration", hulm: true, generic: true, offline: false, manual: false },
     { name: "Cloud Sync (Live)", hulm: true, generic: true, offline: false, manual: false },
-    { name: "Local Server / Offline", hulm: true, generic: false, offline: true, manual: false },
-    { name: "Mobile App", hulm: true, generic: true, offline: false, manual: false },
+    { name: "Local Server / Offline", hulm: false, generic: false, offline: true, manual: false },
+    { name: "Works on Mobile Browsers", hulm: true, generic: true, offline: false, manual: false },
     { name: "Pricing & Updates", hulm: "SaaS / Free", generic: "SaaS / Paid", offline: "License", manual: "None" },
     { name: "Customer Management", hulm: true, generic: true, offline: false, manual: false },
     { name: "Data Security", hulm: true, generic: true, offline: "Local Only", manual: false }
   ];
 
   return (
-    <Section className="bg-white py-16 md:py-24 border-t border-border/30">
+    <Section data-reveal className="bg-white py-16 md:py-24 border-t border-border/30">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-background-muted border border-border/50 text-xs font-semibold text-primary uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#167C70] mb-4">
             Hulm vs Competitors
           </div>
           <h2 className="h2 text-text mb-4 leading-tight">
