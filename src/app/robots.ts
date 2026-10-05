@@ -5,6 +5,13 @@ export default function robots(): MetadataRoute.Robots {
 
   const privatePaths = ["/api/"];
 
+  // Netlify sets URL at build time. On the *.netlify.app staging site, block all crawling.
+  // When the custom domain (hulmsolutions.com) is attached, URL changes and the normal rules apply.
+  const deployUrl = process.env.URL || process.env.DEPLOY_PRIME_URL || "";
+  if (/\.netlify\.app/i.test(deployUrl) || process.env.SITE_NOINDEX === "1") {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
+
   return {
     rules: [
       {

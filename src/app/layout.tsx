@@ -112,8 +112,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${schibsted.variable} antialiased flex min-h-screen flex-col text-[#0F2A26]`}>
+    <html lang="en" className={`${inter.variable} ${schibsted.variable}`}>
+      <body className={`antialiased flex min-h-screen flex-col text-[#0F2A26]`}>
         <GoogleTagManager id={gtmId} />
         <noscript>
           <iframe

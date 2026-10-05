@@ -90,6 +90,12 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Staging / preview hosts (*.netlify.app) must never be indexed. Production host is unaffected.
+        source: "/:path*",
+        has: [{ type: "host", value: ".*\\.netlify\\.app" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
         source: "/:path*",
         headers: [
           { key: "Strict-Transport-Security", value: "max-age=31536000" },
